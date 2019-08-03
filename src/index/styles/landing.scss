@@ -2,5 +2,6 @@
 #landing{
     width: 100% ;
     height: 100vh ;
-    @include bg('../../assets/svgs/landing.svg',center -6vh,no-repeat,100% 112%) ;
+    @include bg('../../assets/svgs/landing.svg',-6vw -12vh,no-repeat,107% 116%) ;
+    position: relative; 
 }
