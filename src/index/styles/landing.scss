@@ -1,0 +1,6 @@
+@import '../../mixins.scss' ;
+#landing{
+    width: 100% ;
+    height: 100vh ;
+    @include bg('../../assets/svgs/landing.svg',center -6vh,no-repeat,100% 112%) ;
+}
