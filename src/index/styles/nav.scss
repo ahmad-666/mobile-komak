@@ -2,53 +2,110 @@
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
 nav{
-    width: (50vw + $mayVar) ;
-    height: auto ;
+    width: 90vw ;
+    height: auto;
     position: fixed ;
-    top: 0 ;
     left: 0;
+    top: 0; 
     z-index: 5;
-    > ul {
+    > ul{
         width: 100% ;
         height: 100%;
         position: relative ;
         display: flex ;
-        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        @include flex(row,flex-start,flex-start,nowrap,"");
         padding: $dist1 ;
-        list-style: none ;
-        border: 1px solid blue ;
+        list-style: none;
         li{
             width: auto ;
             height: 3em;
-            margin: 0 $dist3 ;
             line-height: 3em ;
+            margin: 0 $dist3 ;
             a{
-                width: 100% ;
+                width: auto ;
                 height: 100%;
-                cursor: pointer;
-                font-size: 1em ;
                 color: $darkColor ;
-
+                font-size: 1em ;
             }
         }
         li.special{
-            a{
-                padding: $dist1 ($dist2 + 1em) ;
-                border-radius: 2em ;
+            a {
+                padding: ($dist1 + .1em) ($dist3 - .5em) ;
                 color: white ;
-                background-image: linear-gradient(to right, #ff8347, #ff794e, #ff6e56, #ff645f, #ff5b68);
-            }            
+                background: linear-gradient(to right, #ff416c, #ff4b2b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                border-radius: $dist3 ;   
+            }   
         }
         li.dropdown{
-
+            position: relative ;
+            cursor: pointer;
+            &:hover{
+                ul{
+                    visibility: visible;
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+            p{
+                color: $darkColor;
+                font-size: 1em ;
+                i{
+                    transform: translate(-50%,10%) ;
+                }
+            }
+            ul{
+                width: 10em ;
+                height: 0;
+                visibility: hidden ;
+                opacity: 0;
+                transition: all .4s ease-in-out ;
+                @include center-x ;
+                top: 100% ;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;  
+                box-shadow: 0 .1em .3em .05em $shadowColor ;
+                li{
+                    width: 100% ;
+                    height: 3em;
+                    margin: 0 ;
+                    background-color: $paleColor ;
+                    a{
+                        display: inline-block ;
+                        width: 100% ;
+                        height: 100%;
+                        padding: 0 $dist2 ;
+                        font-size: .8em ;
+                        color: $darkColor ;
+                        background-color: $paleColor ;
+                        transition: all .3s ease-in-out ;
+                        &:hover{
+                            background-color: $greyColor ;
+                        }
+                    }
+                }
+            }
         }
+        // li{
+        //     &:not(.special):not(.dropdown):not(.logo){
+        //         a{
+        //             width: auto ;
+        //             height: 100%;
+
+        //         }
+        //     }
+        // }
         li.logo{
             @include center-y ;
-            left: $dist3 ;
-            img{
-                width: 10em ;
+            left: $dist3;
+            a{
+                width: auto ;
                 height: 100%;
+                img{
+                    width: 10em ;
+                    height: 100%;
+                }
             }
+            
         }
     }
 }

@@ -1,7 +1,43 @@
 @import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
 #landing{
     width: 100% ;
     height: 100vh ;
     @include bg('../../assets/svgs/landing.svg',-6vw -12vh,no-repeat,107% 116%) ;
     position: relative; 
+    .info{
+        width: 40vw ;
+        height: auto;
+        position: absolute ;
+        top: 25% ;
+        left: $dist4;
+        display: flex ;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        h1,p,a{
+            width: 100% ;
+            height: auto ;
+            margin: 0 0;
+        }
+        h1{
+            font-size: 2.4em ;
+            color: $darkColor ;
+            font-weight: 700 ;
+        }
+        p{
+            font-size: .8em ;
+            color: darken($greyColor,20%) ;
+            line-height: $dist3 + .5em  ;
+        }
+        a.special{
+            margin-top: $dist2 ;
+            width: auto ;
+            height: auto;
+            padding: ($dist1 + .1em) ($dist3 - .5em) ;
+            color: white ;
+            background: linear-gradient(to right, #ff416c, #ff4b2b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            border-radius: $dist3 ;   
+            font-size: .9em ;
+        }
+    }
 }
