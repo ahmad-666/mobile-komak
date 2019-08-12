@@ -10,6 +10,13 @@ module.exports = {
     },
     entry: {//we create new property for each entry point , key is name and value should point to entry point
         'index' : './src/index/index.js' ,    
+        'article' : './src/article/article.js' ,    
+        'articles' : './src/articles/articles.js' ,    
+        'category' : './src/category/category.js' ,    
+        'courses' : './src/courses/courses.js' ,    
+        'repairRequest' : './src/repair-request/repair-request.js' ,    
+        'repairTeach' : './src/repair-teach/repair-teach.js' ,    
+        'representation' : './src/representation/representation.js' ,    
     },
     output: {//for each entry point we create one .js bundle(with the same name of entry point)
         filename: '[name].js',
@@ -132,6 +139,48 @@ module.exports = {
             inject: true,
             chunks: ['index'],
             template: './src/index/index.html' //should point to target html file that we want to add <script>,<link>
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'article.html' , 
+            inject: true,
+            chunks: ['article'],
+            template: './src/article/article.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'articles.html' , 
+            inject: true,
+            chunks: ['articles'],
+            template: './src/articles/articles.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'category.html' , 
+            inject: true,
+            chunks: ['category'],
+            template: './src/category/category.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'courses.html' , 
+            inject: true,
+            chunks: ['courses'],
+            template: './src/courses/courses.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'repair-request.html' , 
+            inject: true,
+            chunks: ['repairRequest'],
+            template: './src/repair-request/repair-request.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'repair-teach.html' , 
+            inject: true,
+            chunks: ['repairTeach'],
+            template: './src/repair-teach/repair-teach.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'representation.html' , 
+            inject: true,
+            chunks: ['representation'],
+            template: './src/representation/representation.html' 
         }),
         new CleanWebpackPlugin()
     ]

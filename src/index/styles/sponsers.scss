@@ -4,7 +4,7 @@
 #trust{
     width: 100% ;
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: -3em auto $sectionsDist auto ;
     overflow: hidden;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
@@ -12,7 +12,7 @@
         margin: $dist1 auto ;
     }
     h4{
-        font-size: $font-xl ;
+        font-size: $font-special - .2em ;
         color: $darkColor ;
         font-weight: 700 ;
     }

@@ -1,7 +1,7 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-#latest-articles{
+#latest_articles{
     width: 100% ;
     height: auto;
     overflow: hidden;
@@ -9,11 +9,12 @@
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
     position: relative ;
+    padding-bottom: $dist3 + .8em ;
     h4,.articles{
         margin: $dist1 0 ;
     }
     h4{
-        font-size: $font-xl ;
+        font-size: $font-special ;
         font-weight: 700 ;
         color: $darkColor ;
     }
@@ -22,7 +23,7 @@
         height: 5em;
         border-radius: 50% ;
         position: absolute ;
-        top: 50% ;
+        top: 42% ;
         cursor: pointer;
         background-color: $primaryColor ;
         z-index: 5;
@@ -96,6 +97,16 @@
                         transform: translate(50%,0) scale(1.1) ;
                     }
                 }
+            }
+        }
+        .show-all{
+            font-size: $font-l ;
+            color: $greyColor2 ;
+            @include center-x ;
+            top: 110% ;
+            i{
+                font-size: $font-l ;
+                transform: translate(-30%,10%) ;
             }
         }
     }

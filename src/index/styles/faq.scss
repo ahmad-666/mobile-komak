@@ -4,14 +4,14 @@
 #faq{
     width: 90vw ;
     height: auto;
-    margin: $dist4 auto ;
+    margin: $sectionsDist auto ;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
     h4,.questions{margin: $dist1 0 ;}
     h4{
         width: 100% ;
         text-align: center ;
-        font-size: $font-xl + .3em ;
+        font-size: $font-special ;
         font-weight: 700 ;
         color: $darkColor ;
     }

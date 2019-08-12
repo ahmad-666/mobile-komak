@@ -9,7 +9,9 @@ import './styles/progress.scss' ;
 import './styles/sponsers.scss' ;
 import './styles/latest-articles.scss' ;
 import './styles/faq.scss' ;
+import './styles/newsletters.scss' ;
 import './styles/footer.scss' ;
+import './styles/copyright.scss' ;
 //load scripts
 import './scripts/landing' ;
 import './scripts/why-us' ;
@@ -18,5 +20,8 @@ import './scripts/progress' ;
 import './scripts/sponsers' ;
 import './scripts/latest-articles' ;
 import './scripts/faq' ;
+import './scripts/newsletters.js' ;
 import './scripts/footer' ;
+//load videos 
+import vid from '../assets/vids/vid.mp4' ;
 

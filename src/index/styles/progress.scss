@@ -9,7 +9,7 @@
     @include flex(column,flex-start,center,nowrap,"") ;
     h4,.stages{margin: $dist1 auto ;}
     h4{
-        font-size: $font-special ;
+        font-size: $font-special - .3em ;
         color: $darkColor ;
         font-weight: 700 ;
     }

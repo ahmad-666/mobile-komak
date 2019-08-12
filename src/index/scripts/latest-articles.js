@@ -53,4 +53,4 @@ Slider.prototype.animation = function(val,time){
         loop:1 
     })
 }
-new Slider(document.querySelector('#latest-articles .articles')) ;
+new Slider(document.querySelector('#latest_articles .articles')) ;
