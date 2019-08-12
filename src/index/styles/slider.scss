@@ -1,7 +1,7 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-#latest_articles{
+.slider-wrapper{
     width: 100% ;
     height: auto;
     overflow: hidden;
@@ -10,7 +10,7 @@
     @include flex(column,flex-start,center,nowrap,"") ;
     position: relative ;
     padding-bottom: $dist3 + .8em ;
-    h4,.articles{
+    h4,.slider{
         margin: $dist1 0 ;
     }
     h4{
@@ -39,13 +39,13 @@
     button.next{
         left: .5em;
     }
-    .articles{
+    .slider{
         width: 100% ;
         height: auto;
         position: relative ;
         display: flex ;
         @include flex(row,flex-start,center,nowrap,"") ;
-        .article{
+        .slide{
             width: 15em ;
             height: 13em;
             position: relative ;

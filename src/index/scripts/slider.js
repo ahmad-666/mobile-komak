@@ -2,10 +2,10 @@ import anime from 'animejs' ;
 let getStyle = (el,prop) => window.getComputedStyle(el,null).getPropertyValue(prop) ;
 function Slider(slider){
     this.slider = slider ;
-    this.slide = this.slider.querySelector('.article') ;
+    this.slide = this.slider.querySelector('.slide') ;
     this.offset = parseInt(getStyle(this.slide,'width')) + parseInt(getStyle(this.slide,'margin-right')) + parseInt(getStyle(this.slide,'margin-left')) ;
     this.movement = 0 ;
-    this.slidesNum = this.slider.querySelectorAll('.article').length ;
+    this.slidesNum = this.slider.querySelectorAll('.slide').length ;
     this.slidesInViewport = Math.floor(window.innerWidth / this.offset) ;
     this.currSlideIndex = this.slidesInViewport ; //start from 1
     this.firstSlide = true ;
@@ -53,4 +53,7 @@ Slider.prototype.animation = function(val,time){
         loop:1 
     })
 }
-new Slider(document.querySelector('#latest_articles .articles')) ;
+let sliders = [] ;
+document.querySelectorAll('.slider').forEach(slider => {
+    sliders.push(new Slider(slider))
+})
