@@ -5,70 +5,132 @@
     > div {
         display: flex ;
         @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-        a{
-            width: 14em ;
-            height: 14em;
+        .article{
+            width: calc((90vw - (10 * 1.1em)) / 5) ;
+            height: calc((90vw - (10 * 1.1em)) / 5) ;
             border-radius: $dist3 ;
-            box-shadow: 0 0 .3em .05em $shadowColor ;
-            margin: $dist2 ;
+            box-shadow: 0 .8em .5em -.5em $shadowColor2 ;
+            margin: 1em ;
             display: flex ;
             @include flex(column,flex-start,flex-start,nowrap,"") ;
             transition: all .4s ease-in-out ;
-            &:hover{
-                transform: scale(1.05) ;
-                .bottom{
-                    position: relative ;
-                    top: -.5px ;
-                }
-            }
+            overflow: hidden;
             .top{
                 width: 100% ;
-                height: 70%;
+                height: 65%;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+                background-size: 100% 100% ;
+                position: relative ;
                 border-top-left-radius: $dist3 ;
                 border-top-right-radius: $dist3 ;
-                background: url('../../assets/imgs/grid4.jpg') center center no-repeat ;
-                background-size: 100% 100% ;
-                position: relative;
                 &::before{
                     content: '' ;
                     @include fullSize-abs ;
                     background-color: $blackFilter2 ;
                     border-top-left-radius: $dist3 ;
-                    border-top-right-radius: $dist3 ;
+                    border-top-right-radius: $dist3 ;   
                 }
                 i{
-                    display: inline-block ;
-                    width: auto ;
-                    height: auto;
-                    padding: .3em .6em ;
-                    position: absolute ;
-                    top: 5% ;
-                    right: 8% ;                  
-                    border-radius: .2em ;
-                    background-color: $whiteColor2 ;
-                    font-size: $font-xl ;
+                    width: $dist2 + .5em ;
+                    height: $dist2 + .5em;
+                    border-radius: 50% ;
+                    font-size: $font-xl + .6em ;
+                    text-align: center ;
+                    line-height: $dist2 + .5em;
                     color: $primaryColor ;
+                    background-color: $whiteColor2 ;
+                    position: absolute ;
+                    right: 50%;
+                    top: 100% ;
+                    transform: translate(50%,-50%) ;
+                    transition: all .6s ease-in-out ;
                 }
             }
             .bottom{
                 width: 100% ;
-                height: 30%;
+                height: 35%;
                 border-bottom-left-radius: $dist3 ;
                 border-bottom-right-radius: $dist3 ;
                 display: flex ;
-                @include flex(column,space-around,center,nowrap,"") ;
-                background-color: lighten($primaryColor,5%);
-                .title,.writer{
+                @include flex(column,flex-start,center,nowrap,"") ;
+                background-color: lighten($primaryColor,10%) ;
+                p{
                     width: 100% ;
                     text-align: center ;
+                    font-size: $font-m  ;
                     color: $whiteColor2 ;
-                    font-size: $font-m ;
-                    i{
-                        transform: translateY(3%);
-                        font-size: $font-m - .2em ;
+                    &:nth-child(1){
+                        margin-top: $dist2 + 1em ;    
+                        width: 90% ;
+                        @include ellipse ;  
+                    }
+                    &:nth-child(2){
+                        margin-top: $dist1  ;              
                     }
                 }
             }
+            &:hover{
+                transform: translateY(-5%) ;
+                box-shadow: 0 2.5em 1em -1.2em rgba(0,0,0,.4) ;
+                .top{
+                    i{
+                        color: $whiteColor2 ;
+                        background-color: $primaryColor ;
+                    }
+                }
+            }
+            &:nth-child(1){
+                .top{
+                    background-image: url('../../assets/imgs/grid1.jpg') ;
+                }
+            }
+            &:nth-child(2){
+                .top{
+                    background-image: url('../../assets/imgs/grid2.jpg') ;
+                }
+            }
+            &:nth-child(3){
+                .top{
+                    background-image: url('../../assets/imgs/grid3.jpg') ;
+                }
+            }
+            &:nth-child(4){
+                .top{
+                    background-image: url('../../assets/imgs/grid4.jpg') ;
+                }
+            }
+            &:nth-child(5){
+                .top{
+                    background-image: url('../../assets/imgs/grid5.jpg') ;
+                }
+            }
+            &:nth-child(6){
+                .top{
+                    background-image: url('../../assets/imgs/grid6.jpg') ;
+                }
+            }
+            &:nth-child(7){
+                .top{
+                    background-image: url('../../assets/imgs/grid1.jpg') ;
+                }
+            }
+            &:nth-child(8){
+                .top{
+                    background-image: url('../../assets/imgs/grid2.jpg') ;
+                }
+            }
+            &:nth-child(9){
+                .top{
+                    background-image: url('../../assets/imgs/grid3.jpg') ;
+                }
+            }
+            &:nth-child(10){
+                .top{
+                    background-image: url('../../assets/imgs/grid4.jpg') ;
+                }
+            }
         }
+
     }
 }
