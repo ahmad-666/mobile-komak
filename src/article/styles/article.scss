@@ -10,16 +10,27 @@ main{
     margin: $sectionsDist auto;
     display: flex ;
     @include flex(row,flex-start,flex-start,nowrap,"") ;   
-    #article,aside{
+    .wrapper,aside{
         height: auto ;
         display: flex ;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        box-shadow: 0 0 .5em .3em $shadowColor ;
+    }
+    aside
+        {box-shadow: 0 0 .5em .3em $shadowColor ;
         border: 3px solid $whiteColor2 ;
         background-color: white ;
     }
-    #article{
+
+    .wrapper{
         width: 70% ;
+        #article,#comments{
+            box-shadow: 0 0 .5em .3em $shadowColor ;
+            border: 3px solid $whiteColor2 ;
+            background-color: white ;
+        }
+    }
+    #article,#comments{width: 100% ; height: auto;}
+    #article{
         .bg{
             width: 100% ;
             height: 20em;

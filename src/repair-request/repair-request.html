@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="special">
+                <a href="./repair-request.html">درخواست تعمیر</a>
+            </li>
+            <li class="dropdown">
+                <p>
+                    آموزش ها
+                    <i class="fas fa-angle-down"></i>
+                </p>
+                <ul>
+                    <li>
+                        <a href="./articles.html">مقالات و آموزش نرم افزاری</a>
+                    </li>
+                    <li>
+                        <a href="./repair-teach.html">آموزش تعمیر موبایل</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://mobilekomak.com/store/">فروشگاه</a>
+            </li>
+            <li>
+                <a href="./representation.html">اخذ نمایندگی</a>
+            </li>
+            <li class="logo">
+                <a href="./index.html">
+                    <img src="../assets/imgs/logo.png" alt="logo">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="request">
+        <div id="timeline">
+            <div class="circle active">
+                <p>دستگاه</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle curr">
+                <p>برند</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle">
+                <p>مدل</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle">
+                <p>مشکل</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle">
+                <p>مشخصات</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle">
+                <p>بررسی</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="circle">
+                <p>ثبت</p>
+                <i class="fas fa-check"></i>
+            </div>
+            <span class="line"></span>
+        </div>
+        <form name="content" id="content" method="GET" action="#!" enctype="text/plain">
+            <!-- <div class="slide" id="type">
+                <h4>انتخاب نوع دستگاه</h4>
+                <div class="labels">
+                    <label for="mobile">
+                        <input type="checkbox" id="mobile" name="mobile" value="mobile">
+                        <p>موبایل</p>
+                    </label>
+                    <label for="tablet">
+                        <input type="checkbox" id="tablet" name="tablet" value="tablet">
+                        <p>تبلت</p>
+                    </label>
+                </div>          
+                <ul class="text">
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        ما تو «موبایل کمک» موبایل شما رو با قطعات ۱۰۰ درصد اورجینال تعمیر می‌کنیم.
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        پیک رایگان ارسال و دریافت هم داریم، هر جای تهران که باشی.
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        میتونی سفارش تعمیر موبایلت رو آنلاین ثبت کنی تا کارشناسای ما در اولین فرصت برای هماهنگی باهات تماس بگیرن‌.
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        یا اگه به مشاوره تعمیر نیاز داری، میتونی تو ساعات اداری با شماره پشتیبانی ۰۲۱۷۵۱۴۷ تماس بگیری.
+                    </li>
+                </ul>
+            </div> -->
+            <div class="slide" id="brand">
+                <h4>انتخاب برند</h4>
+                <div class="labels">
+                    <label for="mobile">
+                        <input type="checkbox" id="mobile" name="mobile" value="mobile">
+                        <p>موبایل</p>
+                    </label>
+                    <label for="tablet">
+                        <input type="checkbox" id="tablet" name="tablet" value="tablet">
+                        <p>تبلت</p>
+                    </label>
+                </div>  
+            </div>
+            <div class="slide" id="model">
+            </div>
+            <div class="slide" id="problem">
+            </div>
+            <div class="slide" id="infos">
+            </div>
+            <div class="slide" id="analyse">
+            </div>
+            <div class="slide" id="confirm">
+            </div>
+        </form>
+        <button class="prev">مرحله قبل</button>
+    </div>
+    <div id="footer">
+        <div class="content">
+            <div class="about_us">
+                <h4>درباره ما</h4>
+                <a href="#!" class="modal_trigger" id="about">درباره موبایل کمک</a>
+                <a href="#!" class="modal_trigger" id="rules">قوانین و مقررات</a>
+                <a href="./representation.html">اخذ نمایندگی</a>
+            </div>
+            <div class="training">
+                <h4>آموزش ها</h4>
+                <a href="./courses.html">دوره های آموزشی</a>
+                <a href="./repair-teach.html">آموزش تعمیر موبایل</a>
+            </div>
+            <div class="articles">
+                <h4>مقالات</h4>
+                <a href="./category.html">مقالات تلگرام</a>
+                <a href="./category.html">مقالات اینستاگرام</a>
+                <a href="./category.html">مقالات اندروید</a>
+                <a href="./category.html">مقالات اپل</a>
+                <a href="./category.html">بررسی اپلیکیشن</a>
+            </div>
+            <div class="contact_us">
+                <h4>ارتباط با ما</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    تهران، خیابان جمهوری، نرسیده به خیابان حافظ، خیابان لاله، پلاک ۹، واحد ۲
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    ۰۲۱-۷۵۱۴۷
+                </p>
+                <div id="socials">
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=contact@mobilekomak.com&tf=1"> <i
+                            class="fab fa-google-plus-g"></i> </a>
+                    <a href="https://www.youtube.com/user/MobileKomak"> <i class="fab fa-youtube"></i> </a>
+                    <a href="https://twitter.com/mobilekomak"> <i class="fab fa-twitter"></i> </a>
+                    <a href="https://www.instagram.com/mobilekomak/"> <i class="fab fa-instagram"></i> </a>
+                    <a href="https://www.facebook.com/mobilekomak"> <i class="fab fa-facebook-f"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <a href="http://www.ittoos.com">
+            <i class="far fa-copyright"></i>
+            طراحی سایت توسط ittoos
+        </a>
+    </div>
+    <div class="modal" id="about_modal">
+        <h4>درباره ما</h4>
+        <p>
+            موبایل‌کمک بر اساس یک ایده ساده شکل گرفت؛ تعمیر موبایل بدون مراجعه به مراکز تعمیر یا نمایندگی‌های رسمی.
+            زمانی مجبور بودیم برای تعمیر موبایل یا هر وسیله دیجیتال، ساعت‌های زیادی را در ترافیک صرف کنیم و حتی یک روز
+            کامل را به این کار اختصاص دهیم.
+            برای حل این مشکل،‌ موبایل‌کمک را تاسیس کردیم تا هر شخص در کمترین زمان و به‌صورت غیرحضوری موبایل خود را تعمیر
+            کند.
+            موبایل کمک در سال ۱۳۹۲ فعالیت خود را آغاز کرد. هدف ما ارایه بهترین، ‌ارزان‌ترین و سریع‌ترین خدمات در زمینه
+            مشاوره و تعمیر انواع گوشی و تبلت است.
+            همچنین مشتریان می‌توانند موبایل خود را با پیک رایگان به مرکز تعمیر موبایل‌کمک ارسال کنند تا کارشناسان متخصص
+            این مرکز آن را تعمیر کنند.
+            موبایل‌کمک علاوه بر ارایه سرویس و خدمات، به شما کمک می‌کند تا روش‌های تعمیر انواع گوشی های هوشمند را آموزش
+            ببینید و به یک تعمیرکار حرفه‌ای تبدیل شوید.
+        </p>
+    </div>
+    <div class="modal" id="rules_modal">
+        <h4>قوانین و مقررات</h4>
+        <p>
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+            متن متن متن متم متن متن متن متن متن متن متن
+        </p>
+    </div>
+</body>
+
+</html>

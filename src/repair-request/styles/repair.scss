@@ -1,0 +1,186 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#request{
+    width: 80vw ;
+    height: auto;
+    margin: ($sectionsDist + 2em) auto ;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    box-shadow: 0 0 .5em .1em $shadowColor ;
+    padding: $dist2 ;
+    overflow: hidden;
+    #timeline{       
+        margin-top: $dist3 ;
+        width: 100% ;
+        height: 4em;
+        display: flex ;
+        @include flex(row,space-between,center,nowrap,"") ;
+        position: relative ;
+        &::before{
+            content: '' ;
+            width: 100% ;
+            height: .4em ;
+            background-color: lighten($greyColor2,30%) ;
+            @include center-y ;
+            right: 0 ;
+        }
+        .line{
+            width: 0% ;
+            height: .4em;
+            @include center-y ;
+            right: 0 ;
+            background-color: $greenColor2 ;
+        }
+        .circle{
+            width: 4em ;
+            height: 4em;
+            border-radius: 50% ;
+            border: .2em solid lighten($greyColor2,30%) ;
+            background-color: white ;
+            position: relative ;
+            z-index: 2;
+            transition: all .3s ease-in-out ;
+            i{
+                font-size: $font-xxl + .2em;
+                @include center-xy ;
+                color: white ;
+                opacity: 0;
+                transition: all .3s ease-in-out ;
+            }
+            p{
+                width: 100% ;
+                height: auto;
+                text-align: center ;
+                font-size: $font-m + .1em ;
+                color: lighten($greyColor2,10%) ;
+                position: absolute ;
+                right: 0;
+                top: -60% ;
+                transition: all .3s ease-in-out ;
+            }
+        }
+        .circle.active{
+            background-color: $greenColor2 ;
+            border: .2em solid transparent ;
+
+            i{
+                opacity: 1;
+            }
+            p {
+                color: $greenColor2 ;
+            }
+
+        }
+        .circle.curr{
+            border: .2em solid $greenColor2 ;
+        }
+    }
+    button.prev{
+        width: auto ;
+        height: auto;
+        margin-top: $dist3 ;
+        color: $whiteColor2 ;
+        background-color: $redColor2 ;
+        border-radius: $dist3 ;
+        cursor: pointer;
+        padding: $dist1 + .2em $dist3 + .5em ;
+        font-size: $font-l ;
+    }
+    form#content{
+        width: 100% ;
+        height: auto;
+        margin-top: $dist3 ;
+        display: flex ;
+        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        position: relative ;
+        transition: all .4s ease-in-out ;
+        .slide{
+            flex-shrink: 0 ;
+            width: 100% ;
+            height: auto ;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"");
+            position: relative ;  
+            h4{
+                width: 100% ;
+                font-size: $font-l ;
+                color: $darkColor ;
+                font-weight: 700 ;
+                text-align: center ;
+            }
+            .labels{
+                width: 100% ;
+                max-height: 25em ;
+                overflow: auto ;
+                display: flex ;
+                margin-top: $dist2 ;
+                @include flex(row,flex-start,flex-start,wrap,flex-start);
+                label{
+                    width: calc((80vw - (5 * 2.6em))/ 5) ;
+                    height: calc((80vw - (5 * 2.6em))/ 5) ;
+                    margin: 1em ;
+                    background-position: center center ;
+                    background-repeat: no-repeat ;
+                    background-size: 100% 100% ;
+                    position: relative ;
+                    cursor: pointer;
+                    transition: all .4s ease-in-out ;
+                    border-radius: $dist2 ;
+                    &:hover{
+                        background-size: 125% 125% ;
+                    }
+                    &::before{
+                        content: '' ;
+                        @include fullSize-abs ;
+                        background-color: $blackFilter3 ;
+                        border-radius: $dist2 ;
+    
+                    }
+                    input[type="checkbox"]{
+                        width: 0 ;
+                        height: 0;
+                        display: none ;
+                    }
+                    p{
+                        font-size: $font-special - .2em ;
+                        font-weight: 700 ;
+                        color: $whiteColor2 ;
+                        @include center-xy ;
+                    }
+                }
+            }    
+             
+        }
+        .slide#type{
+            .labels{
+                justify-content: space-around ;
+                label[for="mobile"]{background-image: url('../../assets/imgs/mobile.jpg');}
+                label[for="tablet"]{background-image: url('../../assets/imgs/tablet.jpg');}
+            }
+            ul.text{
+                width: auto ;
+                height: auto;
+                list-style: none;
+                display: flex ;
+                margin-top: $dist2 ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                li{
+                    width: auto ;
+                    height: auto;
+                    font-size: $font-m ;
+                    color: $darkColor ;
+                    line-height: $dist3 ;
+                    margin-top: $dist2 ;
+                    i{
+                        font-size: $font-m ;
+                        color: lighten($darkColor,15%);
+                        transform: translate(50%,0%) ;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
