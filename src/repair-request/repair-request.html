@@ -73,16 +73,16 @@
             </div>
             <span class="line"></span>
         </div>
-        <form novalidate name="content" id="content" method="GET" action="#!" enctype="text/plain">
-            <!-- <div class="slide" id="type">
+        <form novalidate name="order" id="order" method="GET" action="#!" enctype="text/plain">
+            <div class="slide" id="type" data-move="0">
                 <h4>نوع دستگاهت رو انتخاب کن</h4>
                 <div class="labels">
                     <label for="mobile">
-                        <input type="checkbox" id="mobile" name="mobile" value="mobile">
+                        <input data-target="brand" type="radio" id="mobile" name="type" value="mobile">
                         <p>موبایل</p>
                     </label>
                     <label for="tablet">
-                        <input type="checkbox" id="tablet" name="tablet" value="tablet">
+                        <input data-target="brand" type="radio" id="tablet" name="type" value="tablet">
                         <p>تبلت</p>
                     </label>
                 </div>          
@@ -104,158 +104,134 @@
                         یا اگه به مشاوره تعمیر نیاز داری، میتونی تو ساعات اداری با شماره پشتیبانی ۰۲۱۷۵۱۴۷ تماس بگیری.
                     </li>
                 </ul>
-            </div> -->
-            <!-- <div class="slide" id="brand">
+            </div>
+            <div class="slide" id="brand" data-move="1">
                 <h4>برند دستگاهت رو انتخاب کن</h4>
                 <div class="labels">
                     <label for="apple">
-                        <input type="checkbox" id="apple" name="apple" value="apple">
+                        <input data-target="model" type="radio" id="apple" name="brand" value="apple">
                         <p>اپل</p>
                     </label>
                     <label for="samsung">
-                        <input type="checkbox" id="samsung" name="samsung" value="samsung">
+                        <input  data-target="model" type="radio" id="samsung" name="brand" value="samsung">
                         <p>سامسونگ</p>
                     </label>
                     <label for="huawei">
-                        <input type="checkbox" id="huawei" name="huawei" value="huawei">
+                        <input data-target="model" type="radio" id="huawei" name="brand" value="huawei">
                         <p>هوآوی</p>
                     </label>
                     <label for="sony">
-                        <input type="checkbox" id="sony" name="sony" value="sony">
+                        <input data-target="model" type="radio" id="sony" name="brand" value="sony">
                         <p>سونی</p>
                     </label>
                     <label for="lg">
-                        <input type="checkbox" id="lg" name="lg" value="lg">
+                        <input  data-target="model" type="radio" id="lg" name="brand" value="lg">
                         <p>ال جی</p>
                     </label>                 
                 </div>  
-            </div> -->
-            <!-- <div class="slide" id="model">
+            </div>
+            <div class="slide" id="model" data-move="2">
                 <h4>سری، مدل و رنگ گوشیت رو انتخاب کن</h4>
                 <div class="labels">
                     <label for="dont_know">
-                        <input type="checkbox" id="dont_know" name="dont_know" value="dont_know">
+                        <input data-target="color" type="radio" id="dont_know" name="device" value="dont_know">
                         <p>نمیدانم</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_1">
+                        <input data-target="color" type="radio" id="iphone_8_plus_1" name="device" value="iphone_8_plus_1">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_2">
+                        <input data-target="color" type="radio" id="iphone_8_plus_2" name="device" value="iphone_8_plus_2">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_3">
+                        <input data-target="color" type="radio" id="iphone_8_plus_3" name="device" value="iphone_8_plus_3">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_4">
+                        <input data-target="color" type="radio" id="iphone_8_plus_4" name="device" value="iphone_8_plus_4">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_5">
+                        <input data-target="color" type="radio" id="iphone_8_plus_5" name="device" value="iphone_8_plus_5">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_6">
+                        <input data-target="color" type="radio" id="iphone_8_plus_6" name="device" value="iphone_8_plus_6">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_7">
+                        <input data-target="color" type="radio" id="iphone_8_plus_7" name="device" value="iphone_8_plus_7">
                         <p>iPhone 8 plus</p>
                     </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
+                    <label for="iphone_8_plus_8">
+                        <input data-target="color" type="radio" id="iphone_8_plus_8" name="device" value="iphone_8_plus_8">
                         <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>
-                    <label for="iphone_8_plus">
-                        <input type="checkbox" id="iphone_8_plus" name="iphone_8_plus" value="iphone_8_plus">
-                        <p>iPhone 8 plus</p>
-                    </label>                           
+                    </label>                                  
                 </div>  
-            </div> -->
-            <!-- <div class="slide" id="color">
+            </div>
+            <div class="slide" id="color" data-move="3">
+                <h4>سری، مدل و رنگ گوشیت رو انتخاب کن</h4>
                 <div class="labels">
                     <label for="black">
-                        <input type="checkbox" id="black" name="black" value="black">
+                        <input data-target="problem" type="radio" id="black" name="color" value="black">
                         <p>مشکی</p>
                     </label>
-                    <label for="black">
-                        <input type="checkbox" id="black" name="black" value="black">
-                        <p>مشکی</p>
+                    <label for="white">
+                        <input data-target="problem" type="radio" id="white" name="color" value="white">
+                        <p>سفید</p>
                     </label>
-                    <label for="black">
-                        <input type="checkbox" id="black" name="black" value="black">
-                        <p>مشکی</p>
+                    <label for="grey">
+                        <input data-target="problem" type="radio" id="grey" name="color" value="grey">
+                        <p>خاکستری</p>
                     </label>
-                    <label for="black">
-                        <input type="checkbox" id="black" name="black" value="black">
-                        <p>مشکی</p>
+                    <label for="gold">
+                        <input data-target="problem" type="radio" id="gold" name="color" value="gold">
+                        <p>طلایی</p>
                     </label>                             
                 </div>  
-            </div> -->
-            <!-- <div class="slide" id="problem">
+            </div>
+            <div class="slide" id="problem" data-move="4">
                 <h4>مشکل گوشیت رو انتخاب کن</h4>
                 <div class="labels">
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
+                    <label for="problem_1">
+                        <input type="checkbox" id="problem_1" name="problem_1" value="problem_1">
                         <p>صفحه نمایش</p>
+                        <i class="fas fa-check"></i>
                     </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
+                    <label for="problem_2">
+                        <input type="checkbox" id="problem_2" name="problem_2" value="problem_2">
                         <p>صفحه نمایش</p>
+                        <i class="fas fa-check"></i>
                     </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
+                    <label for="problem_3">
+                        <input type="checkbox" id="problem_3" name="problem_3" value="problem_3">
                         <p>صفحه نمایش</p>
+                        <i class="fas fa-check"></i>
                     </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
+                    <label for="problem_4">
+                        <input type="checkbox" id="problem_4" name="problem_4" value="problem_4">
                         <p>صفحه نمایش</p>
+                        <i class="fas fa-check"></i>
                     </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
+                    <label for="problem_5">
+                        <input type="checkbox" id="problem_5" name="problem_5" value="problem_5">
                         <p>صفحه نمایش</p>
-                    </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
-                        <p>صفحه نمایش</p>
-                    </label>
-                    <label for="screen">
-                        <input type="checkbox" id="screen" name="screen" value="screen">
-                        <p>صفحه نمایش</p>
-                    </label>                                        
+                        <i class="fas fa-check"></i>
+                    </label>                               
                 </div>  
-            </div> -->
-            <!-- <div class="slide" id="infos">
+                <button data-target="infos" type="button">مرحله بعد</button>
+                <p class="error">حداقل یک مشکل انتخاب کنید</p>
+            </div>
+            <div class="slide" id="infos" data-move="5">
                 <h4>مشخصات خودت رو وارد کن</h4> 
                 <div class="wrapper">
-                    <div class="info mobile">
-                        <input type="number" id="mobile" name="mobile" required placeholder="شماره موبایل خود را وارد نمایید">
-                        <button>ارسال کد</button>
+                    <div class="info mobile show">
+                        <input type="number" id="mobile_num" name="mobile_num" required placeholder="شماره موبایل خود را وارد نمایید">
+                        <button type="button" data-target="code">ارسال کد</button>
                     </div>
-                    <div class="info code ">
+                    <div class="info code">
                         <div class="input-wrapper">
                             <input type="number" id="code" name="code" required placeholder="کد ارسالی را وارد نمایید">
                             <div class="timer_resend">
@@ -267,144 +243,155 @@
                                 <button class="resend">ارسال مجدد کد</button>
                             </div>
                         </div>
-                        <button>مرحله بعد</button>
+                        <button type="button" data-target="city">مرحله بعد</button>
                         <p class="error">کد وارد شده صحیح نیست</p>
                     </div>
                     <div class="info city">
-                        <div class="input-wrapper">
-                            <input type="text" id="state" name="state" placeholder="انتخاب استان" required readonly>
-                            <i class="fas fa-angle-down"></i>
-                            <ul>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                            </ul>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="text" id="city" name="city" placeholder="انتخاب شهر" required readonly>
-                            <i class="fas fa-angle-down"></i>
-                            <ul>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                                <li>تهران</li>
-                                <li>مشهد</li>
-                            </ul>
-                        </div>
-                        <button>مرحله بعد</button>
+                        <div class="inputs">
+                            <div class="input-wrapper select">
+                                <input type="text" id="state" name="state" placeholder="انتخاب استان" required readonly>
+                                <i class="fas fa-angle-down"></i>
+                                <ul>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                </ul>
+                            </div>
+                            <div class="input-wrapper select">
+                                <input type="text" id="city" name="city" placeholder="انتخاب شهر" required readonly>
+                                <i class="fas fa-angle-down"></i>
+                                <ul>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                    <li>تهران</li>
+                                    <li>مشهد</li>
+                                </ul>
+                            </div>
+                        </div>               
+                        <button type="button" data-target="name">مرحله بعد</button>
+                        <p class="error">استان و شهر خود را وارد کنید</p>
                     </div>
-                    <div class="info name">
+                    <div class="info name ">
                         <input type="text" id="name" name="name" required placeholder="نام خود را وارد نمایید">
                         <div class="input-wrapper">
                             <label for="discount">
-                                <input type="checkbox" id="discount" name="discount">
+                                <input type="checkbox" id="discount" name="discount" value="discount">
                                 <span class="rect"></span>
                                 <p>کد تخفیف دارید؟</p>
                             </label>
                             <input type="text" id="discount_code" name="discount_code" placeholder="کد تخفیف را وارد نمایید">
                         </div>
-                        <button>ادامه مراحل سفارش</button>
+                        <button type="button" data-target="analyse">ادامه مراحل سفارش</button>
                     </div>
                 </div>
-            </div> -->
-            <div class="slide" id="analyse">
+            </div>
+            <div class="slide" id="analyse" data-move="6">
                   <h4>بررسی اطلاعات سفارش قبل تایید نهایی</h4>
                   <div class="infos">
                       <ul class="info">
                           <h4>شرح سفارش</h4>
                           <li>
                               <i class="fas fa-circle"></i>
-                              برند : اپل
+                              <p>برند : </p>
+                              <p> اپل </p>
                           </li>
                           <li>
                             <i class="fas fa-circle"></i>
-                              مدل : iphone 8 plus
+                            <p>مدل : </p>
+                            <p> iphone 8 plus</p>
                           </li>
                           <li>
                               <i class="fas fa-circle"></i>
-                              رنگ : خاکستری
+                              <p>رنگ : </p>
+                              <p> خاکستری </p>
                           </li>
                           <li>
                               <i class="fas fa-circle"></i>
-                              مشکل : شکستگی صفحه نمایش
+                              <p>مشکل : </p>
+                              <p> شکستگی صفحه نمایش </p>
                           </li>
                       </ul>
                       <ul class="info">
                           <h4>اطلاعات تماس</h4>
                           <li>
                               <i class="fas fa-circle"></i>
-                              نام : احمد
+                              <p>نام : </p>
+                              <p> احمد </p>
                           </li>
                           <li>
                             <i class="fas fa-circle"></i>
-                              موبایل : 09158912938
+                            <p>موبایل : </p>
+                            <p> 09158912938 </p>
                           </li>
                           <li>
                               <i class="fas fa-circle"></i>
-                              استان : خراسان رضوی
+                              <p>استان : </p>
+                              <p> خراسان رضوی </p>
                           </li>
                           <li>
                               <i class="fas fa-circle"></i>
-                              شهر : مشهد
+                              <p>شهر : </p>
+                              <p> مشهد </p>
                           </li>
                       </ul>
                   </div>
-                  <button>تایید نهایی سفارش</button>
-                  <p>
+                  <button type="button" data-target="confirm">تایید نهایی سفارش</button>
+                  <p class="rules">
                       ادامه مراحل به معنای موافقت شما با
                       <a href="./rules.html">شرایط و قوانین</a>
                       میباشد
                   </p>
             </div>
-            <div class="slide" id="confirm">
-                <p class="success">سفارش شما با موفقیت ثبت شد</p>
+            <div class="slide" id="confirm" data-move="7"> 
+                <h4>سفارش شما با موفقیت ثبت شد</h4>
                 <p class="tracking"> کد پیگیری ۱۲۳۴۵۶۷۸۹۰۱۲۳</p>
                 <p class="price">هزینه بعد از انجام خدمات دریافت خواهد شد</p>
-            </div>
+            </div> 
         </form>
         <button class="prev">مرحله قبل</button>
     </div>

@@ -63,7 +63,6 @@
         .circle.active{
             background-color: $greenColor2 ;
             border: .2em solid transparent ;
-
             i{
                 opacity: 1;
             }
@@ -87,14 +86,15 @@
         padding: $dist1 + .2em $dist3 + .5em ;
         font-size: $font-l ;
     }
-    form#content{
+    form#order{
         width: 100% ;
         height: auto;
         margin-top: $dist3 ;
         display: flex ;
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         position: relative ;
-        transition: all .4s ease-in-out ;
+        right: 0% ;
+        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) ;
         .slide{
             flex-shrink: 0 ;
             width: 100% ;
@@ -135,9 +135,14 @@
                         @include fullSize-abs ;
                         background-color: $blackFilter ;
                         border-radius: $dist2 ;
-    
+                        transition: all .4s ease-in-out ;
                     }
                     input[type="checkbox"]{
+                        width: 0 ;
+                        height: 0;
+                        display: none ;
+                    }
+                    input[type="radio"]{
                         width: 0 ;
                         height: 0;
                         display: none ;
@@ -149,10 +154,39 @@
                         font-weight: 700 ;
                         color: $whiteColor2 ;
                         @include center-xy ;
+                        @include ellipse ;
+                    }
+                }
+                label.checked{
+                    border-radius: 0 ;
+                    border: .35em solid $orangeColor2 ;
+                    &::before{
+                        border-radius: 0 ;
                     }
                 }
             }    
-             
+            > button {
+                width: auto ;
+                height: auto;
+                color: $whiteColor2 ;
+                background-color: $greenColor2 ;
+                padding: $dist1 $dist3  ;
+                cursor: pointer;
+                border-radius: $dist3 ;
+                font-size: $font-l ;
+                margin: $dist3 auto 0 auto ;         
+            }    
+            input[type='number']::-webkit-outer-spin-button,
+            input[type='number']::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -o-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+            }
+            input[type=number] {
+                -moz-appearance:textfield;
+            }     
         }
         .slide#type{
             .labels{
@@ -203,6 +237,7 @@
             .labels{       
                 label{
                     background-image: url('../../assets/imgs/mobile.jpg') ;
+                    p{font-size: $font-l + .2em ;}
                 }
             }   
         }
@@ -210,8 +245,40 @@
             .labels{       
                 label{
                     background-image: url('../../assets/imgs/mobile.jpg') ;
+                    i{
+                        width: 3em ;
+                        height: 3em;
+                        border-radius: 50% ;
+                        bottom: $dist1 ;
+                        @include center-x ;     
+                        background-color: $greenColor2 ;
+                        color: $whiteColor2 ;
+                        opacity: 0;
+                        visibility: hidden ;
+                        transition: all .3s ease-in-out ;
+                        &::before{
+                            font-size: $font-xl + .3em ;
+                            @include center-xy ;
+                        }
+                    }
+                    i.show{
+                        visibility: visible ;
+                        opacity: 1;
+                    }
                 }
             }   
+            p.error{
+                font-size: $font-m ;
+                color: lighten(crimson,15%) ;
+                margin: $dist1 auto 0 auto ;
+                visibility: hidden ;
+                opacity: 0;
+                transition: all .3s ease-in-out ;
+            }
+            p.error.show{
+                visibility: visible;
+                opacity: 1;
+            }
         }
         .slide#infos{
            .wrapper{
@@ -229,16 +296,21 @@
                        margin-top: $dist2 ;
                    }
                    input{
+                       height: 3em;
                        border: 1px solid $greyColor2 ;
                        background-color: white ;
                        font-size: $font-m ;
                        color: $darkColor ;
                        padding: $dist1 ;
                        border-radius: $dist3 ;
+                       transition: all .3s ease-in-out ;
                        &::placeholder{
                            font-size: $font-m ;
                            color: $greyColor2 ;
                        }
+                   }
+                   input.error{
+                       border: 1.5px solid lighten(crimson,15%) ;
                    }
                    > button{
                        width: auto ;
@@ -258,14 +330,13 @@
                .info.mobile{
                    @include flex(column,flex-start,center,nowrap,"") ;
                    input{
-                       width: 40% ;
-                       height: 2.5em;
+                       width: 20em ;
                    }
                }
                .info.code{
                    @include flex(column,flex-start,center,nowrap,"") ;
                    .input-wrapper{
-                       width: 40% ;
+                       width: 20em ;
                        height: 2.5em;
                        position: relative;
                        input{
@@ -315,73 +386,86 @@
                    }
                }
                .info.city{
-                   @include flex(row,space-around,flex-start,wrap,flex-start) ;
-                   .input-wrapper{
-                       width: 40% ;
-                       height: 2.5em;
-                       position: relative ;
-                       &:nth-child(2){
-                           margin-right: 10% ;
-                       }
-                       input{
-                           width: 100% ;
-                           height: 100%;
-                           border-radius: 0 ;
-                           cursor: pointer;
-                       }
-                       i{
-                           @include center-y ;
-                           left: .5em;
-                           color: $darkColor ;
-                           cursor: pointer;
-                           font-size: $font-l ;
-                       }
-                       ul{
-                           visibility: hidden ;
-                           opacity: 0;
-                           transition: all .3s ease-in-out ;
-                           width: 100% ;
-                           max-height: 8em;
-                           position: absolute ;
-                           top: 100% ;
-                           right: 0 ;
-                           display: flex ;
-                           overflow: auto;
-                           @include flex(column,flex-start,flex-start,nowrap,"") ;
-                           z-index: 2;
-                           box-shadow: 0 .1em .3em .05em $shadowColor ;
-                           li{
-                               width: 100% ;
-                               height: 2.5em ;
-                               color: $darkColor ;
-                               font-size: $font-m ;
-                               line-height: 2.5em ;
-                               transition: all .3s ease-in-out ;
-                               background-color: $whiteColor2 ;
-                               padding-right: $dist1 ;
-                               cursor: pointer;
-                               &:hover{
-                                   background-color: darken($whiteColor2,15%) ;
-                               }
-                           }
-                       }
-                       ul.show{
-                           visibility: visible ;
-                           opacity: 1;
-                       }
-                   }
-                   button{
-                       margin-top: $dist3 ;
-                   }
+                   @include flex(column,flex-start,center,nowrap,"") ;
+                   .inputs{
+                      width: 60% ;
+                      height: auto;
+                      display: flex ;
+                      @include flex(row,space-around,center,wrap,"flex-start") ;
+                      .input-wrapper{
+                        width: 40% ;
+                        height: 2.5em;
+                        position: relative ;
+                        &:nth-child(2){
+                            margin-right: 10% ;
+                        }
+                        input{
+                            width: 100% ;
+                            height: 100%;
+                            border-radius: 0 ;
+                            cursor: pointer;
+                        }
+                        i{
+                            @include center-y ;
+                            left: .5em;
+                            color: $darkColor ;
+                            cursor: pointer;
+                            font-size: $font-l ;
+                        }
+                        ul{
+                            visibility: hidden ;
+                            opacity: 0;
+                            transition: all .3s ease-in-out ;
+                            width: 100% ;
+                            max-height: 8em;
+                            position: absolute ;
+                            top: 100% ;
+                            right: 0 ;
+                            display: flex ;
+                            overflow: auto;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            z-index: 2;
+                            box-shadow: 0 .1em .3em .05em $shadowColor ;
+                            li{
+                                width: 100% ;
+                                height: 2.5em ;
+                                color: $darkColor ;
+                                font-size: $font-m ;
+                                line-height: 2.5em ;
+                                transition: all .3s ease-in-out ;
+                                background-color: $whiteColor2 ;
+                                padding-right: $dist1 ;
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: darken($whiteColor2,15%) ;
+                                }
+                            }
+                        }
+                        ul.show{
+                            visibility: visible ;
+                            opacity: 1;
+                        }
+                      }
+                   } 
+                   p.error{
+                       visibility: hidden ;
+                       opacity: 0;
+                       transition: all .3s ease-in-out ;
+                       font-size: $font-m ;
+                       color: lighten(crimson,15%) ;
+                   }            
+                   p.error.show{
+                       visibility: visible ;
+                       opacity: 1;
+                   }  
                }
                .info.name{
                    @include flex(column,space-around,center,nowrap,"") ;
                    input[type="text"]{
-                       width: 40% ;
-                       height: 3em;
+                       width: 25em ;
                    }
                    .input-wrapper{
-                       min-width: 40% ;
+                       min-width: 20em ;
                        height: auto;
                        display: flex ;
                        @include flex(row,space-between,center,nowrap,"");
@@ -440,7 +524,82 @@
            }
         }
         .slide#analyse{           
-            
+            .infos{      
+                width: 60% ;
+                height: auto;
+                display: flex ;
+                margin-left: auto ;
+                margin-right: auto ;
+                margin-top: $dist2 ;
+                @include flex(row,space-around,flex-start,wrap,flex-start) ;
+                ul.info{     
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    list-style: none ;
+                    h4,li{margin-top: $dist2 ;}
+                    h4{
+                        width: auto ;
+                        font-size: $font-m + .1em ;
+                        color: $greyColor2 ;
+                        font-weight: 700 ;
+                    }
+                    li{
+                        width: auto ;
+                        height: auto ;
+                        display: flex ;
+                        display: flex(row,flex-start,center,nowrap,"") ;
+                        margin-right: $dist1 ;
+                        i{
+                            font-size: .7em ;
+                            color: $primaryColor ;
+                            transform: translate(80%,25%) ;
+                        }
+                        p{
+                            font-size: $font-l ;
+                            &:nth-child(2){
+                                color: $primaryColor;
+                                font-weight: 700;
+                            }
+                            &:nth-child(3){
+                                color: $darkColor;
+                                transform: translateX(-.3em) ;
+                            }
+                        }
+                    }
+                    
+                }
+            }  
+            p.rules{
+                width: 100% ;
+                text-align: center ;
+                font-size: $font-m ;
+                color: $darkColor ;
+                margin-top: $dist2;
+                a{
+                    cursor: pointer;
+                    color: $blueColor1 ;
+                    font-weight: 700 ;
+                }
+            }
+        }
+        .slide#confirm{
+            p{margin: $dist2 auto 0 auto;}
+            p.tracking{
+                width: auto ;
+                height: auto;
+                font-size: $font-l ;
+                color: $whiteColor2 ;
+                background-color: $greenColor2 ;
+                padding: $dist2 $dist3 * 1.6 ;
+                text-align: center ;
+                border-radius: $dist1 ;
+            }
+            p.price{
+                font-size: $font-l ;
+                color: $darkColor ;
+            }
         }
     }
 }
