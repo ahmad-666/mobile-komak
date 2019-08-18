@@ -129,6 +129,9 @@
                         <p>ال جی</p>
                     </label>                 
                 </div>  
+                <div class="btn-wrapper">
+                    <button type="button" class="prev" data-target="#type">مرحله قبل</button>
+                </div>
             </div>
             <div class="slide" id="model" data-move="2">
                 <h4>سری، مدل و رنگ گوشیت رو انتخاب کن</h4>
@@ -170,6 +173,9 @@
                         <p>iPhone 8 plus</p>
                     </label>                                  
                 </div>  
+                <div class="btn-wrapper">
+                    <button type="button" class="prev" data-target="#brand">مرحله قبل</button>
+                </div>
             </div>
             <div class="slide" id="color" data-move="3">
                 <h4>سری، مدل و رنگ گوشیت رو انتخاب کن</h4>
@@ -191,6 +197,9 @@
                         <p>طلایی</p>
                     </label>                             
                 </div>  
+                <div class="btn-wrapper">
+                    <button type="button" class="prev" data-target="#model">مرحله قبل</button>
+                </div>
             </div>
             <div class="slide" id="problem" data-move="4">
                 <h4>مشکل گوشیت رو انتخاب کن</h4>
@@ -221,15 +230,22 @@
                         <i class="fas fa-check"></i>
                     </label>                               
                 </div>  
-                <button data-target="infos" type="button">مرحله بعد</button>
+                <div class="btn-wrapper">
+                    <button data-target="infos" type="button" class="next">مرحله بعد</button>
+                    <button type="button" class="prev" data-target="#color">مرحله قبل</button>
+                </div>
                 <p class="error">حداقل یک مشکل انتخاب کنید</p>
+
             </div>
             <div class="slide" id="infos" data-move="5">
                 <h4>مشخصات خودت رو وارد کن</h4> 
                 <div class="wrapper">
                     <div class="info mobile show">
                         <input type="number" id="mobile_num" name="mobile_num" required placeholder="شماره موبایل خود را وارد نمایید">
-                        <button type="button" data-target="code">ارسال کد</button>
+                        <div class="btn-wrapper">
+                            <button class="next" type="button" data-target="code">ارسال کد</button>
+                            <button type="button" class="prev" data-target="#problem">مرحله قبل</button>
+                        </div>
                     </div>
                     <div class="info code">
                         <div class="input-wrapper">
@@ -243,7 +259,10 @@
                                 <button class="resend">ارسال مجدد کد</button>
                             </div>
                         </div>
-                        <button type="button" data-target="city">مرحله بعد</button>
+                        <div class="btn-wrapper">
+                            <button class="next" type="button" data-target="city"> مرحله بعد </button>
+                            <button type="button" class="prev moveClass" data-target="mobile">مرحله قبل</button>
+                        </div>
                         <p class="error">کد وارد شده صحیح نیست</p>
                     </div>
                     <div class="info city">
@@ -313,7 +332,10 @@
                                 </ul>
                             </div>
                         </div>               
-                        <button type="button" data-target="name">مرحله بعد</button>
+                        <div class="btn-wrapper">
+                            <button class="next" type="button" data-target="name"> مرحله بعد </button>
+                            <button type="button" class="prev" data-target="code">مرحله قبل</button>
+                        </div>
                         <p class="error">استان و شهر خود را وارد کنید</p>
                     </div>
                     <div class="info name ">
@@ -326,7 +348,10 @@
                             </label>
                             <input type="text" id="discount_code" name="discount_code" placeholder="کد تخفیف را وارد نمایید">
                         </div>
-                        <button type="button" data-target="analyse">ادامه مراحل سفارش</button>
+                        <div class="btn-wrapper">
+                            <button class="next" type="button" data-target="analyse"> ادامه مراحل سفارش </button>
+                            <button type="button" class="prev" data-target="city">مرحله قبل</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -386,14 +411,19 @@
                       <a href="./rules.html">شرایط و قوانین</a>
                       میباشد
                   </p>
+                  <div class="btn-wrapper">
+                    <button type="button" class="prev" data-target="#infos">مرحله قبل</button>
+                  </div>
             </div>
             <div class="slide" id="confirm" data-move="7"> 
                 <h4>سفارش شما با موفقیت ثبت شد</h4>
                 <p class="tracking"> کد پیگیری ۱۲۳۴۵۶۷۸۹۰۱۲۳</p>
                 <p class="price">هزینه بعد از انجام خدمات دریافت خواهد شد</p>
+                <div class="btn-wrapper">
+                    <button type="button" class="prev" data-target="#analyse">مرحله قبل</button>
+                </div>
             </div> 
         </form>
-        <button class="prev">مرحله قبل</button>
     </div>
     <div id="footer">
         <div class="content">

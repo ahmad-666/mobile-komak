@@ -75,17 +75,6 @@
             border: .2em solid $greenColor2 ;
         }
     }
-    button.prev{
-        width: auto ;
-        height: auto;
-        margin-top: $dist3 ;
-        color: $whiteColor2 ;
-        background-color: $redColor2 ;
-        border-radius: $dist3 ;
-        cursor: pointer;
-        padding: $dist1 + .2em $dist3 + .5em ;
-        font-size: $font-l ;
-    }
     form#order{
         width: 100% ;
         height: auto;
@@ -94,7 +83,7 @@
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         position: relative ;
         right: 0% ;
-        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) ;
+        transition: all .6s cubic-bezier(0.68, -0.55, 0.265, 1.55) ;
         .slide{
             flex-shrink: 0 ;
             width: 100% ;
@@ -102,6 +91,33 @@
             display: flex ;
             @include flex(column,flex-start,flex-start,nowrap,"");
             position: relative ;  
+            .btn-wrapper{
+                width: auto ;
+                height: auto;
+                display: flex ;
+                @include flex(row,space-around,center,nowrap,"");
+                margin-top: $dist3 ;
+                margin-left: auto ;
+                margin-right: auto ;
+                button{
+                    width: auto ;
+                    height: auto;
+                    color: $whiteColor2 ;     
+                    border-radius: $dist3 ;
+                    cursor: pointer;
+                    padding: $dist1 + .2em $dist3 + .5em ;
+                    font-size: $font-l ;
+                    &:nth-child(2){margin-right: 5em ;}
+                }
+                button.prev{
+                    background-color: $redColor2 ;
+                    z-index: 5 ;
+                }
+                button.next{
+                    background-color: $greenColor2 ;
+                }
+            }
+            
             h4{
                 width: 100% ;
                 font-size: $font-l ;
@@ -112,7 +128,7 @@
             .labels{
                 width: 100% ;
                 max-height: 25em ;
-                overflow: auto ;
+                overflow: auto;
                 display: flex ;
                 margin-top: $dist2 ;
                 @include flex(row,flex-start,flex-start,wrap,flex-start);
@@ -335,6 +351,9 @@
                }
                .info.code{
                    @include flex(column,flex-start,center,nowrap,"") ;
+                   .btn-wrapper{
+                        margin-top: 5em ;
+                   }
                    .input-wrapper{
                        width: 20em ;
                        height: 2.5em;
@@ -424,7 +443,7 @@
                             display: flex ;
                             overflow: auto;
                             @include flex(column,flex-start,flex-start,nowrap,"") ;
-                            z-index: 2;
+                            z-index: 6;
                             box-shadow: 0 .1em .3em .05em $shadowColor ;
                             li{
                                 width: 100% ;
@@ -523,14 +542,15 @@
                }
            }
         }
-        .slide#analyse{           
+        .slide#analyse{      
+            height: auto;     
             .infos{      
                 width: 60% ;
                 height: auto;
                 display: flex ;
                 margin-left: auto ;
                 margin-right: auto ;
-                margin-top: $dist2 ;
+                margin-top: $dist1 ;
                 @include flex(row,space-around,flex-start,wrap,flex-start) ;
                 ul.info{     
                     width: auto ;
@@ -538,7 +558,7 @@
                     display: flex ;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
                     list-style: none ;
-                    h4,li{margin-top: $dist2 ;}
+                    h4,li{margin-top: $dist1 ;}
                     h4{
                         width: auto ;
                         font-size: $font-m + .1em ;
@@ -557,7 +577,7 @@
                             transform: translate(80%,25%) ;
                         }
                         p{
-                            font-size: $font-l ;
+                            font-size: $font-m ;
                             &:nth-child(2){
                                 color: $primaryColor;
                                 font-weight: 700;
@@ -571,12 +591,15 @@
                     
                 }
             }  
+            > button{
+                margin-top: $dist2 ;
+            }
             p.rules{
                 width: 100% ;
                 text-align: center ;
                 font-size: $font-m ;
                 color: $darkColor ;
-                margin-top: $dist2;
+                margin-top: $dist1;
                 a{
                     cursor: pointer;
                     color: $blueColor1 ;

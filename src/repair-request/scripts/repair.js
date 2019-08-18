@@ -31,7 +31,7 @@ problemCheckboxes.forEach(checkbox => {
 function checkboxHandler(e){
     this.parentElement.querySelector('i').classList.toggle('show') ;
 }
-let problemBtn = form.querySelector('.slide#problem > button') ;
+let problemBtn = form.querySelector('.slide#problem .btn-wrapper button.next') ;
 problemBtn.addEventListener('click',problemHandler) ;
 function problemHandler(e){
     let problemsNum = form.querySelectorAll('.slide#problem label i.show').length ;
@@ -53,9 +53,9 @@ function problemHandler(e){
 //enter mobile
 let infosWrapper = form.querySelector('.slide#infos') ;
 let infos = infosWrapper.querySelectorAll('.info') ;
-let sendCodeBtn = infosWrapper.querySelector('.info.mobile > button') ;
+let sendCodeBtn = infosWrapper.querySelector('.info.mobile .btn-wrapper button.next') ;
+let mobileNum = infosWrapper.querySelector('.info.mobile input[type="number"]');
 sendCodeBtn.addEventListener('click',function(e){
-    let mobileNum = this.parentElement.querySelector('input[type="number"]') ;
     if(mobileNum.value.length>6){
         mobileNum.classList.remove('error') ;
         let targetClass = `${this.getAttribute('data-target')}` ;
@@ -73,9 +73,10 @@ function showInfo(elm){
     })
 }
 //enter code
-let codeBtn = infosWrapper.querySelector('.info.code > button') ;
-let codeInput = codeBtn.parentElement.querySelector('input[type="number"]') ;
-let errorText = codeBtn.parentElement.querySelector('p.error') ;
+let codeBtn = infosWrapper.querySelector('.info.code .btn-wrapper button.next') ;
+let codeInput = infosWrapper.querySelector('.info.code input[type="number"]') ;
+let errorText = infosWrapper.querySelector('.info.code > p.error') ;
+console.log(errorText)
 let code = 123 ;
 codeBtn.addEventListener('click',function(e){
     if(codeInput.value == code && (minute.textContent!=0 || second.textContent!=0)){
@@ -91,8 +92,8 @@ codeBtn.addEventListener('click',function(e){
     }
 })
 //timer 
-let minute = codeBtn.parentElement.querySelector('.input-wrapper .timer_resend .minute') ;
-let second = codeBtn.parentElement.querySelector('.input-wrapper .timer_resend .second') ;
+let minute = infosWrapper.querySelector('.info.code .minute');
+let second =infosWrapper.querySelector('.info.code .second') ;
 let clearTimer = setInterval(()=>{
     second.textContent-- ;
     if(second.textContent<10) second.textContent = `0${second.textContent}` ;
@@ -108,7 +109,6 @@ let clearTimer = setInterval(()=>{
     }
 },1000) ;
 //resend code
-let resendCode = codeBtn.parentElement.querySelector('.resend') ;
 //enter city
 function Select(elm){
     this.elm = elm ;
@@ -158,7 +158,7 @@ let selects = [] ;
 infosWrapper.querySelectorAll('.info.city .select').forEach(select => {
     selects.push(new Select(select)) ;
 })
-let cityBtn = infosWrapper.querySelector('.info.city > button') ;
+let cityBtn = infosWrapper.querySelector('.info.city .btn-wrapper button.next') ;
 cityBtn.addEventListener('click',cityHandler) ;
 let cityError = infosWrapper.querySelector('.info.city > p.error') ;
 let city = infosWrapper.querySelector('.info.city input[type="text"]#city');
@@ -180,7 +180,7 @@ function cityHandler(e){
 }
 //enter name
 let nameInput = infosWrapper.querySelector('.info.name input[type="text"]#name') ;
-let nameBtn = infosWrapper.querySelector('.info.name > button') ;
+let nameBtn = infosWrapper.querySelector('.info.name .btn-wrapper button.next') ;
 let discountCheckbox = infosWrapper.querySelector('.info.name input[type="checkbox"]#discount') ;
 let discountInput = infosWrapper.querySelector('.info.name input[type="text"]#discount_code') ;
 discountCheckbox.addEventListener('change',discountHandler) ;
@@ -203,6 +203,14 @@ function nameHandler(e){
 //analyse section
 //-----------------------------------------------------
 //-----------------------------------------------------
+// let analyseBtn = form.querySelector('.slide#analyse .btn-wrapper button.') ;
+// analyseBtn.addEventListener('click',analyseHandler) ;
+// function analyseHandler(e){
+//     let targetID = `#${this.getAttribute('data-target')}` ;
+//     let target = form.querySelector(targetID) ;
+//     let offset = `-${target.getAttribute('data-move')*100}%` ;
+//     form.style.right = offset ; 
+// }
 let analyseBtn = form.querySelector('.slide#analyse > button') ;
 analyseBtn.addEventListener('click',analyseHandler) ;
 function analyseHandler(e){
@@ -214,14 +222,27 @@ function analyseHandler(e){
 //prev button
 //-----------------------------------------------------
 //-----------------------------------------------------
-let prevBtn = wrapper.querySelector('button.prev') ;
-prevBtn.addEventListener('click',prevHandler);
-let slide = form.querySelector('.slide') ;
-function prevHandler(e){
-    let currPos = parseInt(window.getComputedStyle(form,null).getPropertyValue('right')) ;
-    if(currPos!=0){
-        let slideWidth = slide.clientWidth ;
-        form.style.right = `${currPos+slideWidth}px` ;
-
-    }  
+let prevBtnsID = form.querySelectorAll('.slide > .btn-wrapper button.prev') ;
+prevBtnsID = [...prevBtnsID] ;
+prevBtnsID.push(form.querySelector('.info.mobile .btn-wrapper button.prev'))
+prevBtnsID.forEach(prevBtn => {
+    prevBtn.addEventListener('click',prevHandlerID) ;
+})
+function prevHandlerID(e){
+    let currPos = parseInt(form.style.right) ;
+    let offset = currPos + 100 ;
+    form.style.right = `${offset}%` ;
 }
+
+let codePrev =infosWrapper.querySelector('.info.code .btn-wrapper button.prev');
+let cityPrev =infosWrapper.querySelector('.info.city .btn-wrapper button.prev');
+let namePrev =infosWrapper.querySelector('.info.name .btn-wrapper button.prev');
+let prevs = [codePrev,cityPrev,namePrev] ;
+prevs.forEach(prev => {
+    prev.addEventListener('click',e=>{
+        let targetClass = prev.getAttribute('data-target') ;
+        let target = infosWrapper.querySelector(`.${targetClass}`)
+        showInfo(target) ;
+    })
+    
+})
