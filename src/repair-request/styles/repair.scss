@@ -41,7 +41,8 @@
             background-color: white ;
             position: relative ;
             z-index: 2;
-            transition: all .3s ease-in-out ;
+            transition: all .4s ease-in-out ;
+            transition-delay: .4s ;
             i{
                 font-size: $font-xxl + .2em;
                 @include center-xy ;

@@ -1,4 +1,3 @@
-import anime from 'animejs' ;
 let wrapper = document.querySelector('#request') ;
 let form = wrapper.querySelector('#order') ;
 let problemWrapper = form.querySelector('.slide#problem') ;
