@@ -109,11 +109,11 @@
                     font-size: $font-l ;
                     &:nth-child(2){margin-right: 5em ;}
                 }
-                button.prev{
+                button.prevSlide,button.prevTab{
                     background-color: $redColor2 ;
                     z-index: 5 ;
                 }
-                button.next{
+                button.nextSlide,button.nextTab{
                     background-color: $greenColor2 ;
                 }
             }
