@@ -4722,7 +4722,10 @@ nav.fix-style {
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       right: 0;
-      background-color: #1EC198; }
+      background-color: #1EC198;
+      -webkit-transition: all .6s ease-in-out;
+      -moz-transition: all .6s ease-in-out;
+      transition: all .6s ease-in-out; }
     #request #timeline .circle {
       width: 4em;
       height: 4em;
@@ -4842,7 +4845,7 @@ nav.fix-style {
           -ms-flex-line-pack: "";
               align-content: "";
       position: relative; }
-      #request form#order .slide .btn-wrapper {
+      #request form#order .slide .btn_wrapper {
         width: auto;
         height: auto;
         display: -webkit-box;
@@ -4874,7 +4877,7 @@ nav.fix-style {
         margin-top: 2em;
         margin-left: auto;
         margin-right: auto; }
-        #request form#order .slide .btn-wrapper button {
+        #request form#order .slide .btn_wrapper button {
           width: auto;
           height: auto;
           color: #fbfbfb;
@@ -4883,12 +4886,12 @@ nav.fix-style {
           cursor: pointer;
           padding: 0.7em 2.5em;
           font-size: 1em; }
-          #request form#order .slide .btn-wrapper button:nth-child(2) {
+          #request form#order .slide .btn_wrapper button:nth-child(2) {
             margin-right: 5em; }
-        #request form#order .slide .btn-wrapper button.prevSlide, #request form#order .slide .btn-wrapper button.prevTab {
+        #request form#order .slide .btn_wrapper button.prevSlide, #request form#order .slide .btn_wrapper button.prevTab {
           background-color: #e74a4a;
           z-index: 5; }
-        #request form#order .slide .btn-wrapper button.nextSlide, #request form#order .slide .btn-wrapper button.nextTab {
+        #request form#order .slide .btn_wrapper button.nextSlide, #request form#order .slide .btn_wrapper button.nextTab {
           background-color: #1EC198; }
       #request form#order .slide h4 {
         width: 100%;
@@ -5248,7 +5251,7 @@ nav.fix-style {
         -webkit-align-content: "";
             -ms-flex-line-pack: "";
                 align-content: ""; }
-        #request form#order .slide#infos .wrapper .info.code .btn-wrapper {
+        #request form#order .slide#infos .wrapper .info.code .btn_wrapper {
           margin-top: 5em; }
         #request form#order .slide#infos .wrapper .info.code .input-wrapper {
           width: 20em;
