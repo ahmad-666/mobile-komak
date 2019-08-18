@@ -31,6 +31,7 @@
             @include center-y ;
             right: 0 ;
             background-color: $greenColor2 ;
+            transition: all .6s ease-in-out ;
         }
         .circle{
             width: 4em ;
@@ -91,7 +92,7 @@
             display: flex ;
             @include flex(column,flex-start,flex-start,nowrap,"");
             position: relative ;  
-            .btn-wrapper{
+            .btn_wrapper{
                 width: auto ;
                 height: auto;
                 display: flex ;
@@ -351,7 +352,7 @@
                }
                .info.code{
                    @include flex(column,flex-start,center,nowrap,"") ;
-                   .btn-wrapper{
+                   .btn_wrapper{
                         margin-top: 5em ;
                    }
                    .input-wrapper{

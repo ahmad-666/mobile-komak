@@ -1,32 +1,69 @@
 import anime from 'animejs' ;
 let wrapper = document.querySelector('#request') ;
-let timeline = wrapper.querySelector('#timeline') ;
 let form = wrapper.querySelector('#order') ;
 let problemWrapper = form.querySelector('.slide#problem') ;
-//radio buttons
+let infosWrapper = form.querySelector('.slide#infos') ;
+let infos = infosWrapper.querySelectorAll('.info') ;
+//next/prev slides
 //-----------------------------------------------------
 //-----------------------------------------------------
 let nextSlideTriggers = form.querySelectorAll('.nextSlide') ;
 let problemNextBtn = form.querySelector('.slide#problem .nextSlide');
+let nameNextBtn = infosWrapper.querySelector('.info.name .nextSlide') ;
+let modelRadios = form.querySelectorAll('.slide#model .nextSlide') ;
+let colorPrevBtn = form.querySelector('.slide#color .prevSlide') ;
+let analyseNextBtn = form.querySelector('.slide#analyse .nextSlide') ;
 nextSlideTriggers.forEach(trigger => {
     trigger.addEventListener('click',nextSlideHandler);
 })
 function nextSlideHandler(e){
-    if(this != problemNextBtn){
-        let currPos = parseInt(form.style.right) ;
-        let offset = currPos-100 ;
-        form.style.right = `${offset}%`;
-    }
-
-    else {
+    if(this == problemNextBtn){
         if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
             problemWrapper.querySelector('p.error').classList.remove('show') ;
             let currPos = parseInt(form.style.right) ;
             let offset = currPos-100 ;
             form.style.right = `${offset}%`;
+            lineAnimation('forward') ;
+            currStep++ ;
+            tickHandler()
         }
         else {
             problemWrapper.querySelector('p.error').classList.add('show') ;
+        }
+        
+    }
+    else if(this == nameNextBtn){
+        let nameInput = this.parentElement.parentElement.querySelector('input#name') ;
+        if(nameInput.value.length>0){
+            nameInput.classList.remove('error') ;
+            let currPos = parseInt(form.style.right) ;
+            let offset = currPos-100 ;
+            form.style.right = `${offset}%`;
+            lineAnimation('forward') ;
+            currStep++ ;
+            tickHandler()
+        }
+        else{
+            nameInput.classList.add('error') ;
+        }
+    }
+    else {
+        let currPos = parseInt(form.style.right) ;
+        let offset = currPos-100 ;
+        form.style.right = `${offset}%`;
+        //if(this!=)
+        let fillLine = true ;
+        modelRadios.forEach(radio => {
+            if(this == radio) fillLine = false ;
+        })
+        if(fillLine) {
+            lineAnimation('forward') ;
+            currStep++ ;
+            tickHandler() ;
+            // if(this == analyseNextBtn){
+            //     currStep++ ;
+            //     tickHandler() ;
+            // }
         }
     }
     
@@ -39,10 +76,15 @@ function prevSlideHandler(e){
     let currPos = parseInt(form.style.right) ;
     let offset = currPos+100 ;
     form.style.right = `${offset}%`;
+    let fillLine = true ;
+    if(colorPrevBtn == this) fillLine = false ;
+    if(fillLine) {
+        lineAnimation('backward') ;
+        currStep-- ;
+        tickHandler()
+    }
 }
-
-
-//problems section
+//problems checkboxes
 //-----------------------------------------------------
 //-----------------------------------------------------
 let problemCheckboxes = form.querySelectorAll('.slide#problem input[type="checkbox"]') ;
@@ -52,70 +94,56 @@ problemCheckboxes.forEach(checkbox => {
 function checkboxHandler(e){
     this.parentElement.querySelector('i').classList.toggle('show') ;
 }
-
-//infos section
+//next/prev tabs(for #infos section)
 //-----------------------------------------------------
 //-----------------------------------------------------
-//enter mobile
-let infosWrapper = form.querySelector('.slide#infos') ;
-let infos = infosWrapper.querySelectorAll('.info') ;
-let sendCodeBtn = infosWrapper.querySelector('.info.mobile .btn-wrapper button.next') ;
-let mobileNum = infosWrapper.querySelector('.info.mobile input[type="number"]');
-sendCodeBtn.addEventListener('click',function(e){
-    if(mobileNum.value.length>6){
-        mobileNum.classList.remove('error') ;
-        let targetClass = `${this.getAttribute('data-target')}` ;
-        let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showInfo(target) ;
-    }
-    else{
-        mobileNum.classList.add('error') ;
-    }
-})
-function showInfo(elm){
+function showTab(elm){
     infos.forEach(info => {
         if(info!=elm) info.classList.remove('show') ;
         else info.classList.add('show') ;
     })
 }
-//enter code
-let codeBtn = infosWrapper.querySelector('.info.code .btn-wrapper button.next') ;
+let prevTabTriggers = infosWrapper.querySelectorAll('.prevTab') ;
+prevTabTriggers.forEach(trigger => {
+    trigger.addEventListener('click',prevTabHandler) ;
+})
+function prevTabHandler(e){
+    let targetClass = this.getAttribute('data-target') ;
+    let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
+    showTab(target) ;
+}
+//.info.mobile validation 
+let mobileNextBtn = infosWrapper.querySelector('.info.mobile .nextTab') ;
+let mobileNum = infosWrapper.querySelector('.info.mobile input[type="number"]');
+mobileNextBtn.addEventListener('click',function(e){
+    if(mobileNum.value.length>6){
+        mobileNum.classList.remove('error') ;
+        let targetClass = `${this.getAttribute('data-target')}` ;
+        let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
+        showTab(target) ;
+        initTimer();
+    }
+    else{mobileNum.classList.add('error') ;}
+})
+//.info.code validation 
+let codeNextBtn = infosWrapper.querySelector('.info.code .nextTab') ;
 let codeInput = infosWrapper.querySelector('.info.code input[type="number"]') ;
 let errorText = infosWrapper.querySelector('.info.code > p.error') ;
-console.log(errorText)
 let code = 123 ;
-codeBtn.addEventListener('click',function(e){
+codeNextBtn.addEventListener('click',function(e){
     if(codeInput.value == code && (minute.textContent!=0 || second.textContent!=0)){
         codeInput.classList.remove('error') ;
         errorText.classList.remove('show') ;
         let targetClass = `${this.getAttribute('data-target')}` ;
         let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showInfo(target) ;
+        showTab(target) ;
     }
     else{
         codeInput.classList.add('error') ;
         errorText.classList.add('show') ;
     }
-})
-//timer 
-let minute = infosWrapper.querySelector('.info.code .minute');
-let second =infosWrapper.querySelector('.info.code .second') ;
-let clearTimer = setInterval(()=>{
-    second.textContent-- ;
-    if(second.textContent<10) second.textContent = `0${second.textContent}` ;
-    else second.textContent = `${second.textContent}` ;
-    if(second.textContent == 0){
-        minute.textContent-- ;
-        second.textContent = 59 ;
-        if(minute.textContent == -1){
-            minute.textContent = 0 ;
-            second.textContent = `00` ;
-            clearInterval(clearTimer) ;
-        }
-    }
-},1000) ;
-//resend code
-//enter city
+});
+//.info.city validation 
 function Select(elm){
     this.elm = elm ;
     this.input = this.elm.querySelector('input[type="text"]') ;
@@ -164,8 +192,8 @@ let selects = [] ;
 infosWrapper.querySelectorAll('.info.city .select').forEach(select => {
     selects.push(new Select(select)) ;
 })
-let cityBtn = infosWrapper.querySelector('.info.city .btn-wrapper button.next') ;
-cityBtn.addEventListener('click',cityHandler) ;
+let cityNextBtn = infosWrapper.querySelector('.info.city .nextTab') ;
+cityNextBtn.addEventListener('click',cityHandler) ;
 let cityError = infosWrapper.querySelector('.info.city > p.error') ;
 let city = infosWrapper.querySelector('.info.city input[type="text"]#city');
 let state = infosWrapper.querySelector('.info.city input[type="text"]#state');
@@ -178,18 +206,61 @@ function cityHandler(e){
         cityError.classList.remove('show') ;
         let targetClass = this.getAttribute('data-target') ;
         let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showInfo(target) ;
+        showTab(target) ;
     }
     else{
         cityError.classList.add('show') ;
     }
 }
-//enter name
+//.info.name validation 
 let nameInput = infosWrapper.querySelector('.info.name input[type="text"]#name') ;
 let discountCheckbox = infosWrapper.querySelector('.info.name input[type="checkbox"]#discount') ;
 let discountInput = infosWrapper.querySelector('.info.name input[type="text"]#discount_code') ;
-discountCheckbox.addEventListener('change',discountHandler) ;
+discountCheckbox.addEventListener('click',discountHandler) ;
 function discountHandler(e){
     discountInput.classList.toggle('show') ;
+}
+//timer 
+let minute = infosWrapper.querySelector('.info.code .minute');
+let second =infosWrapper.querySelector('.info.code .second') ;
+function initTimer(){
+    let clearTimer = setInterval(()=>{
+        second.textContent-- ;
+        if(second.textContent<10) second.textContent = `0${second.textContent}` ;
+        else second.textContent = `${second.textContent}` ;
+        if(second.textContent == 0){
+            minute.textContent-- ;
+            second.textContent = 59 ;
+            if(minute.textContent == -1){
+                minute.textContent = 0 ;
+                second.textContent = `00` ;
+                clearInterval(clearTimer) ;
+            }
+        }
+    },1000) ;
+}
+//Timeline
+//----------------------------------------------------------
+//----------------------------------------------------------
+let timeline = wrapper.querySelector('#timeline') ;
+let circles = timeline.querySelectorAll('.circle') ;
+let line = timeline.querySelector('.line') ;
+let currStep = 0 ;
+function lineAnimation(dir){
+    let currWidth = parseFloat(line.style.width) ;
+    let offset = null ;
+    if(dir == 'forward') offset = currWidth + 16.66 ;
+    else if(dir == 'backward') offset = currWidth - 16.66 ;
+    line.style.width = `${offset}%` ;
+}
+function tickHandler(){
+    circles.forEach((circle,i) => {
+        //if(i<currStep) circle.classList.add('active') ;
+        //else circle.classList.remove('active') ;
+        if(i<=currStep) circle.classList.add('active') ;
+        else if(i>currStep) circle.classList.remove('active') ;
+        //if(i!=currStep) circle.classList.remove('active') ;
+        //else circle.classList.add('active');
+    })
 }
 
