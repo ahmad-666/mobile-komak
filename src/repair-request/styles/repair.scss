@@ -85,7 +85,7 @@
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         position: relative ;
         right: 0% ;
-        transition: all .6s cubic-bezier(0.68, -0.55, 0.265, 1.55) ;
+        transition: all .9s linear ;
         .slide{
             flex-shrink: 0 ;
             width: 100% ;

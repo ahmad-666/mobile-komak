@@ -17,6 +17,7 @@ module.exports = {
         'repairRequest' : './src/repair-request/repair-request.js' ,    
         'repairTeach' : './src/repair-teach/repair-teach.js' ,    
         'representation' : './src/representation/representation.js' ,    
+        'video' : './src/video/video.js' ,    
     },
     output: {//for each entry point we create one .js bundle(with the same name of entry point)
         filename: '[name].js',
@@ -181,6 +182,12 @@ module.exports = {
             inject: true,
             chunks: ['representation'],
             template: './src/representation/representation.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'video.html' , 
+            inject: true,
+            chunks: ['video'],
+            template: './src/video/video.html' 
         }),
         new CleanWebpackPlugin()
     ]
