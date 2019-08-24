@@ -13,11 +13,14 @@ module.exports = {
         'article' : './src/article/article.js' ,    
         'articles' : './src/articles/articles.js' ,    
         'category' : './src/category/category.js' ,    
-        'courses' : './src/courses/courses.js' ,    
+        //'courses' : './src/courses/courses.js' ,    
         'repairRequest' : './src/repair-request/repair-request.js' ,    
         'repairTeach' : './src/repair-teach/repair-teach.js' ,    
         'representation' : './src/representation/representation.js' ,    
         'video' : './src/video/video.js' ,    
+        'aboutUs' : './src/about-us/about-us.js' ,    
+        'rules' : './src/rules/rules.js' ,    
+        
     },
     output: {//for each entry point we create one .js bundle(with the same name of entry point)
         filename: '[name].js',
@@ -159,12 +162,12 @@ module.exports = {
             chunks: ['category'],
             template: './src/category/category.html' 
         }),
-        new HtmlWebpackPlugin({ 
-            filename: 'courses.html' , 
-            inject: true,
-            chunks: ['courses'],
-            template: './src/courses/courses.html' 
-        }),
+        // new HtmlWebpackPlugin({ 
+        //     filename: 'courses.html' , 
+        //     inject: true,
+        //     chunks: ['courses'],
+        //     template: './src/courses/courses.html' 
+        // }),
         new HtmlWebpackPlugin({ 
             filename: 'repair-request.html' , 
             inject: true,
@@ -188,6 +191,18 @@ module.exports = {
             inject: true,
             chunks: ['video'],
             template: './src/video/video.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'about-us.html' , 
+            inject: true,
+            chunks: ['aboutUs'],
+            template: './src/about-us/about-us.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'rules.html' , 
+            inject: true,
+            chunks: ['rules'],
+            template: './src/rules/rules.html' 
         }),
         new CleanWebpackPlugin()
     ]
