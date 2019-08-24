@@ -5331,7 +5331,7 @@ main {
             visibility: visible;
             opacity: 1; }
 
-main .wrapper #comments {
+#comments {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -5364,9 +5364,11 @@ main .wrapper #comments {
           align-content: "";
   padding: 0 1em 1em 1em;
   margin-top: 2em; }
-  main .wrapper #comments .add_comment, main .wrapper #comments #user_comment, main .wrapper #comments .comment {
+  #comments .add_comment,
+  #comments #user_comment,
+  #comments .comment {
     margin-top: 1em; }
-  main .wrapper #comments .add_comment {
+  #comments .add_comment {
     width: auto;
     height: auto;
     padding: 0.7em 2.2em;
@@ -5376,7 +5378,7 @@ main .wrapper #comments {
     cursor: pointer;
     color: #fbfbfb;
     background-color: #535292; }
-  main .wrapper #comments #user_comment {
+  #comments #user_comment {
     width: 100%;
     height: auto;
     padding: 0.5em 0.5em 2em 0.5em;
@@ -5410,9 +5412,11 @@ main .wrapper #comments {
         -ms-flex-line-pack: "";
             align-content: "";
     border-bottom: 1px solid #86878e; }
-    main .wrapper #comments #user_comment .infos, main .wrapper #comments #user_comment textarea, main .wrapper #comments #user_comment button[type="submit"] {
+    #comments #user_comment .infos,
+    #comments #user_comment textarea,
+    #comments #user_comment button[type="submit"] {
       margin-top: 1em; }
-    main .wrapper #comments #user_comment .infos {
+    #comments #user_comment .infos {
       width: 100%;
       height: auto;
       display: -webkit-box;
@@ -5443,7 +5447,7 @@ main .wrapper #comments {
       -webkit-align-content: "";
           -ms-flex-line-pack: "";
               align-content: ""; }
-      main .wrapper #comments #user_comment .infos input {
+      #comments #user_comment .infos input {
         width: 45%;
         height: 3em;
         -webkit-border-radius: 2em;
@@ -5454,26 +5458,26 @@ main .wrapper #comments {
         color: #2d2d31;
         font-size: 0.85em;
         cursor: pointer; }
-        main .wrapper #comments #user_comment .infos input::-webkit-input-placeholder {
+        #comments #user_comment .infos input::-webkit-input-placeholder {
           color: #86878e;
           font-size: 0.85em; }
-        main .wrapper #comments #user_comment .infos input::-moz-placeholder {
+        #comments #user_comment .infos input::-moz-placeholder {
           color: #86878e;
           font-size: 0.85em; }
-        main .wrapper #comments #user_comment .infos input:-ms-input-placeholder {
+        #comments #user_comment .infos input:-ms-input-placeholder {
           color: #86878e;
           font-size: 0.85em; }
-        main .wrapper #comments #user_comment .infos input::-ms-input-placeholder {
+        #comments #user_comment .infos input::-ms-input-placeholder {
           color: #86878e;
           font-size: 0.85em; }
-        main .wrapper #comments #user_comment .infos input::placeholder {
+        #comments #user_comment .infos input::placeholder {
           color: #86878e;
           font-size: 0.85em; }
-        main .wrapper #comments #user_comment .infos input:nth-child(2) {
+        #comments #user_comment .infos input:nth-child(2) {
           margin-right: 10%; }
-      main .wrapper #comments #user_comment .infos input.error {
+      #comments #user_comment .infos input.error {
         border: 1.5px solid #ef4e6e; }
-    main .wrapper #comments #user_comment textarea {
+    #comments #user_comment textarea {
       width: 100%;
       height: 15em;
       font-size: 0.8em;
@@ -5481,24 +5485,24 @@ main .wrapper #comments {
       padding: 0.5em;
       line-height: 2.2em;
       border: 1px solid #86878e; }
-      main .wrapper #comments #user_comment textarea::-webkit-input-placeholder {
+      #comments #user_comment textarea::-webkit-input-placeholder {
         font-size: 0.8em;
         color: #86878e; }
-      main .wrapper #comments #user_comment textarea::-moz-placeholder {
+      #comments #user_comment textarea::-moz-placeholder {
         font-size: 0.8em;
         color: #86878e; }
-      main .wrapper #comments #user_comment textarea:-ms-input-placeholder {
+      #comments #user_comment textarea:-ms-input-placeholder {
         font-size: 0.8em;
         color: #86878e; }
-      main .wrapper #comments #user_comment textarea::-ms-input-placeholder {
+      #comments #user_comment textarea::-ms-input-placeholder {
         font-size: 0.8em;
         color: #86878e; }
-      main .wrapper #comments #user_comment textarea::placeholder {
+      #comments #user_comment textarea::placeholder {
         font-size: 0.8em;
         color: #86878e; }
-    main .wrapper #comments #user_comment textarea.error {
+    #comments #user_comment textarea.error {
       border: 1.5px solid #ef4e6e; }
-    main .wrapper #comments #user_comment button[type="submit"] {
+    #comments #user_comment button[type="submit"] {
       width: auto;
       height: auto;
       -webkit-border-radius: 2em;
@@ -5510,20 +5514,20 @@ main .wrapper #comments {
       margin-left: auto;
       margin-right: auto;
       background-color: #1EC198; }
-  main .wrapper #comments #user_comment.addTransition {
+  #comments #user_comment.addTransition {
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out; }
-  main .wrapper #comments #user_comment.hide {
+  #comments #user_comment.hide {
     height: 0;
     visibility: hidden;
     opacity: 0;
     padding-bottom: 0; }
-  main .wrapper #comments #user_comment.show {
+  #comments #user_comment.show {
     visibility: visible;
     opacity: 1;
     padding-bottom: 2em; }
-  main .wrapper #comments .comment {
+  #comments .comment {
     padding: 1em 0;
     width: 100%;
     height: auto;
@@ -5556,9 +5560,9 @@ main .wrapper #comments {
     -webkit-align-content: flex-start;
         -ms-flex-line-pack: start;
             align-content: flex-start; }
-    main .wrapper #comments .comment .img_data {
+    #comments .comment .img_data {
       width: auto; }
-    main .wrapper #comments .comment p.name {
+    #comments .comment p.name {
       width: 10%;
       white-space: nowrap;
       overflow: hidden;
@@ -5568,12 +5572,12 @@ main .wrapper #comments {
          -moz-transform: translateY(2em);
           -ms-transform: translateY(2em);
               transform: translateY(2em); }
-    main .wrapper #comments .comment .content {
+    #comments .comment .content {
       max-width: 75%;
       margin-right: 0.5em; }
-    main .wrapper #comments .comment .reply {
+    #comments .comment .reply {
       width: 100%; }
-    main .wrapper #comments .comment .img_data {
+    #comments .comment .img_data {
       height: auto;
       display: -webkit-box;
       display: -webkit-flex;
@@ -5603,22 +5607,22 @@ main .wrapper #comments {
       -webkit-align-content: "";
           -ms-flex-line-pack: "";
               align-content: ""; }
-      main .wrapper #comments .comment .img_data img {
+      #comments .comment .img_data img {
         width: 4em;
         height: 4em;
         -webkit-border-radius: 50%;
                 border-radius: 50%; }
-      main .wrapper #comments .comment .img_data .date {
+      #comments .comment .img_data .date {
         width: 100%;
         text-align: center;
         color: #86878e;
         font-size: 0.7em;
         margin-top: 1em; }
-    main .wrapper #comments .comment p.name {
+    #comments .comment p.name {
       height: auto;
       color: #86878e;
       font-size: 0.7em; }
-    main .wrapper #comments .comment .content {
+    #comments .comment .content {
       height: auto;
       display: -webkit-box;
       display: -webkit-flex;
@@ -5648,13 +5652,13 @@ main .wrapper #comments {
       -webkit-align-content: "";
           -ms-flex-line-pack: "";
               align-content: ""; }
-      main .wrapper #comments .comment .content .text {
+      #comments .comment .content .text {
         width: 100%;
         height: auto;
         color: #2d2d31;
         font-size: 0.8em;
         line-height: 2.2em; }
-      main .wrapper #comments .comment .content .likes_reply {
+      #comments .comment .content .likes_reply {
         width: auto;
         height: auto;
         margin-top: 0;
@@ -5686,7 +5690,8 @@ main .wrapper #comments {
         -webkit-align-content: "";
             -ms-flex-line-pack: "";
                 align-content: ""; }
-        main .wrapper #comments .comment .content .likes_reply .likes, main .wrapper #comments .comment .content .likes_reply .reply {
+        #comments .comment .content .likes_reply .likes,
+        #comments .comment .content .likes_reply .reply {
           width: auto;
           height: auto;
           display: -webkit-box;
@@ -5717,20 +5722,23 @@ main .wrapper #comments {
           -webkit-align-content: "";
               -ms-flex-line-pack: "";
                   align-content: ""; }
-          main .wrapper #comments .comment .content .likes_reply .likes i, main .wrapper #comments .comment .content .likes_reply .reply i {
+          #comments .comment .content .likes_reply .likes i,
+          #comments .comment .content .likes_reply .reply i {
             font-size: 1em;
             cursor: pointer;
             color: #86878e; }
-          main .wrapper #comments .comment .content .likes_reply .likes i.fa-heart.red, main .wrapper #comments .comment .content .likes_reply .reply i.fa-heart.red {
+          #comments .comment .content .likes_reply .likes i.fa-heart.red,
+          #comments .comment .content .likes_reply .reply i.fa-heart.red {
             color: #ef4e6e; }
-          main .wrapper #comments .comment .content .likes_reply .likes p, main .wrapper #comments .comment .content .likes_reply .reply p {
+          #comments .comment .content .likes_reply .likes p,
+          #comments .comment .content .likes_reply .reply p {
             font-size: 0.8em;
             color: #86878e;
             margin-right: 0.5em; }
-        main .wrapper #comments .comment .content .likes_reply .reply {
+        #comments .comment .content .likes_reply .reply {
           cursor: pointer;
           margin-right: 1em; }
-    main .wrapper #comments .comment form.reply {
+    #comments .comment form.reply {
       height: auto;
       width: 80%;
       margin-left: auto;
@@ -5764,31 +5772,31 @@ main .wrapper #comments {
           -ms-flex-line-pack: "";
               align-content: "";
       padding: 0.5em; }
-      main .wrapper #comments .comment form.reply textarea {
+      #comments .comment form.reply textarea {
         width: 100%;
         height: 10em;
         padding: 0.5em;
         color: #2d2d31;
         font-size: 0.8em;
         border: 1px solid #86878e; }
-        main .wrapper #comments .comment form.reply textarea::-webkit-input-placeholder {
+        #comments .comment form.reply textarea::-webkit-input-placeholder {
           font-size: 0.8em;
           color: #86878e; }
-        main .wrapper #comments .comment form.reply textarea::-moz-placeholder {
+        #comments .comment form.reply textarea::-moz-placeholder {
           font-size: 0.8em;
           color: #86878e; }
-        main .wrapper #comments .comment form.reply textarea:-ms-input-placeholder {
+        #comments .comment form.reply textarea:-ms-input-placeholder {
           font-size: 0.8em;
           color: #86878e; }
-        main .wrapper #comments .comment form.reply textarea::-ms-input-placeholder {
+        #comments .comment form.reply textarea::-ms-input-placeholder {
           font-size: 0.8em;
           color: #86878e; }
-        main .wrapper #comments .comment form.reply textarea::placeholder {
+        #comments .comment form.reply textarea::placeholder {
           font-size: 0.8em;
           color: #86878e; }
-      main .wrapper #comments .comment form.reply textarea.error {
+      #comments .comment form.reply textarea.error {
         border: 1.5px solid #ef4e6e; }
-      main .wrapper #comments .comment form.reply button[type="submit"] {
+      #comments .comment form.reply button[type="submit"] {
         width: auto;
         height: auto;
         cursor: pointer;
@@ -5801,14 +5809,14 @@ main .wrapper #comments {
         padding: 0.5em 2.2em;
         font-size: 1em;
         margin-top: 1em; }
-    main .wrapper #comments .comment form.reply.hide {
+    #comments .comment form.reply.hide {
       opacity: 0;
       visibility: hidden;
       height: 0; }
-    main .wrapper #comments .comment form.reply.show {
+    #comments .comment form.reply.show {
       visibility: visible;
       opacity: 1; }
-    main .wrapper #comments .comment form.reply.addTransition {
+    #comments .comment form.reply.addTransition {
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }
