@@ -7,7 +7,7 @@ let infos = infosWrapper.querySelectorAll('.info') ;
 //-----------------------------------------------------
 //-----------------------------------------------------
 let nextSlideTriggers = form.querySelectorAll('.nextSlide') ;
-let problemNextBtn = form.querySelector('.slide#problem .nextSlide');
+let problemNextBtn = form.querySelector('.slide#problem button.nextSlide');
 let nameNextBtn = infosWrapper.querySelector('.info.name .nextSlide') ;
 let modelRadios = form.querySelectorAll('.slide#model .nextSlide') ;
 let colorPrevBtn = form.querySelector('.slide#color .prevSlide') ;
@@ -28,8 +28,7 @@ function nextSlideHandler(e){
         }
         else {
             problemWrapper.querySelector('p.error').classList.add('show') ;
-        }
-        
+        }      
     }
     else if(this == nameNextBtn){
         let nameInput = this.parentElement.parentElement.querySelector('input#name') ;
@@ -82,6 +81,8 @@ function prevSlideHandler(e){
         currStep-- ;
         tickHandler()
     }
+    
+    
 }
 //problems checkboxes
 //-----------------------------------------------------
@@ -103,6 +104,7 @@ function showTab(elm){
     })
 }
 let prevTabTriggers = infosWrapper.querySelectorAll('.prevTab') ;
+let cityPrevButton = infosWrapper.querySelector('.info.city .prevTab') ;
 prevTabTriggers.forEach(trigger => {
     trigger.addEventListener('click',prevTabHandler) ;
 })
@@ -110,6 +112,10 @@ function prevTabHandler(e){
     let targetClass = this.getAttribute('data-target') ;
     let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
     showTab(target) ;
+    if(this == cityPrevButton) {
+        clearInterval(clearTimer) ;
+        initTimer() ;
+    }
 }
 //.info.mobile validation 
 let mobileNextBtn = infosWrapper.querySelector('.info.mobile .nextTab') ;
@@ -120,6 +126,7 @@ mobileNextBtn.addEventListener('click',function(e){
         let targetClass = `${this.getAttribute('data-target')}` ;
         let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
         showTab(target) ;
+        clearInterval(clearTimer) ;
         initTimer();
     }
     else{mobileNum.classList.add('error') ;}
@@ -130,7 +137,7 @@ let codeInput = infosWrapper.querySelector('.info.code input[type="number"]') ;
 let errorText = infosWrapper.querySelector('.info.code > p.error') ;
 let code = 123 ;
 codeNextBtn.addEventListener('click',function(e){
-    if(codeInput.value == code && (minute.textContent!=0 || second.textContent!=0)){
+    if(codeInput.value == code && (minuteElm.textContent!=0 || secondElm.textContent!=0)){
         codeInput.classList.remove('error') ;
         errorText.classList.remove('show') ;
         let targetClass = `${this.getAttribute('data-target')}` ;
@@ -220,19 +227,27 @@ function discountHandler(e){
     discountInput.classList.toggle('show') ;
 }
 //timer 
-let minute = infosWrapper.querySelector('.info.code .minute');
-let second =infosWrapper.querySelector('.info.code .second') ;
+let minute = null ;
+let second = null ;
+let minuteElm = infosWrapper.querySelector('.info.code .minute');
+let secondElm =infosWrapper.querySelector('.info.code .second') ;
+let clearTimer = null ;
 function initTimer(){
-    let clearTimer = setInterval(()=>{
-        second.textContent-- ;
-        if(second.textContent<10) second.textContent = `0${second.textContent}` ;
-        else second.textContent = `${second.textContent}` ;
-        if(second.textContent == 0){
-            minute.textContent-- ;
-            second.textContent = 59 ;
-            if(minute.textContent == -1){
-                minute.textContent = 0 ;
-                second.textContent = `00` ;
+    minute = 2 ;
+    second = 59 ;
+    if(second<10) secondElm.textContent = `0${second}` ;
+    else secondElm.textContent = `${second}` ;
+    minuteElm.textContent = `${minute}` ;
+    clearTimer = setInterval(()=>{
+        second-- ;
+        if(second<10) secondElm.textContent = `0${second}` ;
+        else secondElm.textContent = `${second}` ;
+        if(second == 0){
+            minute-- ;
+            second = 59 ;
+            if(minute == -1){
+                minuteElm.textContent = 0 ;
+                secondElm.textContent = `00` ;
                 clearInterval(clearTimer) ;
             }
         }
@@ -262,4 +277,20 @@ function tickHandler(){
         //else circle.classList.add('active');
     })
 }
-
+//preven input[type="number"] to accept 'e' and 'E'
+let numbers = wrapper.querySelectorAll('input[type="number"]') ;
+fixInputNumber(numbers) ;
+function fixInputNumber(numbers){
+    numbers.forEach(number => {
+        number.addEventListener('keypress',justAcceptNumber) ;
+    })
+}
+function justAcceptNumber(e){
+    if(e.key =='e' || e.key=='E')e.preventDefault(); 
+}
+//resend code 
+let resend = infosWrapper.querySelector('.info.code .resend') ;
+resend.addEventListener('click',e=>{
+    clearInterval(clearTimer) ;
+    initTimer() ;
+})
