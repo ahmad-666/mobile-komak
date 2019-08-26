@@ -1,0 +1,94 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#problems{
+    width: 80vw ;
+    height: auto;
+    margin: $sectionsDist auto ;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    .title,.content{
+        margin: $dist1 auto ;
+    }
+    .title{
+        width: auto ;
+        height: auto;
+        display: flex ;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        h4,p{
+            margin: $dist1 auto ;
+        }
+        h4{
+            font-size: $font-special - .2em ;
+            font-weight: 700 ;
+            color: $darkColor ;
+        }
+        p{
+            font-size: $font-l ;
+            color: $greyColor2 ;
+        }
+    }
+    .content{
+        width: 100% ;
+        height: auto;
+        @include bg('../../assets/imgs/problem.jpg',center center,no-repeat,cover) ;
+        position: relative ;
+        &::before{
+            content: '' ;
+            @include fullSize-abs ;
+            background-color: $blackFilter;
+        }
+        ul{
+            width: 50% ;
+            height: 100%;
+            position: relative ;
+            z-index: 2 ;
+            padding: $dist1 ;
+            display: flex ;
+            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+            li{
+                width: auto ;
+                height: auto;
+                margin: $dist2 ;
+                cursor: pointer;          
+                a{
+                    width: 12em ;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    p,i{
+                        margin: 0 $dist1 ;
+                    }
+                    i{
+                        width: 3em ;
+                        height: 3em;
+                        border-radius: 50% ;
+                        position: relative ;
+                        background-color: $blackFilter ;
+                        transition: all .3s ease-in-out ;
+                        box-shadow: 0 0 .2em .2em transparent ;
+                        cursor: pointer;
+                        &::before{
+                            @include center-xy ;
+                            font-size: 1.6em ;
+                            color: lighten($primaryColor,14%) ;
+                            transition: all .3s ease-in-out ;
+                        }            
+                    }
+                    p{
+                        font-size: $font-l ;
+                        color: $paleColor ;
+                    }
+                    &:hover{
+                        i{
+                            background-color: $primaryColor ;
+                            box-shadow: 0 0 1.5em .2em $primaryColor ;
+                            &::before{
+                                color: $paleColor ;
+                            }
+                        }             
+                    }
+                }          
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+nav{
+    width: 90vw ;
+    height: auto;
+    position: fixed ;
+    left: 0;
+    top: 0; 
+    z-index: 7;
+    background-color: transparent ;
+    box-shadow: 0 .1em .3em .05em transparent ;
+    transition: all .3s ease-in-out ;
+    > ul{
+        width: 100% ;
+        height: 100%;
+        position: relative ;
+        display: flex ;
+        @include flex(row,flex-start,flex-start,nowrap,"");
+        padding: .2em ;
+        list-style: none;
+        li{
+            width: auto ;
+            height: 3em;
+            line-height: 3em ;
+            margin: 0 $dist3 ;
+            a{
+                width: auto ;
+                height: 100%;
+                color: $darkColor ;
+                font-size: 1em ;
+            }
+        }
+        li.special{
+            a {
+                padding: ($dist1) ($dist3 - .5em) ;
+                color: white ;
+                background: linear-gradient(to right, #ff416c, #ff4b2b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                border-radius: $dist3 ;   
+            }   
+        }
+        li.dropdown{
+            position: relative ;
+            cursor: pointer;
+            &:hover{
+                ul{
+                    visibility: visible;
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+            p{
+                color: $darkColor;
+                font-size: 1em ;
+                i{
+                    transform: translate(-50%,10%) ;
+                }
+            }
+            ul{
+                width: 12em ;
+                height: 0;
+                visibility: hidden ;
+                opacity: 0;
+                transition: all .4s ease-in-out ;
+                @include center-x ;
+                top: 100% ;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;  
+                box-shadow: 0 .1em .3em .05em $shadowColor ;
+                li{
+                    width: 100% ;
+                    height: 3em;
+                    margin: 0 ;
+                    background-color: $paleColor ;
+                    a{
+                        display: inline-block ;
+                        width: 100% ;
+                        height: 100%;
+                        padding: 0 $dist1 ;
+                        font-size: .8em ;
+                        color: $darkColor ;
+                        background-color: $paleColor ;
+                        transition: all .3s ease-in-out ;
+                        &:hover{
+                            background-color: $greyColor ;
+                        }
+                    }
+                }
+            }
+        }
+        // li{
+        //     &:not(.special):not(.dropdown):not(.logo){
+        //         a{
+        //             width: auto ;
+        //             height: 100%;
+
+        //         }
+        //     }
+        // }
+        li.logo{
+            @include center-y ;
+            left: $dist3;
+            a{
+                width: auto ;
+                height: 100%;
+                img{
+                    width: 10em ;
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
+}
+nav.fix-style{
+    width: 100% ;
+    box-shadow: 0 .1em .3em .05em $shadowColor ;
+    background-color: $whiteColor2 ;
+}

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./index/styles/nav.css">
+    <link rel="stylesheet" href="./repair-request/styles/repair.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+    <link rel="stylesheet" href="./index/styles/copyright.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="special">
+                <a href="./repair-request.html">درخواست تعمیر</a>
+            </li>
+            <li class="dropdown">
+                <p>
+                    آموزش ها
+                    <i class="fas fa-angle-down"></i>
+                </p>
+                <ul>
+                    <li>
+                        <a href="./articles.html">مقالات و آموزش نرم افزاری</a>
+                    </li>
+                    <li>
+                        <a href="./repair-teach.html">آموزش تعمیر موبایل</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li>
+                <a href="https://mobilekomak.com/store/">فروشگاه</a>
+            </li> -->
+            <li>
+                <a href="./representation.html">اخذ نمایندگی</a>
+            </li>
+            <li class="logo">
+                <a href="./index.html">
+                    <img src="./assets/imgs/logo.png" alt="logo">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="request">
+        <div id="timeline">        
+            <div class="circle active">
+                <i class="fas fa-check"></i>
+                <p>دستگاه</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>برند</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>مدل</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>مشکل</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>مشخصات</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>تایید نهایی</p>
+            </div>
+            <div class="circle">
+                <i class="fas fa-check"></i>
+                <p>کد پیگیری</p>
+            </div>
+            <span class="line"></span>
+            <span class="fill_line"></span>
+        </div>
+        <form novalidate id="request_info" name="request_info" method="GET" action="#!" enctype="text/plain">
+            <div class="slide" id="select_device">
+                <h4>انتخاب دستگاه</h4>
+                <div class="labels">
+                    <label for="mobile">
+                        <input type="radio" id="mobile" value="mobile" name="device" class="nexSlide">
+                        <p>موبایل</p>
+                    </label>
+                    <label for="tablet">
+                        <input type="radio" id="tablet" value="tablet" name="device" class="nexSlide">
+                        <p>تبلت</p>
+                    </label>
+                </div>
+                <ul class="desc">
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                    </li>
+                    <li>
+                        <i class="fas fa-circle"></i>
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                        متن متن متن متن متن متن متن متن متن 
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="slide" id="select_brand">
+                <h4>انتخاب برند</h4>
+                <div class="labels">
+                    <label for="apple">
+                        <input type="radio" id="apple" value="apple" name="brand" class="nexSlide">
+                        <p>اپل</p>
+                    </label>
+                    <label for="sony">
+                        <input type="radio" id="sony" value="sony" name="brand" class="nexSlide">
+                        <p>سونی</p>
+                    </label>
+                    <label for="samsung">
+                        <input type="radio" id="samsung" value="samsung" name="brand" class="nexSlide">
+                        <p>سامسونگ</p>
+                    </label>
+                    <label for="huawei">
+                        <input type="radio" id="huawei" value="huawei" name="brand" class="nexSlide">
+                        <p>هواووی</p>
+                    </label>
+                    <label for="lg">
+                        <input type="radio" id="lg" value="lg" name="brand" class="nexSlide">
+                        <p>ای جی</p>
+                    </label>
+                    <label for="others">
+                        <input type="radio" id="others" value="others" name="brand" class="nexSlide">
+                        <p>سایر</p>
+                    </label>
+                </div>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                </div>
+            </div> -->
+            <!-- <div class="slide" id="select_model">
+                <h4>انتخاب مدل</h4>
+                <div class="labels">
+                    <label for="iphone_1">
+                        <input type="radio" id="iphone_1" value="iphone_1" name="model" class="nexSlide">
+                        <p>آیفون</p>
+                    </label>
+                    <label for="iphone_2">
+                        <input type="radio" id="iphone_2" value="iphone_2" name="model" class="nexSlide">
+                        <p>آیفون</p>
+                    </label>
+                    <label for="iphone_3">
+                        <input type="radio" id="iphone_3" value="iphone_3" name="model" class="nexSlide">
+                        <p>آیفون</p>
+                    </label>
+                    <label for="iphone_4">
+                        <input type="radio" id="iphone_4" value="iphone_4" name="model" class="nexSlide">
+                        <p>آیفون</p>
+                    </label>
+                    <label for="iphone_5">
+                        <input type="radio" id="iphone_5" value="iphone_5" name="model" class="nexSlide">
+                        <p>آیفون</p>
+                    </label>
+                </div>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                </div>
+            </div> -->
+            <!-- <div class="slide" id="select_color">
+                <h4>انتخاب رنگ</h4>
+                <div class="labels">
+                    <label for="gold">
+                        <input type="radio" id="gold" value="gold" name="color" class="nexSlide">
+                        <p>طلایی</p>
+                    </label>
+                    <label for="white">
+                        <input type="radio" id="white" value="white" name="color" class="nexSlide">
+                        <p>سفید</p>
+                    </label>
+                    <label for="black">
+                        <input type="radio" id="black" value="black" name="color" class="nexSlide">
+                        <p>مشکی</p>
+                    </label>
+                    <label for="grey">
+                        <input type="radio" id="grey" value="grey" name="color" class="nexSlide">
+                        <p>خاکستری</p>
+                    </label>
+                </div>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                </div>
+            </div> -->
+            <!-- <div class="slide" id="select_problem">
+                <h4>انتخاب مشکل</h4>
+                <div class="labels">
+                    <label for="problem_1">
+                        <input type="checkbox" id="problem_1" value="problem_1" name="problem_1">
+                        <p>مشکل 1</p>
+                        <i class="fas fa-check"></i>
+                    </label>
+                    <label for="problem_2">
+                        <input type="checkbox" id="problem_2" value="problem_2" name="problem_2">
+                        <p>مشکل 2</p>
+                        <i class="fas fa-check"></i>
+                    </label>
+                    <label for="problem_3">
+                        <input type="checkbox" id="problem_3" value="problem_3" name="problem_3">
+                        <p>مشکل 3</p>
+                        <i class="fas fa-check"></i>
+                    </label>
+                    <label for="dont_know">
+                        <input type="radio" id="dont_know" value="dont_know" name="dont_know" class="nexSlide">
+                        <p>نمیدانم</p>
+                    </label>
+                </div>
+                <p class="error">حداقل یک مشکل را انتخاب کنید</p>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                    <button type="button" class="nextSlide">مرحله بعد</button>
+                </div>
+            </div> -->
+            <!-- <div class="slide" id="select_info">
+                <div class="tabs">
+                    <div class="tab show" id="info_1">
+                        <h4>شماره موبایل خود را وارد کنید</h4>
+                        <div class="input_wrapper">
+                            <input type="number" id="mobile_num" name="mobile_num" required placeholder="شماره موبایل خود را وارد کنید">
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="number" id="code" name="code" required placeholder="کد ارسالی را وارد کنید">
+                            <div id="timer_resend">
+                                <div id="timer">
+                                    <span class="second">59</span>
+                                    :
+                                    <span class="minute">2</span>
+                                </div>
+                                <button type="button" id="resend">ارسال مجدد</button>
+                            </div>
+                            <p class="error">کد ورودی اشتباه هست</p>
+                        </div>
+                        <div class="btn-wrapper">
+                            <button type="button" class="prevSlide">مرحله قبل</button>
+                            <button type="button" class="nextTab" data-target="info_2">مرحله بعد</button>
+                        </div>
+                    </div>
+                    <div class="tab show" id="info_2">
+                        <h4>مشخصات خود را وارد کنید</h4>
+                        <div class="input_wrapper">
+                            <input type="text" id="name" name="name" required placeholder="نام خود را وارد کنید">
+                        </div>
+                        <div class="input_wrapper select">
+                            <input type="text" id="state" name="state" placeholder="استان محل سکونت" readonly required>
+                            <i class="fas fa-angle-down"></i>
+                            <ul>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                            </ul>
+                        </div>
+                        <div class="input_wrapper select">
+                            <input type="text" id="city" name="city" placeholder="شهر محل سکونت" readonly required>
+                            <i class="fas fa-angle-down"></i>
+                            <ul>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                                <li>تهران</li>
+                                <li>مشهد</li>
+                            </ul>
+                        </div>
+                        <div class="discount">
+                            <div class="input-wrapper">
+                                <input type="checkbox" name="discount" id="discount" value="has_discount">
+                                <label for="discount">
+                                    <span class="rect"></span>
+                                    آیا کد تخفیف دارید ؟
+                                </label>    
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="text" name="discount_code" id="discount_code" placeholder="کد تخفیف را وارد کنید">
+                            </div>
+                        </div>
+                        <div class="btn-wrapper">
+                            <button type="button" class="prevTab" data-target="info_1">مرحله قبل</button>
+                            <button type="button" class="nextSlide">مرحله بعد</button>
+                        </div>
+                    </div>
+                </div>          
+            </div> -->
+            <!-- <div class="slide" id="confirm">
+                <h4>بررسی سفارش</h4>   
+                <div id="summery">
+                    <div id="details">
+                        <h4>شرح سفارش</h4>
+                        <ul>
+                            <li class="brand">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">برند:</p>
+                                <p class="text">samsung</p>
+                            </li>
+                            <li class="model">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">مدل:</p>
+                                <p class="text">note 8</p>
+                            </li>
+                            <li class="color">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">رنگ:</p>
+                                <p class="text">سفید</p>
+                            </li>
+                            <li class="problem">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">مشکل:</p>
+                                <p class="text">شکستگی صفحه</p>
+                            </li>                    
+                        </ul>
+                    </div>
+                    <div id="contact">
+                        <h4>اطلاعات تماس</h4>
+                        <ul>
+                            <li class="name">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">نام:</p>
+                                <p class="text">احمدرضا</p>
+                            </li>
+                            <li class="mobile">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">موبایل:</p>
+                                <p class="text">09158912938</p>
+                            </li>
+                            <li class="state">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">استان:</p>
+                                <p class="text">خراسان رضوی</p>
+                            </li>
+                            <li class="city">
+                                <i class="fas fa-circle"></i>
+                                <p class="title">شهر:</p>
+                                <p class="text">مشهد</p>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>     
+                <textarea name="more_info" id="more_info" placeholder="توضیحات بیشتر"></textarea>
+                <button type="button" class="nextSlide">تایید نهایی سفارش</button> 
+                <div class="input_wrapper checkbox">
+                    <input type="checkbox" name="rules" id="rules" for="rules" value="accept_rules" required>
+                    <label for="rules">
+                        <span class="rect"></span>
+                        <p>
+                            با تمامی 
+                            <a href="./rules.html">شرایط و قوانین</a>
+                            موافق هستم
+                        </p>
+                    </label>
+                </div>
+                <p class="error">باید با شرایط و قوانین موافقت کنید</p>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                </div>
+            </div> -->
+            <!-- <div class="slide" id="track_code">
+                <h4>سفارش شما با موفقیت ثبت شد</h4>   
+                <p class="tracking_code">
+                    کد پیگیری: 1234567890
+                </p>
+                <p class="note"></p>
+                <div class="btn-wrapper">
+                    <button type="button" class="prevSlide">مرحله قبل</button>
+                </div>
+            </div> -->
+        </form>
+    </div>
+    <div id="footer">
+        <div class="content">
+            <div class="about_us">
+                <h4>درباره ما</h4>
+                <a href="./about-us.html">درباره موبایل کمک</a>
+                <a href="./rules.html">قوانین و مقررات</a>
+                <a href="./representation.html">اخذ نمایندگی</a>
+            </div>
+            <div class="training">
+                <h4> تعمیر موبایل</h4>
+                <!-- <a href="./courses.html">دوره های آموزشی</a> -->
+                <a href="./repair-teach.html">آموزش تعمیر موبایل</a>
+                <a href="./repair-request.html">درخواست تعمیر موبایل</a>
+            </div>
+            <div class="articles">
+                <h4>مقالات</h4>
+                <a href="./category.html">مقالات تلگرام</a>
+                <a href="./category.html">مقالات اینستاگرام</a>
+                <a href="./category.html">مقالات اندروید</a>
+                <a href="./category.html">مقالات اپل</a>
+                <a href="./category.html">بررسی اپلیکیشن</a>
+            </div>
+            <div class="contact_us">
+                <h4>ارتباط با ما</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    تهران، خیابان جمهوری، نرسیده به خیابان حافظ، خیابان لاله، پلاک ۹، واحد ۲
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    ۰۲۱-۷۵۱۴۷
+                </p>
+                <div id="socials">
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=contact@mobilekomak.com&tf=1"> <i class="fab fa-google-plus-g"></i> </a>
+                    <a href="https://www.youtube.com/user/MobileKomak"> <i class="fab fa-youtube"></i> </a>
+                    <a href="https://twitter.com/mobilekomak"> <i class="fab fa-twitter"></i> </a>
+                    <a href="https://www.instagram.com/mobilekomak/"> <i class="fab fa-instagram"></i> </a>
+                    <a href="https://www.facebook.com/mobilekomak"> <i class="fab fa-facebook-f"></i> </a>
+                </div>
+            </div>
+        </div>     
+    </div>
+    <div id="copyright">
+        <a href="http://www.ittoos.com">
+            <i class="far fa-copyright"></i>
+            طراحی سایت توسط ittoos
+        </a>
+    </div>
+    <script src="./index/scripts/landing.js"></script>
+    <script src="./repair-request/scripts/repair.js"></script>
+    <script src="./index/scripts/footer.js"></script>
+</body>
+
+</html>
