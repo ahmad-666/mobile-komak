@@ -1,155 +1,256 @@
-let wrapper = document.querySelector('#request') ;
-let form = wrapper.querySelector('#order') ;
-let problemWrapper = form.querySelector('.slide#problem') ;
-let infosWrapper = form.querySelector('.slide#infos') ;
-let infos = infosWrapper.querySelectorAll('.info') ;
-//next/prev slides
-//-----------------------------------------------------
-//-----------------------------------------------------
-let nextSlideTriggers = form.querySelectorAll('.nextSlide') ;
-let problemNextBtn = form.querySelector('.slide#problem button.nextSlide');
-let nameNextBtn = infosWrapper.querySelector('.info.name .nextSlide') ;
-let modelRadios = form.querySelectorAll('.slide#model .nextSlide') ;
-let colorPrevBtn = form.querySelector('.slide#color .prevSlide') ;
-let analyseNextBtn = form.querySelector('.slide#analyse .nextSlide') ;
-nextSlideTriggers.forEach(trigger => {
-    trigger.addEventListener('click',nextSlideHandler);
+let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
+let requestWrapper = document.querySelector('#request') ;
+let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
+//move to next/prev slide 
+let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
+let prevSlideHandlers = requestFormWrapper.querySelectorAll('.prevSlide') ;
+nextSlideHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',moveSlider) ;
 })
-function nextSlideHandler(e){
-    if(this == problemNextBtn){
-        if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
-            problemWrapper.querySelector('p.error').classList.remove('show') ;
-            let currPos = parseInt(form.style.right) ;
-            let offset = currPos-100 ;
-            form.style.right = `${offset}%`;
-            lineAnimation('forward') ;
-            currStep++ ;
-            tickHandler()
+prevSlideHandlers.forEach(prevSlideHandler => {
+    prevSlideHandler.addEventListener('click',moveSlider) ;
+})
+function moveSlider(e){
+    if(this.classList.contains('nextSlide')){//move to next slide
+        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem
+            if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
+                problemError.classList.remove('show') ;
+                nextSlide();
+                moveLine('forward') ; 
+                clearInterval(clearTimer) ;
+                initTimer();
+            }
+            else problemError.classList.add('show') ;                 
+        }
+        else if(this == dontKnow) { //if we click on dont_know problem
+            problemError.classList.remove('show') ;
+            nextSlide();   
+            moveLine('forward') ; 
+            clearInterval(clearTimer) ;
+            initTimer() ;
+        }
+        else if(this == infoNextSlide){
+            if(info2Validate()) {
+                nextSlide();     
+                moveLine('forward') ; 
+            }         
+        }
+        else if(this == confirmNextSlide){
+            if(rulesCheckbox.checked) {
+                confirmError.classList.remove('show') ;
+                nextSlide() ;
+                moveLine('forward') ; 
+            }
+            else confirmError.classList.add('show') ;
         }
         else {
-            problemWrapper.querySelector('p.error').classList.add('show') ;
-        }      
-    }
-    else if(this == nameNextBtn){
-        let nameInput = this.parentElement.parentElement.querySelector('input#name') ;
-        if(nameInput.value.length>0){
-            nameInput.classList.remove('error') ;
-            let currPos = parseInt(form.style.right) ;
-            let offset = currPos-100 ;
-            form.style.right = `${offset}%`;
-            lineAnimation('forward') ;
-            currStep++ ;
-            tickHandler()
-        }
-        else{
-            nameInput.classList.add('error') ;
+            nextSlide();  
+            if(!this.classList.contains('static_timeline')) moveLine('forward') ;   
         }
     }
-    else {
-        let currPos = parseInt(form.style.right) ;
-        let offset = currPos-100 ;
-        form.style.right = `${offset}%`;
-        //if(this!=)
-        let fillLine = true ;
-        modelRadios.forEach(radio => {
-            if(this == radio) fillLine = false ;
-        })
-        if(fillLine) {
-            lineAnimation('forward') ;
-            currStep++ ;
-            tickHandler() ;
-            // if(this == analyseNextBtn){
-            //     currStep++ ;
-            //     tickHandler() ;
-            // }
-        }
+    else if(this.classList.contains('prevSlide')) { //move to prev slide 
+        prevSlide(); 
+        if(!this.classList.contains('static_timeline')) moveLine('backward') ; 
     }
-    
 }
-let prevSlideTriggers = form.querySelectorAll('.prevSlide') ;
-prevSlideTriggers.forEach(trigger => {
-    trigger.addEventListener('click',prevSlideHandler) ;
+function nextSlide(){
+    let currPost = parseFloat(requestFormWrapper.style.right) ;
+    requestFormWrapper.style.right = `${currPost-100}%` ;
+}
+function prevSlide(){
+    let currPost = parseFloat(requestFormWrapper.style.right) ;
+    requestFormWrapper.style.right = `${currPost+100}%` ;
+}
+//.slide#select_problem checkboxes
+let problemWrapper = requestFormWrapper.querySelector('.slide#select_problem') ;
+let problemCheckboxes = problemWrapper.querySelectorAll('input[type="checkbox"]') ;
+let problemNextSlideBtn = problemWrapper.querySelector('.btn-wrapper button.nextSlide') ;
+let problemError = problemWrapper.querySelector('p.error') ;
+let dontKnow = problemWrapper.querySelector('.nextSlide#dont_know') ;
+problemCheckboxes.forEach(problemCheckbox => {
+    problemCheckbox.addEventListener('click',problemCheckboxesHandler) ;
 })
-function prevSlideHandler(e){
-    let currPos = parseInt(form.style.right) ;
-    let offset = currPos+100 ;
-    form.style.right = `${offset}%`;
-    let fillLine = true ;
-    if(colorPrevBtn == this) fillLine = false ;
-    if(fillLine) {
-        lineAnimation('backward') ;
-        currStep-- ;
-        tickHandler()
-    }
-    
-    
+function problemCheckboxesHandler(e){
+    let label = this.parentElement ;
+    let icon = label.querySelector('i') ;
+    icon.classList.toggle('show') ;
 }
-//problems checkboxes
-//-----------------------------------------------------
-//-----------------------------------------------------
-let problemCheckboxes = form.querySelectorAll('.slide#problem input[type="checkbox"]') ;
-problemCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('input',checkboxHandler) ;
-})
-function checkboxHandler(e){
-    this.parentElement.querySelector('i').classList.toggle('show') ;
+//code timer 
+let infoWrapper = requestFormWrapper.querySelector('.slide#select_info') ;
+let timerWrapper = infoWrapper.querySelector('#timer') ;
+let minuteElm = timerWrapper.querySelector('.minute');
+let secondElm = timerWrapper.querySelector('.second') ;
+let minute = null ;
+let second = null ;
+let clearTimer = null ;
+function initTimer(){
+    minute = 2 ;
+    second = 59 ;
+    if(second<10) secondElm.textContent = `0${second}` ;
+    else secondElm.textContent = `${second}` ;
+    minuteElm.textContent = `${minute}` ;
+    clearTimer = setInterval(()=>{
+        second-- ;
+        if(second<10) secondElm.textContent = `0${second}` ;
+        else secondElm.textContent = `${second}` ;
+        if(second == 0){
+            minute-- ;
+            second = 59 ;
+            if(minute != -1){
+                minuteElm.textContent = `${minute}` ;
+                secondElm.textContent = `${second}` ;               
+            }
+            else{
+                minuteElm.textContent = `0`  ;
+                secondElm.textContent = `00` ;
+                clearInterval(clearTimer) ;
+            }
+        }
+    },1000) ;
 }
-//next/prev tabs(for #infos section)
-//-----------------------------------------------------
-//-----------------------------------------------------
-function showTab(elm){
-    infos.forEach(info => {
-        if(info!=elm) info.classList.remove('show') ;
-        else info.classList.add('show') ;
+//user input validation 
+let mobileInput = infoWrapper.querySelector('#mobile_num') ;
+let code = 123 ;
+let codeInput = infoWrapper.querySelector('#code') ;
+let codeWrapper = codeInput.parentElement ;
+let codeWrapperHeight = codeWrapper.offsetHeight ;
+codeWrapper.classList.add('hide') ;
+let nameInput = infoWrapper.querySelector('#name') ;
+let stateInput = infoWrapper.querySelector('#state') ;
+let cityInput = infoWrapper.querySelector('#city') ;
+//prevent input[type="number"] to accept 'e' and 'E'
+let numbers = requestFormWrapper.querySelectorAll('input[type="number"]') ;
+fixInputNumber(numbers) ;
+function fixInputNumber(numbers){
+    numbers.forEach(number => {
+        number.addEventListener('keypress',justAcceptNumber) ;
     })
 }
-let prevTabTriggers = infosWrapper.querySelectorAll('.prevTab') ;
-let cityPrevButton = infosWrapper.querySelector('.info.city .prevTab') ;
-prevTabTriggers.forEach(trigger => {
-    trigger.addEventListener('click',prevTabHandler) ;
+function justAcceptNumber(e){
+    if(e.key =='e' || e.key=='E')e.preventDefault(); 
+}
+//tabs handler 
+let tabs = infoWrapper.querySelectorAll('.tab') ;
+let nextTabHandlers = infoWrapper.querySelectorAll('.btn-wrapper button.nextTab') ;
+let prevTabHandlers = infoWrapper.querySelectorAll('.btn-wrapper button.prevTab') ;
+let info1 = infoWrapper.querySelector('#info_1') ;
+let info1NextTab = info1.querySelector('.btn-wrapper button.nextTab') ;
+let infoNextSlide = infoWrapper.querySelector('.btn-wrapper .nextSlide') ;
+nextTabHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',tabHandler) ;
 })
-function prevTabHandler(e){
-    let targetClass = this.getAttribute('data-target') ;
-    let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-    showTab(target) ;
-    if(this == cityPrevButton) {
+prevTabHandlers.forEach(prevTabHandler => {
+    prevTabHandler.addEventListener('click',tabHandler) ;
+})
+function tabHandler(e){
+    if(this == info1NextTab){
+        if(mobileValidate()) {
+            codeWrapper.classList.add('addTransition') ;
+            codeWrapper.classList.remove('hide') ;
+            codeWrapper.style.height = `${codeWrapperHeight}px` ;
+            info1NextTab.style.display = 'none';  
+            codeInput.addEventListener('input',monitorCode) ;
+        }
+    }
+    else{       
+        changeTab(this.getAttribute('data-target')) ;
         clearInterval(clearTimer) ;
         initTimer() ;
     }
 }
-//.info.mobile validation 
-let mobileNextBtn = infosWrapper.querySelector('.info.mobile .nextTab') ;
-let mobileNum = infosWrapper.querySelector('.info.mobile input[type="number"]');
-mobileNextBtn.addEventListener('click',function(e){
-    if(mobileNum.value.length>6){
-        mobileNum.classList.remove('error') ;
-        let targetClass = `${this.getAttribute('data-target')}` ;
-        let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showTab(target) ;
-        clearInterval(clearTimer) ;
-        initTimer();
+function mobileValidate(){
+    if(mobileInput.value.length >= 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
+        mobileInput.classList.remove('error') ;
+        mobileInput.removeEventListener('input',monitorMobile) ;
+        return true ;
     }
-    else{mobileNum.classList.add('error') ;}
-})
-//.info.code validation 
-let codeNextBtn = infosWrapper.querySelector('.info.code .nextTab') ;
-let codeInput = infosWrapper.querySelector('.info.code input[type="number"]') ;
-let errorText = infosWrapper.querySelector('.info.code > p.error') ;
-let code = 123 ;
-codeNextBtn.addEventListener('click',function(e){
-    if(codeInput.value == code && (minuteElm.textContent!=0 || secondElm.textContent!=0)){
+    else {
+        mobileInput.classList.add('error') ;
+        mobileInput.addEventListener('input',monitorMobile) ;
+    }
+}
+function monitorMobile(e){
+    if(mobileInput.value.length < 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
+    else mobileInput.classList.remove('error') ;
+}
+function codeValidate(){
+    if(codeInput.value == code && (parseInt(minuteElm.textContent)!=0 || parseInt(secondElm.textContent)!=0)){
         codeInput.classList.remove('error') ;
-        errorText.classList.remove('show') ;
-        let targetClass = `${this.getAttribute('data-target')}` ;
-        let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showTab(target) ;
+        codeInput.removeEventListener('input',monitorCode) ;
+        return true ;
+    }
+    else {
+        codeInput.classList.add('error') ;
+        codeInput.addEventListener('input',monitorCode) ;
+    }
+}
+function monitorCode(e){
+    if(this.value == code && ( parseInt(minuteElm.textContent)!=0 || parseInt(secondElm.textContent)!=0 )){
+        //this.classList.remove('error') ;
+        changeTab(info1NextTab.getAttribute('data-target')) ;
+    }
+    // else{
+    //     this.classList.add('error') ;
+    // }
+}
+function info2Validate(){
+    if(nameValidate() && stateValidate() && cityValidate()){
+        return true ;
+    }
+}
+function nameValidate(){
+    if(nameInput.value.length>0){
+        nameInput.classList.remove('error') ;
+        nameInput.removeEventListener('input',monitorName) ;
+        return true ;
     }
     else{
-        codeInput.classList.add('error') ;
-        errorText.classList.add('show') ;
+        nameInput.classList.add('error') ;
+        nameInput.addEventListener('input',monitorName) ;
     }
-});
-//.info.city validation 
+}
+function monitorName(e){
+    if(nameInput.value.length>0) nameInput.classList.remove('error') ;
+    else nameInput.classList.add('error') ;
+}
+function stateValidate(){
+    if(stateInput.value.length>0){
+        stateInput.classList.remove('error') ;
+        //stateInput.removeEventListener('input',monitorState) ;
+        return true ;
+    }
+    else{
+        stateInput.classList.add('error') ;
+        //stateInput.addEventListener('input',monitorState) ;
+    }
+}
+// function monitorState(e){
+//     if(stateInput.value.length>0) stateInput.classList.remove('error') ;
+//     else stateInput.classList.add('error') ;
+// }
+function cityValidate(){
+    if(cityInput.value.length>0){
+        cityInput.classList.remove('error') ;
+        //cityInput.removeEventListener('input',monitorCity) ;
+        return true ;
+    }
+    else{
+        cityInput.classList.add('error') ;
+        //cityInput.addEventListener('input',monitorCity) ;
+    }
+}
+// function monitorCity(e){
+//     if(cityInput.value.length>0) cityInput.classList.remove('error') ;
+//     else cityInput.classList.add('error') ;
+// }
+function changeTab(targetID){
+    let targetTab = infoWrapper.querySelector(`#${targetID}`) ;
+    tabs.forEach(tab => {
+        if(targetTab == tab) tab.classList.add('show') ;
+        else tab.classList.remove('show') ;
+    })
+}
+//selects
 function Select(elm){
     this.elm = elm ;
     this.input = this.elm.querySelector('input[type="text"]') ;
@@ -187,6 +288,7 @@ Select.prototype.handleEvent = function(e){
     else{
         let currLi = e.currentTarget ;
         this.input.value = currLi.textContent ;
+        this.input.classList.remove('error');
         this.ul.classList.remove('show') ;
         document.removeEventListener('click',this) ;
         this.lis.forEach(li => {
@@ -195,102 +297,44 @@ Select.prototype.handleEvent = function(e){
     }
 }
 let selects = [] ;
-infosWrapper.querySelectorAll('.info.city .select').forEach(select => {
+infoWrapper.querySelectorAll('.input_wrapper.select').forEach(select => {
     selects.push(new Select(select)) ;
 })
-let cityNextBtn = infosWrapper.querySelector('.info.city .nextTab') ;
-cityNextBtn.addEventListener('click',cityHandler) ;
-let cityError = infosWrapper.querySelector('.info.city > p.error') ;
-let city = infosWrapper.querySelector('.info.city input[type="text"]#city');
-let state = infosWrapper.querySelector('.info.city input[type="text"]#state');
-function cityHandler(e){
-    let cityEnter = false ;
-    let stateEnter = false ;
-    if(city.value) cityEnter = true ;
-    if(state.value) stateEnter = true ;
-    if(cityEnter && stateEnter) {
-        cityError.classList.remove('show') ;
-        let targetClass = this.getAttribute('data-target') ;
-        let target = infosWrapper.querySelector(`.info.${targetClass}`) ;
-        showTab(target) ;
-    }
-    else{
-        cityError.classList.add('show') ;
-    }
-}
-//.info.name validation 
-let nameInput = infosWrapper.querySelector('.info.name input[type="text"]#name') ;
-let discountCheckbox = infosWrapper.querySelector('.info.name input[type="checkbox"]#discount') ;
-let discountInput = infosWrapper.querySelector('.info.name input[type="text"]#discount_code') ;
-discountCheckbox.addEventListener('click',discountHandler) ;
-function discountHandler(e){
-    discountInput.classList.toggle('show') ;
-}
-//timer 
-let minute = null ;
-let second = null ;
-let minuteElm = infosWrapper.querySelector('.info.code .minute');
-let secondElm =infosWrapper.querySelector('.info.code .second') ;
-let clearTimer = null ;
-function initTimer(){
-    minute = 2 ;
-    second = 59 ;
-    if(second<10) secondElm.textContent = `0${second}` ;
-    else secondElm.textContent = `${second}` ;
-    minuteElm.textContent = `${minute}` ;
-    clearTimer = setInterval(()=>{
-        second-- ;
-        if(second<10) secondElm.textContent = `0${second}` ;
-        else secondElm.textContent = `${second}` ;
-        if(second == 0){
-            minute-- ;
-            second = 59 ;
-            if(minute == -1){
-                minuteElm.textContent = 0 ;
-                secondElm.textContent = `00` ;
-                clearInterval(clearTimer) ;
-            }
-        }
-    },1000) ;
-}
-//Timeline
-//----------------------------------------------------------
-//----------------------------------------------------------
-let timeline = wrapper.querySelector('#timeline') ;
-let circles = timeline.querySelectorAll('.circle') ;
-let line = timeline.querySelector('.line') ;
-let currStep = 0 ;
-function lineAnimation(dir){
-    let currWidth = parseFloat(line.style.width) ;
-    let offset = null ;
-    if(dir == 'forward') offset = currWidth + 16.66 ;
-    else if(dir == 'backward') offset = currWidth - 16.66 ;
-    line.style.width = `${offset}%` ;
-}
-function tickHandler(){
-    circles.forEach((circle,i) => {
-        //if(i<currStep) circle.classList.add('active') ;
-        //else circle.classList.remove('active') ;
-        if(i<=currStep) circle.classList.add('active') ;
-        else if(i>currStep) circle.classList.remove('active') ;
-        //if(i!=currStep) circle.classList.remove('active') ;
-        //else circle.classList.add('active');
-    })
-}
-//preven input[type="number"] to accept 'e' and 'E'
-let numbers = wrapper.querySelectorAll('input[type="number"]') ;
-fixInputNumber(numbers) ;
-function fixInputNumber(numbers){
-    numbers.forEach(number => {
-        number.addEventListener('keypress',justAcceptNumber) ;
-    })
-}
-function justAcceptNumber(e){
-    if(e.key =='e' || e.key=='E')e.preventDefault(); 
-}
-//resend code 
-let resend = infosWrapper.querySelector('.info.code .resend') ;
+//resend code
+let resend = infoWrapper.querySelector('#resend') ;
 resend.addEventListener('click',e=>{
     clearInterval(clearTimer) ;
     initTimer() ;
 })
+//discount checkbox 
+let discountCheckbox = infoWrapper.querySelector('input[type="checkbox"]#discount');
+let discountCode = infoWrapper.querySelector('input[type="text"]#discount_code') ;
+discountCheckbox.addEventListener('click',toggleDiscount) ;
+function toggleDiscount(e){
+    discountCode.classList.toggle('show') ;
+}
+//confirm 
+let confirmWrapper = requestFormWrapper.querySelector('.slide#confirm') ; 
+let rulesCheckbox = confirmWrapper.querySelector('input[type="checkbox"]') ;
+let confirmNextSlide = confirmWrapper.querySelector('button.nextSlide') ;
+let confirmError = confirmWrapper.querySelector('p.error') ;
+//timeline 
+let timeline = requestWrapper.querySelector('#timeline') ;
+let line = timeline.querySelector('.line') ;
+let fillLine = timeline.querySelector('.fill_line') ;
+let circles = timeline.querySelectorAll('.circle') ;
+let circleIndex = 0 ;
+function moveLine(dir){
+    let currWidth = parseFloat(fillLine.style.width) ;
+    let offset = 100/6 ;
+    if(dir == 'forward'){
+        fillLine.style.width = `${currWidth+offset}%` ;
+        circleIndex++ ;
+        circles[circleIndex].classList.add('active') ; 
+    }
+    else if(dir = 'backward'){
+        circles[circleIndex].classList.remove('active') ; 
+        circleIndex-- ;
+        fillLine.style.width = `${currWidth-offset}%` ;
+    }
+}

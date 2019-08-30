@@ -9,7 +9,7 @@ let offset = (sliderWidth - window.innerWidth > 0) ? (sliderWidth - window.inner
 let time = slidesNum*1500 ;
 if(offset > 0) animateSlider() ;
 function animateSlider(){
-    anime({
+    let animation = anime({
         targets: slider,
         duration: time ,
         delay: 0 ,
@@ -17,5 +17,11 @@ function animateSlider(){
         direction: 'alternate',
         right: -(offset + slide.getBoundingClientRect().width/2) ,
         easing: 'linear'
+    })
+    slider.addEventListener('mouseenter',e=>{
+        animation.pause() ;
+    })
+    slider.addEventListener('mouseleave',e=>{
+        animation.play() ;
     })
 }

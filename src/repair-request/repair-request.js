@@ -7,7 +7,7 @@ import '../index/styles/footer.scss' ;
 import '../index/styles/copyright.scss' ;
 //load scripts
 import '../index/scripts/landing' ;
-//import './scripts/repair' ;
+import './scripts/repair' ;
 import '../index/scripts/footer' ;
 //load videos 
 
