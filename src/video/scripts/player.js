@@ -1,6 +1,6 @@
-let wrapper = document.querySelector('main .wrapper') ;
+let playerWrapper = document.querySelector('main .wrapper') ;
 //play video
-let videoWrapper = wrapper.querySelector('#video') ;
+let videoWrapper = playerWrapper.querySelector('#video') ;
 let video = videoWrapper.querySelector('video') ;
 let content = videoWrapper.querySelector('.content') ;
 let filter = videoWrapper.querySelector('.filter') ;
@@ -12,7 +12,7 @@ function playVideo(e){
     video.play() ;
 }
 //show more 
-let descWrapper = wrapper.querySelector('.desc') ;
+let descWrapper = playerWrapper.querySelector('.desc') ;
 let showMoreBtn = descWrapper.querySelector('.show_more') ;
 let desc = descWrapper.querySelector('p') ;
 showMoreBtn.addEventListener('click',toggleDesc) ;

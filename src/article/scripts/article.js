@@ -1,3 +1,4 @@
+import util from '../../utilities/utilities' ;
 //tabs
 //--------------------------------------------
 //--------------------------------------------
@@ -24,8 +25,4 @@ function activateTab(e){
 //--------------------------------------------
 //--------------------------------------------
 let ellipses = document.querySelectorAll('.ellipse') ;
-ellipses.forEach(ellipse => {
-    let parent = ellipse.parentElement ;
-    let threshold = parseInt(window.getComputedStyle(parent,null).getPropertyValue('max-height'));
-    if(parent.scrollHeight > threshold) ellipse.style.display = 'block' ;
-})
+util.checkEllipse(ellipses) ;

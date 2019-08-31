@@ -1,4 +1,4 @@
-let getStyle = (elm,prop) => window.getComputedStyle(elm,null).getPropertyValue(prop) ;
+import util from '../../utilities/utilities' ;
 let requestWrapper = document.querySelector('#request') ;
 let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
 //move to next/prev slide 

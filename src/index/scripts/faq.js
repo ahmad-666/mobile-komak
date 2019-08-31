@@ -1,5 +1,5 @@
-let wrapper = document.querySelector('#faq') ;
-let questions = wrapper.querySelectorAll('.title') ;
+let faqWrapper = document.querySelector('#faq') ;
+let questions = faqWrapper.querySelectorAll('.title') ;
 questions.forEach(question => {
     question.addEventListener('click',toggleQuestion) ;
 })

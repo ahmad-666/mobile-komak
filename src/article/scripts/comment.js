@@ -1,9 +1,9 @@
-let wrapper = document.querySelector('#comments') ;
+let commentWrapper = document.querySelector('#comments') ;
 //Show #user_comment
 //-----------------------------------------------------------
 //-----------------------------------------------------------
-let addCommentBtn = wrapper.querySelector('.add_comment') ;
-let addComment = wrapper.querySelector('#user_comment') ;
+let addCommentBtn = commentWrapper.querySelector('.add_comment') ;
+let addComment = commentWrapper.querySelector('#user_comment') ;
 let addCommentHeight = addComment.clientHeight ;
 addComment.classList.add('hide') ;
 addCommentBtn.addEventListener('click',toggleAddComment) ;
@@ -16,7 +16,7 @@ function toggleAddComment(e){
 //likes
 //----------------------------------------------------------
 //----------------------------------------------------------
-let likes = wrapper.querySelectorAll('.comment .content .likes i.fa-heart') ;
+let likes = commentWrapper.querySelectorAll('.comment .content .likes i.fa-heart') ;
 likes.forEach(like => {
     like.addEventListener('click',toggleLike) ;
 })
@@ -31,18 +31,18 @@ function toggleLike(e){
 //reply
 //----------------------------------------------------------
 //----------------------------------------------------------
-let replySample = wrapper.querySelector('.comment > .reply');
+let replySample = commentWrapper.querySelector('.comment > .reply');
 let replyHeight = replySample.clientHeight ;
-wrapper.querySelectorAll('.comment .reply').forEach(reply => {
+commentWrapper.querySelectorAll('.comment .reply').forEach(reply => {
     reply.classList.add('hide') ;
 })
-let replyTriggers = wrapper.querySelectorAll('.comment .content .likes_reply .reply') ;
+let replyTriggers = commentWrapper.querySelectorAll('.comment .content .likes_reply .reply') ;
 replyTriggers.forEach(replyTrigger => {
     replyTrigger.addEventListener('click',toggleReply) ;
 })
 function toggleReply(e){
     let targetID = `#${this.getAttribute('data-target')}` ;
-    let target = wrapper.querySelector(targetID) ;
+    let target = commentWrapper.querySelector(targetID) ;
     target.classList.add('addTransition') ;
     target.classList.toggle('show') ;
     if(target.classList.contains('show')) target.style.height = `${replyHeight}px` ;
@@ -140,6 +140,6 @@ ReplyForm.prototype.handleEvent = function(e){
     if(!this.replyText.validity.valueMissing) this.replyText.classList.remove('error') ;
     else this.replyText.classList.add('error') ;
 }
-wrapper.querySelectorAll('.comment > form').forEach(reply => {
+commentWrapper.querySelectorAll('.comment > form').forEach(reply => {
     new ReplyForm(reply) ;
 })
