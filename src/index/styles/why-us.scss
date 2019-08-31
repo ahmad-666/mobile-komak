@@ -2,11 +2,12 @@
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 #why_us{
-    width: 90vw; 
+    width: 100%; 
     height: auto;
     margin: $sectionsDist auto ;
     display: flex ;
     @include flex(column,flex-start,space-around,nowrap,"") ;
+    background-color: darken($paleColor,1%) ;
     .title,.items,video{
         margin: $dist1 0 ;
     }

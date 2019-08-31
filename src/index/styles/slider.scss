@@ -30,7 +30,7 @@
         i{
             @include center-xy;
             font-size: $font-xxl ;
-            color: white ;
+            color: #2d2d31 ;
         }
     }
     button.prev{
@@ -38,6 +38,15 @@
     }
     button.next{
         left: .5em;
+    }
+    .show-all{
+        font-size: $font-l ;
+        color: $greyColor2 ;
+        @include center-x ;
+        i{
+            font-size: $font-l ;
+            transform: translate(-30%,10%) ;
+        }
     }
     .slider{
         width: 100% ;
@@ -137,7 +146,7 @@
                     height: 3em;
                     text-align: center ;
                     line-height: 3em ;
-                    color: white ;
+                    color: #2d2d31 ;
                     background-color: $primaryColor ;
                     border-radius: 2em ;
                     font-size: $font-l - .1em ;
@@ -180,15 +189,22 @@
 
             }
         }
-        .show-all{
-            font-size: $font-l ;
-            color: $greyColor2 ;
-            @include center-x ;
-            top: 110% ;
-            i{
-                font-size: $font-l ;
-                transform: translate(-30%,10%) ;
-            }
-        }
+    }
+}
+.slider-wrapper#latest_articles{
+    background-color: darken($paleColor,1%) ;
+    .show-all{
+        top: 90% ;
+    }
+}
+.slider-wrapper#repair_articles,.slider-wrapper#similars{
+    .show-all{
+        top: 90% ;
+    }
+}
+.slider-wrapper#vids_articles{
+    background-color: darken($paleColor,1%) ;
+    .show-all{
+        top: 90% ;
     }
 }

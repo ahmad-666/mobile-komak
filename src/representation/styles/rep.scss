@@ -1,9 +1,9 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
-body{
-    background-color: darken($whiteColor1,5%) ;
-}
+// body{
+//     background-color: darken($whiteColor1,5%) ;
+// }
 section{
     width: 80% ;
     height: auto;
@@ -81,7 +81,7 @@ section{
 }
 section#summery{margin-top: $sectionsDist * 1.5 ;}
 section#specialty{margin-top: $dist2 ;}
-form#request{
+form#rep_request{
     width: 80% ;
     height: auto;
     border: 2px solid lighten($greyColor2,20%) ;

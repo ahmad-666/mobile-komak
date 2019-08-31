@@ -1,9 +1,9 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-body{
-    background-color: darken($whiteColor1,5%) ;
-}
+// body{
+//     background-color: darken($whiteColor1,5%) ;
+// }
 main{
     width: 90vw ;
     height: auto;
@@ -209,7 +209,7 @@ main{
                 height: auto;
                 padding-right: 5% ;
             }
-            #tabs{
+            #tabs_popular{
                 width: 90% ;
                 height: auto;
                 margin-top: $dist2 ;            

@@ -2,9 +2,11 @@
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
 #progress{
-    width: 90vw ;
+    width: 100vw ;
     height: auto;
     margin: $sectionsDist auto ;
+    background-color: darken($paleColor,1%) ;
+
     display: flex ; 
     @include flex(column,flex-start,center,nowrap,"") ;
     h4,.stages{margin: $dist1 auto ;}
@@ -14,7 +16,7 @@
         font-weight: 700 ;
     }
     .stages{
-        width: 100% ;
+        width: 90% ;
         height: 15em;
         position: relative ;
         display: flex ;

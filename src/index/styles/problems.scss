@@ -33,13 +33,17 @@
         height: auto;
         @include bg('../../assets/imgs/problem.jpg',center center,no-repeat,cover) ;
         position: relative ;
+        padding: $dist1 ;
+        display: flex ;
+        @include flex(row,space-around,center,nowrap,"") ;
         &::before{
             content: '' ;
             @include fullSize-abs ;
             background-color: $blackFilter;
         }
         ul{
-            width: 50% ;
+            flex-shrink: 0 ;
+            width: 24em ;
             height: 100%;
             position: relative ;
             z-index: 2 ;
@@ -49,10 +53,10 @@
             li{
                 width: auto ;
                 height: auto;
-                margin: $dist2 ;
+                margin: $dist1 ;
                 cursor: pointer;          
                 a{
-                    width: 12em ;
+                    width: 10em ;
                     display: flex ;
                     @include flex(row,flex-start,center,nowrap,"") ;
                     p,i{
@@ -75,7 +79,7 @@
                         }            
                     }
                     p{
-                        font-size: $font-l ;
+                        font-size: $font-m ;
                         color: $paleColor ;
                     }
                     &:hover{
@@ -89,6 +93,16 @@
                     }
                 }          
             }
+        }
+        .text{
+            width: 100% ;
+            height: auto;
+            background-color: $whiteColor2 ;
+            padding: $dist1 ;
+            color: $darkColor ;
+            font-size: $font-m ;
+            line-height: $dist3 ;
+            z-index: 1;
         }
     }
 }

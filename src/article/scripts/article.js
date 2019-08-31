@@ -2,7 +2,7 @@
 //--------------------------------------------
 //--------------------------------------------
 //--------------------------------------------
-let tabsWrapper = document.querySelector('main aside #tabs') ;
+let tabsWrapper = document.querySelector('main aside #tabs_popular') ;
 let tabsTriggers = tabsWrapper.querySelectorAll('li') ;
 let tabs = tabsWrapper.querySelectorAll('#tabs_content > div') ;
 tabsTriggers.forEach(tabTrigger => {

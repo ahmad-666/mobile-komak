@@ -1,9 +1,6 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-body{
-    background-color: darken($whiteColor1,5%) ;
-}
 #rules{
     width: 80vw ;
     height: auto;

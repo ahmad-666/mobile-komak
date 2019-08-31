@@ -2,9 +2,11 @@
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
 #newsletters{
-    width: 75% ;
+    width: 100% ;
     height: auto;
     margin: $sectionsDist auto ;
+    background-color: darken($paleColor,1%) ;
+
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
     p,.input-wrapper{margin-top: $dist2 ;}
@@ -18,7 +20,7 @@
         color: $greyColor2 ;
     }
     .input-wrapper{
-        width: 50% ;
+        width: 40% ;
         height: 3em;
         position: relative ;
         box-shadow: 0 0 .5em .03em $shadowColor ;
