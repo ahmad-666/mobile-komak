@@ -600,7 +600,7 @@ main aside #popular #tabs_popular ul li::before {
   position: absolute;
   right: 0;
   top: 100%;
-  background-color: #81e6fc;
+  background-color: #4a4982;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all .3s ease-in-out;
@@ -609,7 +609,7 @@ main aside #popular #tabs_popular ul li::before {
 }
 
 main aside #popular #tabs_popular ul li.active {
-  color: #81e6fc;
+  color: #4a4982;
   font-weight: 700;
 }
 

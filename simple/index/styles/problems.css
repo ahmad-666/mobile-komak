@@ -234,7 +234,7 @@
       -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
   font-size: 1.6em;
-  color: #c7f4fe;
+  color: #6968aa;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -246,9 +246,9 @@
 }
 
 #problems .content ul li a:hover i {
-  background-color: #81e6fc;
-  -webkit-box-shadow: 0 0 1.5em 0.2em #81e6fc;
-          box-shadow: 0 0 1.5em 0.2em #81e6fc;
+  background-color: #4a4982;
+  -webkit-box-shadow: 0 0 1.5em 0.2em #4a4982;
+          box-shadow: 0 0 1.5em 0.2em #4a4982;
 }
 
 #problems .content ul li a:hover i::before {

@@ -132,7 +132,7 @@
 }
 
 #tabs ul li:hover i, #tabs ul li:hover h6 {
-  color: #81e6fc;
+  color: #4a4982;
   -webkit-transform: scale(1.2);
      -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -144,7 +144,7 @@
 }
 
 #tabs ul li.active i, #tabs ul li.active h6 {
-  color: #81e6fc;
+  color: #4a4982;
   -webkit-transform: scale(1.2);
      -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -160,7 +160,7 @@
   position: absolute;
   top: 100%;
   right: 0%;
-  background-color: #81e6fc;
+  background-color: #4a4982;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -168,7 +168,7 @@
 
 #tabs .tabs_content {
   width: 90%;
-  height: 28em;
+  height: 38em;
   position: relative;
 }
 

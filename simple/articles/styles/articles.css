@@ -104,7 +104,7 @@
   font-size: 1.8em;
   text-align: center;
   line-height: 1.5em;
-  color: #81e6fc;
+  color: #4a4982;
   background-color: #fbfbfb;
   position: absolute;
   right: 50%;
@@ -151,14 +151,14 @@
   -webkit-align-content: "";
       -ms-flex-line-pack: "";
           align-content: "";
-  background-color: #b3f0fd;
+  background-color: #5d5ba3;
 }
 
 .tabs_content > div .article .bottom p {
   width: 100%;
   text-align: center;
   font-size: 0.8em;
-  color: #2d2d31;
+  color: #fbfbfb;
 }
 
 .tabs_content > div .article .bottom p:nth-child(1) {
@@ -184,7 +184,7 @@
 
 .tabs_content > div .article:hover .top i {
   color: #fbfbfb;
-  background-color: #81e6fc;
+  background-color: #4a4982;
 }
 
 .tabs_content > div .article:nth-child(1) .top {

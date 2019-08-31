@@ -1,3 +1,4 @@
+//import util from '../../utilities/utilities' ;
 let tabsWrapper = document.querySelector('#tabs') ;
 let line = tabsWrapper.querySelector('.line') ;
 let tabs = tabsWrapper.querySelectorAll('ul li') ;

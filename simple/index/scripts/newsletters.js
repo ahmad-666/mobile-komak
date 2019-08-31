@@ -1,9 +1,9 @@
-let form = document.forms['newsletters'] ;
-let email = form['email'] ;
-form.addEventListener('submit',checkValidation) ;
+let rssForm = document.forms['newsletters'] ;
+let email = rssForm['email'] ;
+rssForm.addEventListener('submit',checkValidation) ;
 function checkValidation(e){
     e.preventDefault();
-    if(emailValidate()) form.submit() ;
+    if(emailValidate()) rssForm.submit() ;
 }
 function emailValidate(){
     if(email.checkValidity()) {

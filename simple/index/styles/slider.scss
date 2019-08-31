@@ -30,7 +30,8 @@
         i{
             @include center-xy;
             font-size: $font-xxl ;
-            color: #2d2d31 ;
+            color: $whiteColor2 ;
+            // color: #2d2d31 ;
         }
     }
     button.prev{
@@ -146,7 +147,8 @@
                     height: 3em;
                     text-align: center ;
                     line-height: 3em ;
-                    color: #2d2d31 ;
+                    color: $whiteColor2 ;
+                    // color: #2d2d31 ;
                     background-color: $primaryColor ;
                     border-radius: 2em ;
                     font-size: $font-l - .1em ;

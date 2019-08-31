@@ -405,7 +405,7 @@
 }
 
 #request form#request_info .slide ul.desc li i {
-  color: #81e6fc;
+  color: #4a4982;
   font-size: 1em;
   -webkit-transform: translate(50%, 15%);
      -moz-transform: translate(50%, 15%);
@@ -1265,7 +1265,7 @@
 
 #request form#request_info .slide#confirm #summery #details ul li i, #request form#request_info .slide#confirm #summery #contact ul li i {
   font-size: 1em;
-  color: #81e6fc;
+  color: #4a4982;
   -webkit-transform: translate(50%, 15%);
      -moz-transform: translate(50%, 15%);
       -ms-transform: translate(50%, 15%);
@@ -1274,7 +1274,7 @@
 
 #request form#request_info .slide#confirm #summery #details ul li .title, #request form#request_info .slide#confirm #summery #contact ul li .title {
   font-size: 0.8em;
-  color: #81e6fc;
+  color: #4a4982;
   font-weight: 700;
 }
 

@@ -52,7 +52,7 @@
   position: absolute;
   top: 45%;
   cursor: pointer;
-  background-color: #81e6fc;
+  background-color: #4a4982;
   z-index: 5;
 }
 
@@ -65,7 +65,7 @@
       -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
   font-size: 2em;
-  color: #2d2d31;
+  color: #fbfbfb;
 }
 
 .slider-wrapper button.prev {
@@ -293,8 +293,8 @@
   height: 3em;
   text-align: center;
   line-height: 3em;
-  color: #2d2d31;
-  background-color: #81e6fc;
+  color: #fbfbfb;
+  background-color: #4a4982;
   border-radius: 2em;
   font-size: 0.9em;
   -webkit-transition: all .3s ease-in-out;
