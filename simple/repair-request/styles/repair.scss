@@ -30,7 +30,7 @@
         }
         .fill_line{
             width: 0% ;
-            transition: all .5s ease-in-out ;
+            transition: all .8s ease-in-out ;
             background-color: $greenColor2 ;
         }
         .circle{
@@ -43,13 +43,13 @@
             line-height: 4.5em ;
             border: .2em solid lighten($greyColor2,30%) ; ;
             background-color: white ;
-            transition: all .5s ease-in-out ;
+            transition: all .5s ease-in-out .3s ;
             i{
                 opacity: 0 ;
                 visibility: hidden ;
                 font-size: $font-xxl ;
                 color: $whiteColor2 ;
-                transition: all .3s ease-in-out ;
+                transition: all .5s ease-in-out .3s ;
             }
             p{
                 width: 200% ;
@@ -58,7 +58,7 @@
                 color: $greyColor2 ;
                 @include center-x ;
                 bottom: 100% ;
-                transition: all .3s ease-in-out ;
+                transition: all .5s ease-in-out .3s ;
                 line-height: 2em ;
             }
         }
@@ -83,7 +83,7 @@
         margin-top: $dist2 ;
         position: relative ;
         right: 0 ;
-        transition: all .5s ease-in-out ;
+        transition: all .8s ease-in-out ;
         .slide{
             flex-shrink: 0 ;
             width: 100% ;
@@ -129,14 +129,17 @@
                     }
                     i{
                         @include center-x ;
-                        bottom: $dist1 ;
-                        width: 3em ;
-                        height: 3em;
+                        bottom: 10px ;
+                        width: 1.7em ;
+                        height: 1.7em;
                         border-radius: 50% ;
                         background-color: $greenColor2 ;
                         opacity: 0;
                         visibility: hidden ;
                         transition: all .3s ease-in-out ;
+                        text-align: center ;
+                        line-height: 1.7em ;
+                        font-size: $font-special;
                         &::before{
                             font-size: $font-l ;
                             color: $whiteColor2 ;
@@ -302,7 +305,6 @@
                             padding: $dist1 ;
                             border-radius: $dist3 ;
                             border: 1px solid $darkColor ;
-                            transition: all .2s ease-in-out ;
                             &::placeholder{
                                 font-size: $font-m ;
                                 color: $greyColor2 ;
@@ -350,6 +352,17 @@
                             opacity: 1;
                         }
                     }
+                    .input_wrapper.code_wrapper{
+                        height: auto;
+                        visibility: visible ;
+                        opacity: 1;
+                    }
+                    .input_wrapper.code_wrapper.hide{
+                        visibility: hidden ;
+                        opacity: 0;
+                        height: 0;
+                    }
+                    .input_wrapper.code_wrapper.addTransition{transition: all .3s ease-in-out;}
                     .input_wrapper.select{
                         width: auto ;
                         height: auto;
@@ -402,10 +415,10 @@
                     .discount{
                         width: auto ;
                         height: auto;
-                        margin-top: $dist2 ;
+                        margin-top: $dist1 ;
                         display: flex ;
                         @include flex(row,flex-start,center,nowrap,"") ;
-                        .input-wrapper{
+                        .input_wrapper{
                             width: auto ;
                             height: 2em;
                             display: flex ;
@@ -455,10 +468,17 @@
                                 color: $darkColor ;
                                 padding: $dist1 ;
                                 border: 1px solid $darkColor ;
+                                opacity: 0;
+                                visibility: hidden ;
+                                transition: all .3s ease-in-out ;
                                 &::placeholder{
                                     font-size: $font-m ;
                                     color: $greyColor2 ;
                                 }
+                            }
+                            input#discount_code.show{
+                                opacity: 1;
+                                visibility: visible ;
                             }
                         }
                     }

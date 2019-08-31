@@ -1,7 +1,8 @@
 #newsletters {
-  width: 75%;
+  width: 100%;
   height: auto;
   margin: 4em auto;
+  background-color: #f1f0f5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -48,7 +49,7 @@
 }
 
 #newsletters .input-wrapper {
-  width: 50%;
+  width: 40%;
   height: 3em;
   position: relative;
   -webkit-box-shadow: 0 0 0.5em 0.03em rgba(70, 69, 85, 0.3);

@@ -1,3 +1,5 @@
+//import anime from 'animejs' ;
+//import colors from '../../colors.scss' ;
 let wrapper = document.querySelector('#progress') ;
 let fillLine = wrapper.querySelector('.fill') ;
 let icons = wrapper.querySelectorAll('.stage > i') ;

@@ -1,8 +1,8 @@
-let wrapper = document.querySelector('#tabs') ;
-let line = wrapper.querySelector('.line') ;
-let tabs = wrapper.querySelectorAll('ul li') ;
+let tabsWrapper = document.querySelector('#tabs') ;
+let line = tabsWrapper.querySelector('.line') ;
+let tabs = tabsWrapper.querySelectorAll('ul li') ;
 let lastLi = tabs[tabs.length-1] ;
-let tabsContents = wrapper.querySelectorAll('.tabs_content > div') ;
+let tabsContents = tabsWrapper.querySelectorAll('.tabs_content > div') ;
 tabs.forEach(tab => {
     tab.addEventListener('click',activateTab) ;
 });
@@ -15,9 +15,6 @@ function getChildIndex(child){
         if(c==child)  index = i ;
     })
     return index ;
-}
-function getStyle(el,prop){
-    return window.getComputedStyle(el,null).getPropertyValue(prop) ;
 }
 function activateTab(e){
     //activate tab

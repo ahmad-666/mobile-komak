@@ -60,7 +60,7 @@ Select.prototype.handleEvent = function(e){
     }
 }
 let selects = [] ;
-let form = document.querySelector('form#request') ;
+let form = document.querySelector('form#rep_request') ;
 form.querySelectorAll('.inputs .select').forEach(select => {
     selects.push(new Select(select)) ;
 })

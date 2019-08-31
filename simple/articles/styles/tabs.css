@@ -1,8 +1,9 @@
 @charset "UTF-8";
 #tabs {
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 4em auto;
+  background-color: #f1f0f5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -20,17 +21,18 @@
      -moz-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-     -moz-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
   -webkit-align-content: "";
       -ms-flex-line-pack: "";
           align-content: "";
+  padding-bottom: 1em;
 }
 
 #tabs ul, #tabs .tabs_contentو, #tabs h4 {
@@ -46,7 +48,7 @@
 }
 
 #tabs ul {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -130,7 +132,7 @@
 }
 
 #tabs ul li:hover i, #tabs ul li:hover h6 {
-  color: #4a4982;
+  color: #81e6fc;
   -webkit-transform: scale(1.2);
      -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -142,7 +144,7 @@
 }
 
 #tabs ul li.active i, #tabs ul li.active h6 {
-  color: #4a4982;
+  color: #81e6fc;
   -webkit-transform: scale(1.2);
      -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -158,15 +160,15 @@
   position: absolute;
   top: 100%;
   right: 0%;
-  background-color: #4a4982;
+  background-color: #81e6fc;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
 #tabs .tabs_content {
-  width: 100%;
-  height: 36em;
+  width: 90%;
+  height: 28em;
   position: relative;
 }
 
@@ -181,6 +183,26 @@
   -webkit-transition: all .6s ease-in-out;
   -moz-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
+}
+
+#tabs .tabs_content > div .show-all {
+  font-size: 1em;
+  color: #86878e;
+  position: absolute;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+     -moz-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  top: 95%;
+}
+
+#tabs .tabs_content > div .show-all i {
+  font-size: 1em;
+  -webkit-transform: translate(-30%, 10%);
+     -moz-transform: translate(-30%, 10%);
+      -ms-transform: translate(-30%, 10%);
+          transform: translate(-30%, 10%);
 }
 
 #tabs .tabs_content > div.active {

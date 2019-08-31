@@ -1,9 +1,8 @@
 //import anime from 'animejs' ;
-let getStyle1= (el,prop) => window.getComputedStyle(el,null).getPropertyValue(prop) ;
 function Slider(slider){
     this.slider = slider ;
     this.slide = this.slider.querySelector('.slide') ;
-    this.offset = parseInt(getStyle1(this.slide,'width')) + parseInt(getStyle1(this.slide,'margin-right')) + parseInt(getStyle1(this.slide,'margin-left')) ;
+    this.offset = parseInt(getStyle(this.slide,'width')) + parseInt(getStyle(this.slide,'margin-right')) + parseInt(getStyle(this.slide,'margin-left')) ;
     this.movement = 0 ;
     this.slidesNum = this.slider.querySelectorAll('.slide').length ;
     this.slidesInViewport = Math.floor(window.innerWidth / this.offset) ;

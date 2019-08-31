@@ -1,6 +1,6 @@
 //ellipse 
-let ellipses1 = document.querySelectorAll('.ellipse') ;
-ellipses1.forEach(ellipse => {
+let ellipses = document.querySelectorAll('.ellipse') ;
+ellipses.forEach(ellipse => {
     checkEllipse(ellipse) ;
 })
 function checkEllipse(elm){

@@ -1,5 +1,5 @@
 #why_us {
-  width: 90vw;
+  width: 100%;
   height: auto;
   margin: 4em auto;
   display: -webkit-box;
@@ -30,6 +30,7 @@
   -webkit-align-content: "";
       -ms-flex-line-pack: "";
           align-content: "";
+  background-color: #f1f0f5;
 }
 
 #why_us .title, #why_us .items, #why_us video {

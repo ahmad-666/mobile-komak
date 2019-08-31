@@ -2,7 +2,7 @@
 //--------------------------------------------
 //--------------------------------------------
 //--------------------------------------------
-let tabsWrapper = document.querySelector('main aside #tabs') ;
+let tabsWrapper = document.querySelector('main aside #tabs_popular') ;
 let tabsTriggers = tabsWrapper.querySelectorAll('li') ;
 let tabs = tabsWrapper.querySelectorAll('#tabs_content > div') ;
 tabsTriggers.forEach(tabTrigger => {
@@ -23,9 +23,3 @@ function activateTab(e){
 //--------------------------------------------
 //--------------------------------------------
 //--------------------------------------------
-let ellipses = document.querySelectorAll('.ellipse') ;
-ellipses.forEach(ellipse => {
-    let parent = ellipse.parentElement ;
-    let threshold = parseInt(window.getComputedStyle(parent,null).getPropertyValue('max-height'));
-    if(parent.scrollHeight > threshold) ellipse.style.display = 'block' ;
-})

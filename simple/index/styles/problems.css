@@ -90,6 +90,33 @@
   background: url("../../assets/imgs/problem.jpg") center center no-repeat;
   background-size: cover;
   position: relative;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
 }
 
 #problems .content::before {
@@ -103,7 +130,10 @@
 }
 
 #problems .content ul {
-  width: 50%;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 24em;
   height: 100%;
   position: relative;
   z-index: 2;
@@ -141,12 +171,12 @@
 #problems .content ul li {
   width: auto;
   height: auto;
-  margin: 1em;
+  margin: 0.5em;
   cursor: pointer;
 }
 
 #problems .content ul li a {
-  width: 12em;
+  width: 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -204,24 +234,35 @@
       -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
   font-size: 1.6em;
-  color: #6968aa;
+  color: #c7f4fe;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
 #problems .content ul li a p {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #f4f3f7;
 }
 
 #problems .content ul li a:hover i {
-  background-color: #4a4982;
-  -webkit-box-shadow: 0 0 1.5em 0.2em #4a4982;
-          box-shadow: 0 0 1.5em 0.2em #4a4982;
+  background-color: #81e6fc;
+  -webkit-box-shadow: 0 0 1.5em 0.2em #81e6fc;
+          box-shadow: 0 0 1.5em 0.2em #81e6fc;
 }
 
 #problems .content ul li a:hover i::before {
   color: #f4f3f7;
+}
+
+#problems .content .text {
+  width: 100%;
+  height: auto;
+  background-color: #fbfbfb;
+  padding: 0.5em;
+  color: #2d2d31;
+  font-size: 0.8em;
+  line-height: 2em;
+  z-index: 1;
 }
 /*# sourceMappingURL=problems.css.map */

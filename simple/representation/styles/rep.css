@@ -1,7 +1,3 @@
-body {
-  background-color: #ebebeb;
-}
-
 section {
   width: 80%;
   height: auto;
@@ -207,7 +203,7 @@ section#specialty {
   margin-top: 1em;
 }
 
-form#request {
+form#rep_request {
   width: 80%;
   height: auto;
   border: 2px solid #bbbbbf;
@@ -246,35 +242,35 @@ form#request {
   padding: 0.5em 0 1em 0;
 }
 
-form#request h4, form#request p.desc, form#request .inputs, form#request button[type="submit"] {
+form#rep_request h4, form#rep_request p.desc, form#rep_request .inputs, form#rep_request button[type="submit"] {
   margin: 0.5em auto;
 }
 
-form#request h4 {
+form#rep_request h4 {
   font-size: 1em;
   color: #2d2d31;
   font-weight: 700;
 }
 
-form#request p.desc {
+form#rep_request p.desc {
   width: 75%;
   font-size: 0.8em;
   color: #86878e;
   text-align: center;
 }
 
-form#request button[type="submit"] {
+form#rep_request button[type="submit"] {
   width: auto;
   height: auto;
   padding: 0.5em 2.3em;
   color: #fbfbfb;
-  background-color: #4a4982;
+  background-color: #81e6fc;
   font-size: 1em;
   cursor: pointer;
   border-radius: 2em;
 }
 
-form#request .inputs {
+form#rep_request .inputs {
   width: 75%;
   height: auto;
   display: -webkit-box;
@@ -308,25 +304,25 @@ form#request .inputs {
   padding: 0 1em;
 }
 
-form#request .inputs input#name, form#request .inputs input#tel, form#request .inputs .input-wrapper, form#request .inputs input#address {
+form#rep_request .inputs input#name, form#rep_request .inputs input#tel, form#rep_request .inputs .input-wrapper, form#rep_request .inputs input#address {
   width: 40%;
   height: 3em;
   margin: 1em 5%;
 }
 
-form#request .inputs .input-wrapper {
+form#rep_request .inputs .input-wrapper {
   width: 40%;
   height: 2.5em;
   margin: 1em 5%;
 }
 
-form#request .inputs input#address {
+form#rep_request .inputs input#address {
   width: 40%;
   height: 3em;
   margin: 1em 5%;
 }
 
-form#request .inputs input {
+form#rep_request .inputs input {
   font-size: 0.8em;
   color: #2d2d31;
   padding: 0.5em;
@@ -336,59 +332,60 @@ form#request .inputs input {
   transition: border-width 0s ease-in-out , border-color .3s ease-in-out;
 }
 
-form#request .inputs input::-webkit-input-placeholder {
+form#rep_request .inputs input::-webkit-input-placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input:-moz-placeholder {
+form#rep_request .inputs input:-moz-placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input::-moz-placeholder {
+form#rep_request .inputs input::-moz-placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input:-ms-input-placeholder {
+form#rep_request .inputs input:-ms-input-placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input::-ms-input-placeholder {
+form#rep_request .inputs input::-ms-input-placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input::placeholder {
+form#rep_request .inputs input::placeholder {
   font-size: 0.8em;
   color: #86878e;
 }
 
-form#request .inputs input:focus {
-  border: 2px solid #4a4982;
+form#rep_request .inputs input:focus {
+  border: 2px solid #81e6fc;
 }
 
-form#request .inputs input.error {
+form#rep_request .inputs input.error {
   border: 2px solid #e74a4a;
 }
 
-form#request .inputs input#name, form#request .inputs input#tel, form#request .inputs input#address {
+form#rep_request .inputs input#name, form#rep_request .inputs input#tel, form#rep_request .inputs input#address {
   border-radius: 2em;
 }
 
-form#request .inputs .input-wrapper {
+form#rep_request .inputs .input-wrapper {
   position: relative;
 }
 
-form#request .inputs .input-wrapper input {
+form#rep_request .inputs .input-wrapper input {
   width: 100%;
   height: 100%;
   cursor: pointer;
+  border-radius: 2em;
 }
 
-form#request .inputs .input-wrapper i {
+form#rep_request .inputs .input-wrapper i {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -401,7 +398,8 @@ form#request .inputs .input-wrapper i {
   cursor: pointer;
 }
 
-form#request .inputs .input-wrapper ul {
+form#rep_request .inputs .input-wrapper ul {
+  border-radius: 2em;
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -446,7 +444,7 @@ form#request .inputs .input-wrapper ul {
   z-index: 3;
 }
 
-form#request .inputs .input-wrapper ul li {
+form#rep_request .inputs .input-wrapper ul li {
   width: 100%;
   height: 2.5em;
   color: #2d2d31;
@@ -454,17 +452,27 @@ form#request .inputs .input-wrapper ul li {
   background-color: #fbfbfb;
   font-size: 0.8em;
   line-height: 2.5em;
-  padding: 0 0.5em;
+  padding: 0 1em;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-form#request .inputs .input-wrapper ul li:hover {
+form#rep_request .inputs .input-wrapper ul li:first-child {
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+}
+
+form#rep_request .inputs .input-wrapper ul li:last-child {
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+form#rep_request .inputs .input-wrapper ul li:hover {
   background-color: #e2e2e2;
 }
 
-form#request .inputs .input-wrapper ul.show {
+form#rep_request .inputs .input-wrapper ul.show {
   opacity: 1;
   visibility: visible;
 }

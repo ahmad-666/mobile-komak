@@ -206,9 +206,20 @@
 #grid .row .article {
   position: relative;
   background-position: center center;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#grid .row .article:hover {
+  background-size: 125% 125%;
+}
+
+#grid .row .article:hover::before {
+  background-color: rgba(30, 30, 30, 0.3);
 }
 
 #grid .row .article::before {

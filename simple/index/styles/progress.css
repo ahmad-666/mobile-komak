@@ -1,7 +1,8 @@
 #progress {
-  width: 90vw;
+  width: 100vw;
   height: auto;
   margin: 4em auto;
+  background-color: #f1f0f5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -43,7 +44,7 @@
 }
 
 #progress .stages {
-  width: 100%;
+  width: 90%;
   height: 15em;
   position: relative;
   display: -webkit-box;

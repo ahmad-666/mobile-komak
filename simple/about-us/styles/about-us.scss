@@ -1,13 +1,10 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-body{
-    background-color: darken($whiteColor1,5%) ;
-}
 #about_us{
     width: 80vw ;
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: $sectionsDist  auto ;
     padding: $dist2 ;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;

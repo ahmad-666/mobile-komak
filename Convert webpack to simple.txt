@@ -1,0 +1,48 @@
+covert webpack proj to simple project :
+	-first of all inside webpack we should use 'id' for main containers and style all elements relative to that id and also 
+		for js we should get that id as wrapper.
+	-inside webpack entry points :
+		for all files we should use '../' like :
+			before : import './style/some.scss' ;
+			after : import '../index/styles/some.scss' ;
+			-now for make it simple we use convert '../ to './'
+	-in server side all .css files will load all together so there should be no conflict and if we use top id there will be no 
+		conflict.
+	-create folder named 'simple' 
+	-copy entire src folder to it.
+	-cut/paste all .html files inside ./simple/<root> (all .html files near each other)
+	-remove all :exports from .scss files(variables.scss,colors.scss)
+	-compile all .scss files(compiled css should go exactly beside relative .scss file so now there is no need 
+		for changing addresses that we set via scss)
+	-create folder names 'external' and put external libraries inside it --> ./simple/external/anime.min.js
+		we can just copy external libraries files(.css,.js) from node_modules and if that does not work we can try CDN.
+	-now we should have :
+		./simple/assets/...
+		./simple/external/...
+		./simple/colors.scss 
+		./simple/colors.css 
+		./simple/mixins.scss 
+		./simple/mixins.css 
+		...
+		./simple/index.html 
+		./simple/other.html 
+		./simple/index/index.js 
+		./simple/index/styles/...
+		./simple/index/scripts/...
+	-open all .html files and change all addresses from '../assets/...' to './assets/...'
+		(there is no need to change link addresses)
+	-if we export scss colors or set file's path via js now we should set them manually inside js and we should remove 
+		those imports
+	-now we should open all entry points and base on them add <link rel="stylesheet" href="..."> or <script src="...">
+		-we should not import js libraries inside .js file like when we use webpack and we should remove them and 
+		and just add simple <srript src="..."> inside .html files(same for .css files too)
+	-here maybe we get dupicated error for .js files and we should remove any duplication
+		after we solve all js conflicts we should update webpack version so now webpack has no confliction too.
+	-we can easily use previouly set git and there is no need for changing anything
+	-for changing proj :	
+		-each time first we update webpack version then update simple version.
+		  -copy new assets folder 
+		  -update html but not <link> , <scripts> parts.
+		  -copy all new css files 
+		  -copy all new js files
+	-we should know that at the end online version of site should use webpack version.
