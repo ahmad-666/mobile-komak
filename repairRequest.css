@@ -4730,7 +4730,7 @@ nav.fix-style {
       -webkit-transition: all .8s ease-in-out;
       -moz-transition: all .8s ease-in-out;
       transition: all .8s ease-in-out;
-      background-color: #1EC198; }
+      background-color: #06ccf8; }
     #request #timeline .circle {
       width: 4em;
       height: 4em;
@@ -4770,10 +4770,10 @@ nav.fix-style {
         transition: all .5s ease-in-out .3s;
         line-height: 2em; }
     #request #timeline .circle.active {
-      background-color: #1EC198;
+      background-color: #06ccf8;
       border: .2em solid transparent; }
       #request #timeline .circle.active p {
-        color: #1EC198;
+        color: #06ccf8;
         font-size: 1em; }
       #request #timeline .circle.active i {
         opacity: 1;
@@ -4935,7 +4935,7 @@ nav.fix-style {
             height: 1.7em;
             -webkit-border-radius: 50%;
                     border-radius: 50%;
-            background-color: #1EC198;
+            background-color: #06ccf8;
             opacity: 0;
             visibility: hidden;
             -webkit-transition: all .3s ease-in-out;
@@ -5003,7 +5003,7 @@ nav.fix-style {
           #request form#request_info .slide ul.desc li:not(:first-child) {
             margin-top: 1em; }
           #request form#request_info .slide ul.desc li i {
-            color: #4a4982;
+            color: #06ccf8;
             font-size: 1em;
             -webkit-transform: translate(50%, 15%);
                -moz-transform: translate(50%, 15%);
@@ -5053,7 +5053,7 @@ nav.fix-style {
           #request form#request_info .slide .btn-wrapper button:nth-child(1) {
             background-color: #ea6161; }
           #request form#request_info .slide .btn-wrapper button:nth-child(2) {
-            background-color: #1EC198;
+            background-color: #06ccf8;
             margin-right: 4em; }
     #request form#request_info .slide#select_device .labels {
       -webkit-box-orient: horizontal;
@@ -5205,7 +5205,7 @@ nav.fix-style {
             #request form#request_info .slide#select_info .tabs .tab .btn-wrapper button:nth-child(1) {
               background-color: #ea6161; }
             #request form#request_info .slide#select_info .tabs .tab .btn-wrapper button:nth-child(2) {
-              background-color: #1EC198;
+              background-color: #06ccf8;
               margin-right: 4em; }
         #request form#request_info .slide#select_info .tabs .tab .input_wrapper {
           width: auto;
@@ -5372,8 +5372,8 @@ nav.fix-style {
           #request form#request_info .slide#select_info .tabs .tab .input_wrapper.select input {
             width: 20em;
             height: 2.5em;
-            -webkit-border-radius: 0;
-                    border-radius: 0;
+            -webkit-border-radius: 2em;
+                    border-radius: 2em;
             cursor: pointer; }
           #request form#request_info .slide#select_info .tabs .tab .input_wrapper.select i {
             font-size: 1em;
@@ -5520,8 +5520,8 @@ nav.fix-style {
                         border-radius: 0;
                 border-top: 1.2px solid transparent;
                 border-right: 1.2px solid transparent;
-                border-left: 1.2px solid #1EC198;
-                border-bottom: 1.2px solid #1EC198;
+                border-left: 1.2px solid #06ccf8;
+                border-bottom: 1.2px solid #06ccf8;
                 -webkit-transform: translate(0, -50%) rotate(-45deg);
                    -moz-transform: translate(0, -50%) rotate(-45deg);
                     -ms-transform: translate(0, -50%) rotate(-45deg);
@@ -5720,14 +5720,14 @@ nav.fix-style {
               margin-top: 1em; }
             #request form#request_info .slide#confirm #summery #details ul li i, #request form#request_info .slide#confirm #summery #contact ul li i {
               font-size: 1em;
-              color: #4a4982;
+              color: #06ccf8;
               -webkit-transform: translate(50%, 15%);
                  -moz-transform: translate(50%, 15%);
                   -ms-transform: translate(50%, 15%);
                       transform: translate(50%, 15%); }
             #request form#request_info .slide#confirm #summery #details ul li .title, #request form#request_info .slide#confirm #summery #contact ul li .title {
               font-size: 0.8em;
-              color: #4a4982;
+              color: #06ccf8;
               font-weight: 700; }
             #request form#request_info .slide#confirm #summery #details ul li .text, #request form#request_info .slide#confirm #summery #contact ul li .text {
               color: #86878e;
@@ -5746,7 +5746,9 @@ nav.fix-style {
       font-size: 0.8em;
       line-height: 2em;
       margin: 1em auto 0 auto;
-      border: 1px solid #bbbbbf; }
+      border: 1px solid #bbbbbf;
+      -webkit-border-radius: 2em;
+              border-radius: 2em; }
       #request form#request_info .slide#confirm textarea:hover {
         border: 1px solid #bbbbbf; }
       #request form#request_info .slide#confirm textarea::-webkit-input-placeholder {
@@ -5770,7 +5772,7 @@ nav.fix-style {
       padding: 0.7em 2.3em;
       color: #fbfbfb;
       font-size: 1em;
-      background-color: #1EC198;
+      background-color: #06ccf8;
       margin: 1em auto 0 auto;
       -webkit-border-radius: 2em;
               border-radius: 2em;
@@ -5798,8 +5800,8 @@ nav.fix-style {
         #request form#request_info .slide#confirm .input_wrapper.checkbox input[type="checkbox"]:checked ~ label .rect {
           border-top: 1.2px solid transparent;
           border-right: 1.2px solid transparent;
-          border-left: 1.2px solid #1EC198;
-          border-bottom: 1.2px solid #1EC198;
+          border-left: 1.2px solid #06ccf8;
+          border-bottom: 1.2px solid #06ccf8;
           -webkit-transform: translate(0, -50%) rotate(-50deg);
              -moz-transform: translate(0, -50%) rotate(-50deg);
               -ms-transform: translate(0, -50%) rotate(-50deg);
@@ -5864,7 +5866,7 @@ nav.fix-style {
       height: auto;
       padding: 1em 4em;
       color: #fbfbfb;
-      background-color: #1EC198;
+      background-color: #06ccf8;
       -webkit-border-radius: 1em;
               border-radius: 1em;
       margin: 1em auto 0 auto;

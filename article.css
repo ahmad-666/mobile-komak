@@ -4691,7 +4691,7 @@ nav.fix-style {
     position: absolute;
     top: 45%;
     cursor: pointer;
-    background-color: #4a4982;
+    background-color: #06ccf8;
     z-index: 5; }
     .slider-wrapper button i {
       position: absolute;
@@ -4872,7 +4872,7 @@ nav.fix-style {
           text-align: center;
           line-height: 3em;
           color: #fbfbfb;
-          background-color: #4a4982;
+          background-color: #06ccf8;
           -webkit-border-radius: 2em;
                   border-radius: 2em;
           font-size: 0.9em;
@@ -5584,14 +5584,14 @@ main {
               position: absolute;
               right: 0;
               top: 100%;
-              background-color: #4a4982;
+              background-color: #06ccf8;
               opacity: 0;
               visibility: hidden;
               -webkit-transition: all .3s ease-in-out;
               -moz-transition: all .3s ease-in-out;
               transition: all .3s ease-in-out; }
           main aside #popular #tabs_popular ul li.active {
-            color: #4a4982;
+            color: #06ccf8;
             font-weight: 700; }
             main aside #popular #tabs_popular ul li.active::before {
               opacity: 1;
@@ -5689,7 +5689,7 @@ main {
             border-radius: 2em;
     cursor: pointer;
     color: #fbfbfb;
-    background-color: #535292; }
+    background-color: #1dd2fa; }
   #comments #user_comment {
     width: 100%;
     height: auto;

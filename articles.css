@@ -4691,7 +4691,7 @@ nav.fix-style {
     position: absolute;
     top: 45%;
     cursor: pointer;
-    background-color: #4a4982;
+    background-color: #06ccf8;
     z-index: 5; }
     .slider-wrapper button i {
       position: absolute;
@@ -4872,7 +4872,7 @@ nav.fix-style {
           text-align: center;
           line-height: 3em;
           color: #fbfbfb;
-          background-color: #4a4982;
+          background-color: #06ccf8;
           -webkit-border-radius: 2em;
                   border-radius: 2em;
           font-size: 0.9em;
@@ -5047,7 +5047,7 @@ nav.fix-style {
         font-size: 1.8em;
         text-align: center;
         line-height: 1.5em;
-        color: #4a4982;
+        color: #06ccf8;
         background-color: #fbfbfb;
         position: absolute;
         right: 50%;
@@ -5094,7 +5094,7 @@ nav.fix-style {
       -webkit-align-content: "";
           -ms-flex-line-pack: "";
               align-content: "";
-      background-color: #5d5ba3; }
+      background-color: #36d7fa; }
       .tabs_content > div .article .bottom p {
         width: 100%;
         text-align: center;
@@ -5117,7 +5117,7 @@ nav.fix-style {
               box-shadow: 0 2.5em 1em -1.2em rgba(0, 0, 0, 0.4); }
       .tabs_content > div .article:hover .top i {
         color: #fbfbfb;
-        background-color: #4a4982; }
+        background-color: #06ccf8; }
     .tabs_content > div .article:nth-child(1) .top {
       background-image: url(assets/imgs/grid1.jpg); }
     .tabs_content > div .article:nth-child(2) .top {
@@ -5495,7 +5495,7 @@ nav.fix-style {
         -moz-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out; }
       #tabs ul li:hover i, #tabs ul li:hover h6 {
-        color: #4a4982;
+        color: #06ccf8;
         -webkit-transform: scale(1.2);
            -moz-transform: scale(1.2);
             -ms-transform: scale(1.2);
@@ -5503,7 +5503,7 @@ nav.fix-style {
       #tabs ul li:nth-child(5) {
         border-left: 1.2px solid #838391; }
     #tabs ul li.active i, #tabs ul li.active h6 {
-      color: #4a4982;
+      color: #06ccf8;
       -webkit-transform: scale(1.2);
          -moz-transform: scale(1.2);
           -ms-transform: scale(1.2);
@@ -5517,7 +5517,7 @@ nav.fix-style {
       position: absolute;
       top: 100%;
       right: 0%;
-      background-color: #4a4982;
+      background-color: #06ccf8;
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }

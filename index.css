@@ -5081,7 +5081,7 @@ nav.fix-style {
                   -ms-transform: translate(50%, -50%);
                       transform: translate(50%, -50%);
               font-size: 1.6em;
-              color: #6968aa;
+              color: #4adbfb;
               -webkit-transition: all .3s ease-in-out;
               -moz-transition: all .3s ease-in-out;
               transition: all .3s ease-in-out; }
@@ -5089,9 +5089,9 @@ nav.fix-style {
             font-size: 0.8em;
             color: #f4f3f7; }
           #problems .content ul li a:hover i {
-            background-color: #4a4982;
-            -webkit-box-shadow: 0 0 1.5em 0.2em #4a4982;
-                    box-shadow: 0 0 1.5em 0.2em #4a4982; }
+            background-color: #06ccf8;
+            -webkit-box-shadow: 0 0 1.5em 0.2em #06ccf8;
+                    box-shadow: 0 0 1.5em 0.2em #06ccf8; }
             #problems .content ul li a:hover i::before {
               color: #f4f3f7; }
     #problems .content .text {
@@ -5444,7 +5444,7 @@ nav.fix-style {
     position: absolute;
     top: 45%;
     cursor: pointer;
-    background-color: #4a4982;
+    background-color: #06ccf8;
     z-index: 5; }
     .slider-wrapper button i {
       position: absolute;
@@ -5625,7 +5625,7 @@ nav.fix-style {
           text-align: center;
           line-height: 3em;
           color: #fbfbfb;
-          background-color: #4a4982;
+          background-color: #06ccf8;
           -webkit-border-radius: 2em;
                   border-radius: 2em;
           font-size: 0.9em;

@@ -4875,7 +4875,7 @@ form#rep_request {
     height: auto;
     padding: 0.5em 2.3em;
     color: #fbfbfb;
-    background-color: #4a4982;
+    background-color: #06ccf8;
     font-size: 1em;
     cursor: pointer;
     -webkit-border-radius: 2em;
@@ -4948,7 +4948,7 @@ form#rep_request {
         font-size: 0.8em;
         color: #86878e; }
       form#rep_request .inputs input:focus {
-        border: 2px solid #4a4982; }
+        border: 2px solid #06ccf8; }
     form#rep_request .inputs input.error {
       border: 2px solid #e74a4a; }
     form#rep_request .inputs input#name, form#rep_request .inputs input#tel, form#rep_request .inputs input#address {
