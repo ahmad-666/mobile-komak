@@ -217,6 +217,62 @@ main{
                 margin-right: auto ;
                 display: flex ;
                 @include flex(column,flex-start,center,nowrap,"") ;
+                a{
+                    width: 100% ;
+                    height: 8em;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    margin-top: $dist1 ;
+                    .img{
+                        flex-shrink: 0 ;
+                        width: 7em ;
+                        height: 7em ;
+                        background-position: center center ;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100% ;
+                        transition: all .3s ease-in-out ;
+                        position: relative ;
+                        &::before{
+                            content: '' ;
+                            @include fullSize-abs ;
+                            background-color: $blackFilter ;
+                        }
+                    }
+                    &:nth-child(1){.img{background-image: url('../../assets/imgs/article3.jpg');}}
+                    &:nth-child(2){.img{background-image: url('../../assets/imgs/article4.jpg');}}
+                    &:nth-child(3){.img{background-image: url('../../assets/imgs/article5.jpg');}}
+                    &:nth-child(4){.img{background-image: url('../../assets/imgs/grid1.jpg');}}
+                    .content{
+                        width: auto ;
+                        height: auto;
+                        margin-right: $dist1 ;
+                        display: flex ;
+                        @include flex(column,space-around,flex-start,nowrap,"") ;
+                        h4,p{
+                            margin-top:  $dist1  ;
+                        }
+                        h4{
+                            width: auto  ;
+                            font-size: $font-m - .1em ;
+                            color: $darkColor ;
+                            font-weight: 700 ;
+                            @include multiEllipse(3,1.5em,$darkColor);
+                        }
+                        p{
+                            font-size: $font-m - .2em ;
+                            color: $greyColor2 ;
+                        }
+                    }
+                    &:hover{
+                        .img{
+                            background-size: 120% 120% ;
+                            &::before{
+                                background-color: rgba(30,30,30,.4) ;
+                            }
+                        }
+                        
+                    }
+                }
                 ul{
                     margin-top: -$dist1  ;
                     width: 100% ;
@@ -267,62 +323,7 @@ main{
                         visibility: hidden ;
                         opacity: 0;
                         transition: all .6s ease-in-out ;
-                        a{
-                            width: 100% ;
-                            height: 8em;
-                            display: flex ;
-                            @include flex(row,flex-start,center,nowrap,"") ;
-                            margin-top: $dist1 ;
-                            .img{
-                                flex-shrink: 0 ;
-                                width: 7em ;
-                                height: 7em ;
-                                background-position: center center ;
-                                background-repeat: no-repeat;
-                                background-size: 100% 100% ;
-                                transition: all .3s ease-in-out ;
-                                position: relative ;
-                                &::before{
-                                    content: '' ;
-                                    @include fullSize-abs ;
-                                    background-color: $blackFilter ;
-                                }
-                            }
-                            &:nth-child(1){.img{background-image: url('../../assets/imgs/article3.jpg');}}
-                            &:nth-child(2){.img{background-image: url('../../assets/imgs/article4.jpg');}}
-                            &:nth-child(3){.img{background-image: url('../../assets/imgs/article5.jpg');}}
-                            &:nth-child(4){.img{background-image: url('../../assets/imgs/grid1.jpg');}}
-                            .content{
-                                width: auto ;
-                                height: auto;
-                                margin-right: $dist1 ;
-                                display: flex ;
-                                @include flex(column,space-around,flex-start,nowrap,"") ;
-                                h4,p{
-                                    margin-top:  $dist1  ;
-                                }
-                                h4{
-                                    width: auto  ;
-                                    font-size: $font-m - .1em ;
-                                    color: $darkColor ;
-                                    font-weight: 700 ;
-                                    @include multiEllipse(3,1.5em,$darkColor);
-                                }
-                                p{
-                                    font-size: $font-m - .2em ;
-                                    color: $greyColor2 ;
-                                }
-                            }
-                            &:hover{
-                                .img{
-                                    background-size: 120% 120% ;
-                                    &::before{
-                                        background-color: rgba(30,30,30,.4) ;
-                                    }
-                                }
-                                
-                            }
-                        }
+                        
                     }
                     > div.active{
                         visibility: visible ;
