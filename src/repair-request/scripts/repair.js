@@ -158,7 +158,7 @@ function tabHandler(e){
     }
 }
 function mobileValidate(){
-    if(mobileInput.value.length >= 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
+    if(mobileInput.value.length == 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
         mobileInput.classList.remove('error') ;
         mobileInput.removeEventListener('input',monitorMobile) ;
         return true ;
@@ -169,7 +169,7 @@ function mobileValidate(){
     }
 }
 function monitorMobile(e){
-    if(mobileInput.value.length < 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
+    if(mobileInput.value.length != 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
     else mobileInput.classList.remove('error') ;
 }
 function codeValidate(){

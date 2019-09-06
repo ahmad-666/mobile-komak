@@ -235,7 +235,7 @@ main{
                         &::before{
                             content: '' ;
                             @include fullSize-abs ;
-                            background-color: $blackFilter ;
+                            // background-color: $blackFilter ;
                         }
                     }
                     &:nth-child(1){.img{background-image: url('../../assets/imgs/article3.jpg');}}

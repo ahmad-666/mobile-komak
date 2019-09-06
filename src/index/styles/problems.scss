@@ -35,7 +35,8 @@
         position: relative ;
         padding: $dist1 ;
         display: flex ;
-        @include flex(row,space-around,center,nowrap,"") ;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        overflow: hidden;
         &::before{
             content: '' ;
             @include fullSize-abs ;
@@ -51,58 +52,76 @@
             display: flex ;
             @include flex(row,flex-start,flex-start,wrap,flex-start) ;
             li{
-                width: auto ;
+                width: 10em ;
                 height: auto;
                 margin: $dist1 ;
-                cursor: pointer;          
-                a{
-                    width: 10em ;
-                    display: flex ;
-                    @include flex(row,flex-start,center,nowrap,"") ;
-                    p,i{
-                        margin: 0 $dist1 ;
-                    }
-                    i{
-                        width: 3em ;
-                        height: 3em;
-                        border-radius: 50% ;
-                        position: relative ;
-                        background-color: $blackFilter ;
+                cursor: pointer;         
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;                     
+                p,i{
+                    margin: 0 $dist1 ;
+                }
+                i{
+                    width: 3em ;
+                    height: 3em;
+                    border-radius: 50% ;
+                    position: relative ;
+                    background-color: $blackFilter ;
+                    transition: all .3s ease-in-out ;
+                    box-shadow: 0 0 .2em .2em transparent ;
+                    cursor: pointer;
+                    &::before{
+                        @include center-xy ;
+                        font-size: 1.6em ;
+                        color: lighten($primaryColor,14%) ;
                         transition: all .3s ease-in-out ;
-                        box-shadow: 0 0 .2em .2em transparent ;
-                        cursor: pointer;
+                    }            
+                }
+                p{
+                    font-size: $font-m ;
+                    color: $paleColor ;
+                    margin-right: 0 ;
+                }
+                &:hover{
+                    i{
+                        background-color: $primaryColor ;
+                        box-shadow: 0 0 1.5em .2em $primaryColor ;
                         &::before{
-                            @include center-xy ;
-                            font-size: 1.6em ;
-                            color: lighten($primaryColor,14%) ;
-                            transition: all .3s ease-in-out ;
-                        }            
-                    }
-                    p{
-                        font-size: $font-m ;
-                        color: $paleColor ;
-                    }
-                    &:hover{
-                        i{
-                            background-color: $primaryColor ;
-                            box-shadow: 0 0 1.5em .2em $primaryColor ;
-                            &::before{
-                                color: $paleColor ;
-                            }
-                        }             
-                    }
-                }          
+                            color: $paleColor ;
+                        }
+                    }             
+                }
+        
             }
         }
-        .text{
+        .tabs_wrapper{
             width: 100% ;
-            height: auto;
-            background-color: $whiteColor2 ;
-            padding: $dist1 ;
-            color: $darkColor ;
-            font-size: $font-m ;
-            line-height: $dist3 ;
-            z-index: 1;
+            height: 20em;
+            margin-right: $dist1 ;
+            position: relative;
+            z-index: 2;
+            .tab{
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s ease-in-out ;
+                background-color: $whiteColor2 ;
+                padding: $dist1 ;
+                font-size: $font-m ;
+                color: $darkColor ;
+                line-height: $dist3 ;
+                width: 100% ;
+                max-height: 100%  ;
+                overflow: auto;
+                position: absolute ;
+                top: 50% ;
+                transform: translateY(-50%) ;
+                right: 0; 
+            }
+            .tab.active{
+                opacity: 1;
+                visibility: visible ;
+            }
+            
         }
     }
 }

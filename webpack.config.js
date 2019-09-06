@@ -20,7 +20,8 @@ module.exports = {
         'video' : './src/video/video.js' ,    
         'aboutUs' : './src/about-us/about-us.js' ,    
         'rules' : './src/rules/rules.js' ,    
-        
+        'login' : './src/login/login.js' ,    
+        'track' : './src/track/track.js'       
     },
     output: {//for each entry point we create one .js bundle(with the same name of entry point)
         filename: '[name].js',
@@ -203,6 +204,18 @@ module.exports = {
             inject: true,
             chunks: ['rules'],
             template: './src/rules/rules.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'track.html' , 
+            inject: true,
+            chunks: ['track'],
+            template: './src/track/track.html' 
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'login.html' , 
+            inject: true,
+            chunks: ['login'],
+            template: './src/login/login.html' 
         }),
         new CleanWebpackPlugin()
     ]
