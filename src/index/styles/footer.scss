@@ -4,10 +4,10 @@
 #footer{
     width: 100% ;
     height: 25em;
-    background: url('../../assets/svgs/footer.svg') 80% -5%  no-repeat ;
-    background-size: 116% 142% ;
+    background: url('../../assets/svgs/footer.svg') 100% 0%  no-repeat ;
+    background-size: 130% 100% ;
     position: relative ;
-    margin-top:  -$sectionsDist ;
+    margin-top: -2em ;
     .content{
         width: 100% ;
         height: auto;
@@ -79,14 +79,28 @@
         font-size: 13px ;
     }
 }
-@media screen and (max-width:665px){
-    #footer{ 
-        background: url('../../assets/svgs/footer.svg') 50% 30%  no-repeat ;
-        background-size: 200% 200% ;
+@media screen and (max-width:650px){
+    #footer{
+        background-image: none ;
+        background-color: #212020 ;
         font-size: 13px ;
-        height: 35em;
+        height: 25em;
          .content{
-            top: 35% ;
+            top: 5% ;
+        }
+    }
+}
+@media screen and (max-width:315px){
+    #footer{
+        height: auto;
+        padding: 0 $dist1 ;
+
+        .content{
+            position: relative ;
+            @include flex(row,flex-start,flex-start,wrap,flex-start);
+            .about_us,.training,.articles,.contact_us{
+                margin-top: $dist3 ;
+            }
         }
     }
 }
