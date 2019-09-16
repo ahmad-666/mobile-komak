@@ -4,7 +4,7 @@
 #newsletters{
     width: 100% ;
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: $dist2 auto $sectionsDist auto ;
     background-color: darken($paleColor,1%) ;
 
     display: flex ;
@@ -16,12 +16,12 @@
         font-weight: 700 ;
     }
     p{
-        font-size: $font-m + .2em ;
+        font-size: $font-m  ;
         color: $greyColor2 ;
     }
     .input-wrapper{
         width: 40% ;
-        height: 3em;
+        height: 2.5em;
         position: relative ;
         box-shadow: 0 0 .5em .03em $shadowColor ;
         margin-top: $dist3 ;
@@ -40,7 +40,7 @@
             }
         }
         button{
-            width: 8em ;
+            width: 5em ;
             height: 100%;
             line-height: .5em ; 
             border-radius: $dist3 + 1em ;
@@ -49,7 +49,7 @@
             left: 0em;
             cursor: pointer;
             i{
-                font-size: $font-xxl + .2em ;
+                font-size: $font-special ;
                 color: white ;
             }
         }
@@ -76,6 +76,89 @@
             img{
                 width: 6em ;
                 height: 6em;
+            }
+        }
+    }
+}
+@media screen and (max-width:900px){
+    #newsletters{
+        font-size: 16px;
+        margin-bottom: $sectionsDist + 2em ;
+        .confirmation{
+            a{          
+                img{
+                    width: 5em ;
+                    height: 5em;
+                }
+            }
+        }
+       
+    }
+}
+@media screen and (max-width:600px){
+    #newsletters{
+        font-size: 13px;
+        p,.input-wrapper{}
+        h4{
+           
+        }
+        p{
+           
+        }
+        .input-wrapper{
+           
+            input{
+              
+                &::placeholder{
+                   
+                }
+            }
+            button{
+                width: 4em ;
+              
+                i{
+                   font-size: $font-xl ;
+                }
+            }
+            p.error{
+              
+            }
+            p.error.show{}
+        }
+        .confirmation{
+           
+            a{
+              
+                img{
+                  
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width:500px){
+    #newsletters{
+        margin-bottom: $sectionsDist + 4em ;
+
+    }
+}
+@media screen and (max-width:450px){
+    #newsletters{
+        .input-wrapper{
+            width: 65% ;
+        }
+    }
+}
+@media screen and (max-width:350px){
+    #newsletters{
+        font-size: 10px;
+        .input-wrapper{
+            button{
+                width: 3em ;
+                i{
+                    font-size: $font-l 
+                }
             }
         }
     }

@@ -5,7 +5,7 @@
     width: 100% ;
     height: auto;
     overflow: hidden;
-    margin: $sectionsDist 0 ;
+    margin: $dist3 auto 0 auto ;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
     position: relative ;
@@ -19,8 +19,8 @@
         color: $darkColor ;
     }
     button{
-        width: 5em ;
-        height: 5em;
+        width: 4em ;
+        height: 4em;
         border-radius: 50% ;
         position: absolute ;
         top: 45% ;
@@ -29,7 +29,7 @@
         z-index: 5;
         i{
             @include center-xy;
-            font-size: $font-xxl ;
+            font-size: $font-special ;
             color: $whiteColor2 ;
             // color: #2d2d31 ;
         }
@@ -56,10 +56,10 @@
         display: flex ;
         @include flex(row,flex-start,center,nowrap,"") ;
         .slide{
-            width: 15em ;
-            height: 13em;
+            width: 13em ;
+            height: 12em;
             position: relative ;
-            margin: 0 $dist2 ;
+            margin: 0 $dist1 ;
             flex-shrink: 0 ;
             border-radius: $dist3 ;
             transition: all .3s ease-in-out ;
@@ -143,7 +143,7 @@
                 }
                 a{
                     bottom: .5em ;
-                    width: 10em ;
+                    width: 8em ;
                     height: 3em;
                     text-align: center ;
                     line-height: 3em ;
@@ -151,7 +151,7 @@
                     // color: #2d2d31 ;
                     background-color: $primaryColor ;
                     border-radius: 2em ;
-                    font-size: $font-l - .1em ;
+                    font-size: $font-m  ;
                     transition: all .3s ease-in-out ;
                 }
                 .time{
@@ -208,5 +208,53 @@
     background-color: darken($paleColor,1%) ;
     .show-all{
         top: 90% ;
+    }
+}
+@media screen and (max-width:900px){
+    .slider-wrapper{
+        font-size: 16px;
+        button{
+            width: 3.5em ;
+            height: 3.5em;
+            
+            i{
+                font-size: $font-xl ;
+                // color: #2d2d31 ;
+            }
+        }
+    }
+}
+@media screen and (max-width:700px){
+    .slider-wrapper{
+        font-size: 13px;
+        button{
+            width: 3em ;
+            height: 3em;
+            i{
+                font-size: $font-xl ;
+                // color: #2d2d31 ;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    .slider-wrapper{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:450px){
+    .slider-wrapper{
+        button{
+            display: none ;
+        }
+        .slider{
+            overflow: auto ;
+            padding: $dist2 0; 
+        }
+    }
+}
+@media screen and (max-width:320px){
+    .slider-wrapper{
+        font-size: 10px ;
     }
 }

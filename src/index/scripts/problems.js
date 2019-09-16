@@ -8,8 +8,19 @@ problemTabTriggers.forEach(trigger => {
 function openProblemTab(e){
     let targetID = this.getAttribute('data-target') ;
     let targetTab = problemTabWrapper.querySelector(`#${targetID}`) ;
+    problemTabWrapper.classList.add('show') ;
+    if(window.innerWidth<=450){
+        problemTabWrapper.addEventListener('click',closeWrapper) ;
+    }
     problemTabs.forEach(tab => {
-        if(tab == targetTab) tab.classList.add('active') ;
-        else tab.classList.remove('active') ;
+        if(tab == targetTab) {
+            tab.classList.add('active') ;
+        }
+        else {
+            tab.classList.remove('active') ;
+        }
     })
+}
+function closeWrapper(e){
+    problemTabWrapper.classList.remove('show') ;
 }

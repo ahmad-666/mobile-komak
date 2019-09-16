@@ -4,10 +4,10 @@
 #problems{
     width: 80vw ;
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: $dist3 auto 0 auto;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
-    .title,.content{
+    .content{
         margin: $dist1 auto ;
     }
     .title{
@@ -104,7 +104,7 @@
                 opacity: 0;
                 visibility: hidden ;
                 transition: all .3s ease-in-out ;
-                background-color: $whiteColor2 ;
+                background-color: darken($whiteColor2,12%) ;
                 padding: $dist1 ;
                 font-size: $font-m ;
                 color: $darkColor ;
@@ -122,6 +122,87 @@
                 visibility: visible ;
             }
             
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    #problems{
+        .content{
+            font-size: 16px ;
+        }
+    }
+}
+@media screen and (max-width:900px){
+    #problems{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:800px){
+    #problems{
+        width: 95% ;
+        .content{
+            ul{
+                width: 20em ;
+                li{
+                    width: 8em ;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    #problems{
+        font-size: 12px ;
+        .content{
+            font-size: 12px ;
+        }
+    }
+}
+@media screen and (max-width:450px){
+    #problems{
+        .content{
+            @include flex(row,space-around,center,nowrap,"") ;
+            ul{
+                width: 90% ;
+                @include flex(row,space-around,center,wrap,flex-start) ;
+            }
+            .tabs_wrapper{
+                position: fixed ;
+                top: 0;
+                right: 0;
+                width: 100vw ;
+                height: 100vh;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s linear ;
+                z-index: 0;
+                .tab{
+                    width: 100% ;
+                    height: 100%;
+                }
+            }
+            .tabs_wrapper.show{
+                z-index: 10;
+                opacity: 1;
+                visibility: visible; 
+            }
+        }
+    }
+}
+@media screen and (max-width:300px){
+    #problems{
+        .content{
+            @include flex(row,space-around,center,nowrap,"") ;
+            ul{
+                width: 100% ;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                li{
+                    width: 90% ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    font-size: 14px ;
+                }
+            }
+        
         }
     }
 }

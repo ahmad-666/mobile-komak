@@ -69,3 +69,24 @@
         }
     }
 }
+@media screen and (max-width:1000px){
+    #footer{
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width:850px){
+    #footer{
+        font-size: 13px ;
+    }
+}
+@media screen and (max-width:665px){
+    #footer{ 
+        background: url('../../assets/svgs/footer.svg') 50% 30%  no-repeat ;
+        background-size: 200% 200% ;
+        font-size: 13px ;
+        height: 35em;
+         .content{
+            top: 35% ;
+        }
+    }
+}
