@@ -29,31 +29,73 @@
                 </ul>
             </li>
             <!-- <li>
-                        <a href="https://mobilekomak.com/store/">فروشگاه</a>
-                    </li> -->
+                <a href="https://mobilekomak.com/store/">فروشگاه</a>
+            </li> -->
             <li>
-                <a href="./representation.html">اخذ نمایندگی</a>
+                <a href="./login.html">ورود</a>
+            </li>
+            <li>
+                <a href="./track.html">پیگیری سفارش</a>
             </li>
             <li class="logo">
                 <a href="./index.html">
                     <img src="../assets/imgs/logo.png" alt="logo">
                 </a>
             </li>
+            <li class="mobile">
+                <i class="fas fa-bars"></i>
+                <ul class="mobile_nav">
+                    <li class="logo_mobile">
+                        <a href="./index.html">
+                            <img src="../assets/imgs/logo.png" alt="logo">
+                        </a>
+                    </li>
+                    <li class="special_mobile">
+                        <a href="./repair-request.html">درخواست تعمیر</a>
+                    </li>
+                    <li class="dropdownTrigger">
+                        آموزش ها 
+                        <i class="fas fa-angle-left"></i>
+                        <ul class="dropdownMenu">
+                            <li>
+                                <a href="./articles.html">مقالات و آموزش نرم افزاری</a>
+                            </li>
+                            <li>
+                                <a href="./articles.html">آموزش تعمیر موبایل</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./login.html">ورود</a>
+                    </li>
+                    <li>
+                        <a href="./track.html">پیگیری سفارش</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <main>
         <div class="wrapper">
+            <div id="breadcumb">
+                <a href="./index.html"><i class="fas fa-home"></i></a>
+                <i class="fas fa-angle-left"></i>
+                <a href="./category.html" class="category">نام دسته بندی</a>
+                <i class="fas fa-angle-left"></i>
+                <a href="./article.html">نام مقاله</a>
+            </div>
             <div id="article">
                 <div class="bg">
                     <div class="content">
-                        <div class="writer">
-                            <img src="../assets/imgs/profile.png" alt="profile">
-                            <p>نام نویسنده</p>
-                        </div>
-                        <span class="date">22 مرداد 1398</span>
-                        <div class="comments_num">
-                            <i class="fas fa-comments"></i>
-                            <p>1 نظر</p>
+                        <img src="../assets/imgs/profile.png" alt="profile">
+                        <div class="bottom_row">
+                            <p class="writer_name">نام نویسنده</p>
+
+                            <span class="date">22 مرداد 1398</span>
+                            <div class="comments_num">
+                                <i class="fas fa-comments"></i>
+                                <p>1 نظر</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +200,7 @@
                 </div>
             </div>
             <div id="comments">
-                <button class="add_comment">نظر خود را اظافه کنید</button>
+                <button class="add_comment">نظر خود را اضافه کنید</button>
                 <form novalidate name="user_comment" id="user_comment" method="GET" action="#!" enctype="text/plain">
                     <div class="infos">
                         <input type="text" name="name" id="name" required placeholder="نام خود را وارد کنید">
@@ -169,29 +211,30 @@
                     <button type="submit">ثبت نظر</button>
                 </form>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep1">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep1">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -199,31 +242,92 @@
                         <textarea name="reply_content" class="reply_content" required></textarea>
                         <button type="submit">ثبت پاسخ</button>
                     </form>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep2">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep2">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -233,29 +337,30 @@
                     </form>
                 </div>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep3">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep3">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -356,7 +461,6 @@
             </div>
         </aside>
     </main>
-
     <div class="slider-wrapper" id="similars">
         <h4>مقالات مشابه</h4>
         <button class="prev"><i class="fas fa-arrow-right"></i></button>

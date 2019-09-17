@@ -6,6 +6,7 @@
     height: 25em;
     position: relative ;
     box-shadow: 0 0 .5em .3em $shadowColor ;
+    margin-top: $dist3 ;
     video{
         @include fullSize-abs ;
     }

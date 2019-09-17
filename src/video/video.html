@@ -43,6 +43,13 @@
     </nav>
     <main>
         <div class="wrapper">
+            <div id="breadcumb">
+                <a href="./index.html"><i class="fas fa-home"></i></a>
+                <i class="fas fa-angle-left"></i>
+                <a href="./category.html" class="category">نام دسته بندی</a>
+                <i class="fas fa-angle-left"></i>
+                <a href="./article.html">نام مقاله</a>
+            </div>
             <div id="video">
                 <video src="../assets/vids/vid.mp4" controls></video>
                 <div class="filter"></div>
@@ -85,7 +92,7 @@
                 </p>
             </div>
             <div id="comments">
-                <button class="add_comment">نظر خود را اظافه کنید</button>
+                <button class="add_comment">نظر خود را اضافه کنید</button>
                 <form novalidate name="user_comment" id="user_comment" method="GET" action="#!" enctype="text/plain">
                     <div class="infos">
                         <input type="text" name="name" id="name" required placeholder="نام خود را وارد کنید">
@@ -96,29 +103,30 @@
                     <button type="submit">ثبت نظر</button>
                 </form>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep1">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep1">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,31 +134,92 @@
                         <textarea name="reply_content" class="reply_content" required></textarea>
                         <button type="submit">ثبت پاسخ</button>
                     </form>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_reply">
+                        <div class="row">
+                            <div class="data">
+                                <p class="name">نام نویسنده</p>
+                                <p class="date">1398/0/24</p>
+                            </div>
+                            <div class="content">
+                                <p class="text">
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                    متن متن متن متن متن متن متن متن متن متن متن متن
+                                </p>
+                                <div class="likes_reply">
+                                    <div class="likes">
+                                        <i class="far fa-heart"></i>
+                                        <p>0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep2">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep2">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,29 +229,30 @@
                     </form>
                 </div>
                 <div class="comment">
-                    <div class="img_data">
-                        <img src="../assets/imgs/profile.png" alt="profile">
-                        <p class="date">1398/0/24</p>
-                    </div>
-                    <p class="name">نام نویسنده</p>
-                    <div class="content">
-                        <p class="text">
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                            متن متن متن متن متن متن متن متن متن متن متن متن
-                        </p>
-                        <div class="likes_reply">
-                            <div class="likes">
-                                <i class="far fa-heart"></i>
-                                <p>0</p>
-                            </div>
-                            <div class="reply" data-target="rep3">
-                                <i class="fas fa-reply"></i>
-                                <p>پاسخ</p>
+                    <div class="row">
+                        <div class="data">
+                            <p class="name">نام نویسنده</p>
+                            <p class="date">1398/0/24</p>
+                        </div>
+                        <div class="content">
+                            <p class="text">
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                                متن متن متن متن متن متن متن متن متن متن متن متن
+                            </p>
+                            <div class="likes_reply">
+                                <div class="likes">
+                                    <i class="far fa-heart"></i>
+                                    <p>0</p>
+                                </div>
+                                <div class="reply" data-target="rep3">
+                                    <i class="fas fa-reply"></i>
+                                    <p>پاسخ</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -32,19 +32,22 @@
                     border-top-right-radius: $dist3 ;   
                 }
                 i{
-                    width: $dist2 + .5em ;
-                    height: $dist2 + .5em;
-                    border-radius: 50% ;
-                    font-size: $font-xl + .6em ;
-                    text-align: center ;
-                    line-height: $dist2 + .5em;
-                    color: $primaryColor ;
+                    width: $dist3 + .2em ;
+                    height: $dist3 + .2em;
+                    border-radius: 50% ;        
                     background-color: $whiteColor2 ;
                     position: absolute ;
                     right: 50%;
                     top: 100% ;
                     transform: translate(50%,-50%) ;
-                    transition: all .6s ease-in-out ;
+                    transition: all .3s ease-in-out ;
+                    &::before{
+                        transition: all .3s ease-in-out ;
+                        color: $primaryColor ;
+                        @include center-xy ;
+                        font-size: $font-special ;
+
+                    }
                 }
             }
             .bottom{
@@ -62,7 +65,7 @@
                     color: $whiteColor2 ;
                     // color: #2d2d31 ;
                     &:nth-child(1){
-                        margin-top: $dist2 + 1em ;    
+                        margin-top: $dist2 + .5em ;    
                         width: 90% ;
                         @include ellipse ;  
                     }
@@ -78,6 +81,9 @@
                     i{
                         color: $whiteColor2 ;
                         background-color: $primaryColor ;
+                        &::before{
+                            color: $whiteColor2 ;
+                        }
                     }
                 }
             }
