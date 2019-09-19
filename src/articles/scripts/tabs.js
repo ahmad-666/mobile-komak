@@ -1,36 +1,63 @@
 import util from '../../utilities/utilities' ;
+import FontFaceObserver from 'fontfaceobserver'
+var font = new FontFaceObserver('iranSans');
+font.load().then(function () {
+    new Tabs(tabsWrapper) ;
+});
+//--------------------line
+//--------------------line
+//--------------------line
+function MovingLine(line){
+    this.line = line ;
+}
+MovingLine.prototype.move = function(target){
+    let width = null ;
+    let right = null ;
+    //parent of this.line and target should be same 
+    width = parseFloat(target.getBoundingClientRect().width.toFixed(2)) ;
+    let parentWidth = parseFloat(target.parentElement.getBoundingClientRect().width.toFixed(2)); 
+    let targetLeftOffset = target.offsetLeft ;
+    right = parentWidth - targetLeftOffset - width ;
+    this.line.style.width = `${width}px` ;
+    this.line.style.right = `${right}px` ;
+}
+//--------------------tabs
+//--------------------tabs
+//--------------------tabs
 let tabsWrapper = document.querySelector('#tabs') ;
 let line = tabsWrapper.querySelector('.line') ;
 let tabs = tabsWrapper.querySelectorAll('ul li') ;
 let lastLi = tabs[tabs.length-1] ;
 let tabsContents = tabsWrapper.querySelectorAll('.tabs_content > div') ;
-tabs.forEach(tab => {
-    tab.addEventListener('click',activateTab) ;
-});
-function getChildIndex(child){
-    let index = null ;
-    let parent = child.parentElement ;
-    let children = parent.children ;
-    children.forEach((c,i) => {
-        if(c==child)  index = i ;
-    })
-    return index ;
+function Tabs(wrapper){
+    this.wrapper = wrapper ;
+    this.tabs = this.wrapper.querySelectorAll('.tab') ;
+    this.contents = this.wrapper.querySelectorAll('.content') ;
+    this.tabs.forEach(tab => {
+        tab.addEventListener('click',this.openTab.bind(this)) ;
+    });
+    this.line = new MovingLine(this.wrapper.querySelector('.line')) ;
+    this.init() ;
 }
-function activateTab(e){
-    //activate tab
-    tabs.forEach(tab => {       
-        if(tab!=this) tab.classList.remove('active') ;
-        else tab.classList.add('active') ;
+Tabs.prototype.init = function(){
+    this.tabs[0].click() ;
+}
+Tabs.prototype.openTab = function(e){
+    let targetID = null ;
+    this.tabs.forEach(tab => {
+        if(tab == e.currentTarget) {
+            tab.classList.add('active') ;
+            targetID = tab.getAttribute('data-target') ;
+        }
+        else tab.classList.remove('active') ;
     })
-    //move line
-    let lineOffset= getChildIndex(this)*parseFloat(util.getStyle(this,'width'))  ;
-    if(this==lastLi) line.style.width = `calc(20%)` ; 
-    else line.style.width = `calc(20% + 1.2px + .2px)` ;
-    line.style.right = `${lineOffset}px` ;
-    //appear tab content
-    let currTabContentID = this.getAttribute('data-target') ;
-    tabsContents.forEach(content => {
-        if(content.getAttribute('id') == currTabContentID) content.classList.add('active') ;
+    this.contents.forEach(content => {
+        if(content.getAttribute('id') == targetID) content.classList.add('active') ;
         else content.classList.remove('active') ;
-    })
+    }) ;
+    this.line.move(e.currentTarget) ;
 }
+//scrollArrows---------------------
+//scrollArrows---------------------
+//scrollArrows---------------------
+new util.ScrollArrows(tabsWrapper) ;

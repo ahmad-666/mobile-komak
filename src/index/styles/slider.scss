@@ -200,11 +200,13 @@
     }
 }
 .slider-wrapper#repair_articles,.slider-wrapper#similars{
+    margin: $dist2 auto 0 auto ;
     .show-all{
         top: 90% ;
     }
 }
 .slider-wrapper#vids_articles{
+    margin: $dist2 auto $sectionsDist auto ;
     background-color: darken($paleColor,1%) ;
     .show-all{
         top: 90% ;

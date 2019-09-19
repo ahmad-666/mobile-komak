@@ -125,3 +125,23 @@ body{
         }
     } 
 }
+@media screen and (max-width:900px){
+    #login_wrapper{font-size: 16px;}
+}
+@media screen and (max-width:600px){
+    #login_wrapper{font-size: 13px;}
+
+}
+@media screen and (max-width:350px){
+    #login_wrapper{
+        font-size: 10px;
+        min-height: 50vh ;
+        form#login{
+            width: 90% ;
+            .input_wrapper{
+                width: 90% ;
+            }
+        }
+    }
+
+}
