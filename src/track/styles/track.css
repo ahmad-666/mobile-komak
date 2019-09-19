@@ -1,0 +1,235 @@
+:export {
+  primaryColor: #06ccf8;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  blackFilter: rgba(30, 30, 30, 0.8);
+}
+
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  mayVar: 40vw;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+body {
+  background-color: #f1f0f5;
+}
+
+#track_wrapper {
+  width: 100%;
+  min-height: 50vh;
+  margin: 4em auto 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#track_wrapper img {
+  width: 10em;
+  height: 3em;
+}
+
+#track_wrapper form#track {
+  width: 25em;
+  height: auto;
+  padding: 1em;
+  margin-top: 2em;
+  background-color: white;
+  -webkit-box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#track_wrapper form#track h4, #track_wrapper form#track .input_wrapper, #track_wrapper form#track button[type="submit"], #track_wrapper form#track p.error {
+  margin: 0.5em auto;
+}
+
+#track_wrapper form#track h4:first-child, #track_wrapper form#track .input_wrapper:first-child, #track_wrapper form#track button[type="submit"]:first-child, #track_wrapper form#track p.error:first-child {
+  margin-top: 0;
+}
+
+#track_wrapper form#track h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+#track_wrapper form#track .input_wrapper {
+  width: 15em;
+  height: 2.5em;
+  position: relative;
+}
+
+#track_wrapper form#track .input_wrapper input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d5d5d8;
+  color: #2d2d31;
+  font-size: 0.8em;
+  padding: 0.5em;
+  border-radius: 2em;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+#track_wrapper form#track .input_wrapper input::-webkit-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input:-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input::-moz-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input:-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input::-ms-input-placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input::placeholder {
+  font-size: 0.8em;
+  color: #86878e;
+}
+
+#track_wrapper form#track .input_wrapper input.error {
+  border: 2px solid #e95858;
+}
+
+#track_wrapper form#track button {
+  width: auto;
+  height: auto;
+  padding: 0.3em 2em;
+  cursor: pointer;
+  border-radius: 2em;
+  font-size: 1em;
+  color: #fbfbfb;
+  background-color: #06ccf8;
+}
+
+#track_wrapper form#track p.error {
+  display: none;
+  font-size: 0.8em;
+  color: #e95858;
+  margin-top: 0.5em;
+}
+
+#track_wrapper form#track p.error.show {
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  #track_wrapper {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #track_wrapper {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #track_wrapper {
+    font-size: 10px;
+    min-height: 50vh;
+  }
+  #track_wrapper form#track {
+    width: 90%;
+  }
+  #track_wrapper form#track .input_wrapper {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=track.css.map */

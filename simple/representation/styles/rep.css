@@ -264,7 +264,7 @@ form#rep_request button[type="submit"] {
   height: auto;
   padding: 0.5em 2.3em;
   color: #fbfbfb;
-  background-color: #4a4982;
+  background-color: #06ccf8;
   font-size: 1em;
   cursor: pointer;
   border-radius: 2em;
@@ -363,7 +363,7 @@ form#rep_request .inputs input::placeholder {
 }
 
 form#rep_request .inputs input:focus {
-  border: 2px solid #4a4982;
+  border: 2px solid #06ccf8;
 }
 
 form#rep_request .inputs input.error {

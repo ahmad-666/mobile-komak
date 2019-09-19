@@ -1,3 +1,41 @@
+:export {
+  primaryColor: #06ccf8;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  blackFilter: rgba(30, 30, 30, 0.8);
+}
+
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  mayVar: 40vw;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
 body {
   background-color: #ebebeb;
 }
@@ -76,7 +114,7 @@ main aside {
 }
 
 main .wrapper {
-  width: 70%;
+  width: 100%;
 }
 
 main .wrapper #article, main .wrapper #comments {
@@ -177,7 +215,7 @@ main #article .bg .content {
   height: auto;
   position: absolute;
   right: 0;
-  top: 60%;
+  top: 70%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -367,8 +405,11 @@ main #article .text p {
 }
 
 main aside {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   border-radius: 0.5em;
-  width: 25%;
+  width: 15em;
   height: auto;
   margin-right: 5%;
   padding-bottom: 1em;
@@ -704,5 +745,185 @@ main aside #popular a .content p {
 
 main aside #popular a:hover .img {
   background-size: 120% 120%;
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+  }
+  main .wrapper {
+    width: 100%;
+  }
+  main aside {
+    -webkit-flex-shrink: none;
+        -ms-flex-negative: none;
+            flex-shrink: none;
+    width: 100%;
+    margin-top: 2em;
+    margin-right: 0;
+  }
+  main aside #latest {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  main aside #latest .article {
+    width: -webkit-calc((100% - (2 * 1em)) / 2);
+    width: -moz-calc((100% - (2 * 1em)) / 2);
+    width: calc((100% - (2 * 1em)) / 2);
+    margin: 0.5em;
+    height: 10em;
+  }
+  main aside #latest .article .content h6 {
+    font-size: 1.2em;
+  }
+  main aside #latest .article .content p {
+    font-size: 0.8em;
+  }
+  main aside #popular {
+    margin-top: 1em;
+  }
+  main aside #popular #tabs_popular {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  main aside #popular a {
+    padding: 0.5em;
+    padding-left: 0;
+    width: -webkit-calc((100% - (2 * 1em)) / 2);
+    width: -moz-calc((100% - (2 * 1em)) / 2);
+    width: calc((100% - (2 * 1em)) / 2);
+    margin: 0.5em;
+    height: auto;
+  }
+  main aside #popular a .img {
+    width: 10em;
+    height: 10em;
+  }
+  main aside #popular a .content h4 {
+    font-size: 1em;
+  }
+  main aside #popular a .content p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main aside #latest .article {
+    width: -webkit-calc((100% - (1 * 1em)) / 1);
+    width: -moz-calc((100% - (1 * 1em)) / 1);
+    width: calc((100% - (1 * 1em)) / 1);
+    margin: 0.5em;
+    height: 13em;
+  }
+  main aside #latest .article .content h6 {
+    font-size: 1.2em;
+  }
+  main aside #latest .article .content p {
+    font-size: 0.8em;
+  }
+  main aside #popular a {
+    width: -webkit-calc((100% - (1 * 1em)) / 1);
+    width: -moz-calc((100% - (1 * 1em)) / 1);
+    width: calc((100% - (1 * 1em)) / 1);
+    margin: 0.5em;
+    height: auto;
+  }
+  main aside #popular a .img {
+    width: 11em;
+    height: 11em;
+  }
+  main aside #popular a .content h4 {
+    font-size: 1em;
+  }
+  main aside #popular a .content p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=article.css.map */

@@ -1,7 +1,7 @@
 #trust {
   width: 100%;
   height: auto;
-  margin: -3em auto 4em auto;
+  margin: -1em auto 0 auto;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -143,5 +143,23 @@
       -ms-transform: translateX(50%);
           transform: translateX(50%);
   bottom: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  #trust {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #trust {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #trust {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=sponsers.css.map */

@@ -2,9 +2,10 @@
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 #why_us{
+    direction: ltr ;
     width: 100%; 
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: $dist3 auto 0 auto ;
     display: flex ;
     @include flex(column,flex-start,space-around,nowrap,"") ;
     background-color: darken($paleColor,1%) ;
@@ -36,13 +37,14 @@
         width: 100% ;
         height: auto;
         display: flex ;
-        @include flex(row,space-around,center,wrap,flex-start) ;
+        @include flex(row,space-around,flex-start,wrap,flex-start) ;
         .item{
             margin: $dist1 0 ;
-            width: 15em ;
-            height: 13em;
+            width: calc((100% - (4 * 1em)) / 4) ;
+            height: auto;
+            margin: 0 $dist1 ;
             display: flex ;
-            @include flex(column,space-around,center,nowrap,"") ;
+            @include flex(column,flex-start,center,nowrap,"") ;
             img,h6,p{
                 width: auto ;
                 margin: 0 ;
@@ -54,19 +56,163 @@
             h6{
                 font-size: $font-l ;
                 color: $darkColor ;
+                margin-top: $dist1 ;
             }
             p{
                 font-size: $font-m - .1em;
                 color: $greyColor2 ;
+                margin-top: $dist1 ;
             }
         }
     }
     video{
+        direction: ltr ;
         width: 35em ;
         height: 20em;
         position: relative;
-        right: 50% ;
-        transform: translateX(50%) ;
+        left: 50% ;
+        transform: translateX(-50%) ;
+        margin-top: $dist2 ;
         
+    }
+}
+@media screen and (max-width:900px){
+    #why_us{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:750px){
+    #why_us{
+        .title{
+            .line,h4{
+                margin: 0 $dist1 ;
+            }
+            .line{
+                width: 9em ;
+                height: .15em ;
+            }
+            h4{
+                font-size: $font-xl ;         
+            }
+        }
+        .items{
+            .item{            
+                margin: 0 $dist1 ;
+                img{
+                    width: 5em ;
+                    height: 5em;
+                }
+                h6{
+                    font-size: $font-m + .1em ;
+                }
+                p{
+                    font-size: $font-m - .1em;
+                }
+            }
+        }
+        video{
+            width: 30em ;
+            height: 17em;
+        }
+    }
+}
+@media screen and (max-width:680px){
+    #why_us{
+        .items{
+            .item{     
+                width: calc((100% - (2 * 1em)) / 2) ;       
+                margin: $dist2 $dist1 ;
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    #why_us{
+        .title{
+            width: 100% ;
+            height: auto; 
+            display: flex ;
+            @include flex(row,space-around,center,nowrap,"") ;
+            .line,h4{
+                margin: 0 $dist1 ;
+            }
+            .line{
+                width: 30% ;
+                height: .1em ;
+            }
+            h4{
+                font-size: $font-l ;
+               
+            }
+        }
+        .items{
+            .item{     
+                width: calc((100% - (2 * 1em)) / 2) ;       
+                margin: $dist2 $dist1 ;
+                img{
+                    width: 5em ;
+                    height: 5em;
+                }
+                h6{
+                    font-size: $font-m + .1em ;
+                }
+                p{
+                    font-size: $font-m - .1em;
+                }
+            }
+        }
+        video{
+            width: 90% ;
+            height: 14em;
+        }
+    }
+}
+@media screen and (max-width:370px){
+    #why_us{
+        .title{
+            width: 100% ;
+            height: auto; 
+            display: flex ;
+            @include flex(row,space-around,center,nowrap,"") ;
+            .line,h4{
+                margin: 0 $dist1 ;
+            }
+            .line{
+                width: 20% ;
+                height: .1em ;
+            }
+            h4{
+                font-size: $font-l ;
+               
+            }
+        }
+    }
+   
+    
+}
+@media screen and (max-width:330px){
+    #why_us{
+        .title{
+            h4{
+                font-size: $font-m ;         
+            }
+        }
+        .items{
+            .item{     
+                width: 75% ;       
+                margin: $dist2 0 ;
+                img{
+                    width: 6em ;
+                    height: 6em;
+                }
+                h6{
+                    font-size: $font-m ;
+                }
+            }
+        }
+        video{
+            width: 90% ;
+            height: 14em;
+        }
     }
 }

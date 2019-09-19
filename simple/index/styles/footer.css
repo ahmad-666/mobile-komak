@@ -1,10 +1,10 @@
 #footer {
   width: 100%;
-  height: 33em;
-  background: url("../../assets/svgs/footer.svg") 80% -5% no-repeat;
-  background-size: 116% 142%;
+  height: 25em;
+  background: url("../../assets/svgs/footer.svg") 100% 0% no-repeat;
+  background-size: 130% 100%;
   position: relative;
-  margin-top: -4em;
+  margin-top: 2em;
 }
 
 #footer .content {
@@ -182,5 +182,65 @@
   cursor: pointer;
   margin-top: 0;
   margin-left: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+  #footer {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #footer {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #footer {
+    background-image: none;
+    background-color: #212020;
+    font-size: 13px;
+    height: 25em;
+  }
+  #footer .content {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  #footer {
+    height: auto;
+    padding: 0 0.5em;
+  }
+  #footer .content {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  #footer .content .about_us, #footer .content .training, #footer .content .articles, #footer .content .contact_us {
+    margin-top: 2em;
+  }
 }
 /*# sourceMappingURL=footer.css.map */

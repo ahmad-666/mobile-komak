@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  margin: 4em 0;
+  margin: 2em auto 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -46,13 +46,13 @@
 }
 
 .slider-wrapper button {
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   border-radius: 50%;
   position: absolute;
   top: 45%;
   cursor: pointer;
-  background-color: #4a4982;
+  background-color: #06ccf8;
   z-index: 5;
 }
 
@@ -64,7 +64,7 @@
      -moz-transform: translate(50%, -50%);
       -ms-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
-  font-size: 2em;
+  font-size: 1.6em;
   color: #fbfbfb;
 }
 
@@ -130,10 +130,10 @@
 }
 
 .slider-wrapper .slider .slide {
-  width: 15em;
-  height: 13em;
+  width: 13em;
+  height: 12em;
   position: relative;
-  margin: 0 1em;
+  margin: 0 0.5em;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -289,14 +289,14 @@
 
 .slider-wrapper .slider .slide .content a {
   bottom: .5em;
-  width: 10em;
+  width: 8em;
   height: 3em;
   text-align: center;
   line-height: 3em;
   color: #fbfbfb;
-  background-color: #4a4982;
+  background-color: #06ccf8;
   border-radius: 2em;
-  font-size: 0.9em;
+  font-size: 0.8em;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -364,15 +364,68 @@
   top: 90%;
 }
 
+.slider-wrapper#repair_articles, .slider-wrapper#similars {
+  margin: 1em auto 0 auto;
+}
+
 .slider-wrapper#repair_articles .show-all, .slider-wrapper#similars .show-all {
   top: 90%;
 }
 
 .slider-wrapper#vids_articles {
+  margin: 1em auto 4em auto;
   background-color: #f1f0f5;
 }
 
 .slider-wrapper#vids_articles .show-all {
   top: 90%;
+}
+
+@media screen and (max-width: 900px) {
+  .slider-wrapper {
+    font-size: 16px;
+  }
+  .slider-wrapper button {
+    width: 3.5em;
+    height: 3.5em;
+  }
+  .slider-wrapper button i {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .slider-wrapper {
+    font-size: 13px;
+  }
+  .slider-wrapper button {
+    width: 3em;
+    height: 3em;
+  }
+  .slider-wrapper button i {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .slider-wrapper {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .slider-wrapper button {
+    display: none;
+  }
+  .slider-wrapper .slider {
+    overflow: auto;
+    padding: 1em 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slider-wrapper {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=slider.css.map */

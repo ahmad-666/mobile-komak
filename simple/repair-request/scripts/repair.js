@@ -1,3 +1,6 @@
+//-------------------------------
+//-------------------------------
+//-------------------------------
 let requestWrapper = document.querySelector('#request') ;
 let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
 //move to next/prev slide 
@@ -158,7 +161,7 @@ function tabHandler(e){
     }
 }
 function mobileValidate(){
-    if(mobileInput.value.length >= 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
+    if(mobileInput.value.length == 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
         mobileInput.classList.remove('error') ;
         mobileInput.removeEventListener('input',monitorMobile) ;
         return true ;
@@ -169,7 +172,7 @@ function mobileValidate(){
     }
 }
 function monitorMobile(e){
-    if(mobileInput.value.length < 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
+    if(mobileInput.value.length != 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
     else mobileInput.classList.remove('error') ;
 }
 function codeValidate(){
@@ -321,19 +324,44 @@ let confirmError = confirmWrapper.querySelector('p.error') ;
 let timeline = requestWrapper.querySelector('#timeline') ;
 let line = timeline.querySelector('.line') ;
 let fillLine = timeline.querySelector('.fill_line') ;
+if(window.innerWidth>350){
+    fillLine.style.width = '0%' ;
+    fillLine.style.height = '' ;
+}
+else if(window.innerWidth<=350){
+    fillLine.style.width = '' ;
+    fillLine.style.height = '0%' ;
+}
 let circles = timeline.querySelectorAll('.circle') ;
 let circleIndex = 0 ;
 function moveLine(dir){
-    let currWidth = parseFloat(fillLine.style.width) ;
-    let offset = 100/6 ;
-    if(dir == 'forward'){
-        fillLine.style.width = `${currWidth+offset}%` ;
-        circleIndex++ ;
-        circles[circleIndex].classList.add('active') ; 
+    if(window.innerWidth>350){
+        let currWidth = parseFloat(fillLine.style.width) ;
+        let offset = 100/6 ;
+        if(dir == 'forward'){
+            fillLine.style.width = `${currWidth+offset}%` ;
+            circleIndex++ ;
+            circles[circleIndex].classList.add('active') ; 
+        }
+        else if(dir = 'backward'){
+            circles[circleIndex].classList.remove('active') ; 
+            circleIndex-- ;
+            fillLine.style.width = `${currWidth-offset}%` ;
+        }
     }
-    else if(dir = 'backward'){
-        circles[circleIndex].classList.remove('active') ; 
-        circleIndex-- ;
-        fillLine.style.width = `${currWidth-offset}%` ;
+    else if(window.innerWidth<=350){
+        let currHeight = parseFloat(fillLine.style.height) ;
+        let offset = 100/6 ;
+        if(dir == 'forward'){
+            fillLine.style.height = `${currHeight+offset}%` ;
+            circleIndex++ ;
+            circles[circleIndex].classList.add('active') ; 
+        }
+        else if(dir = 'backward'){
+            circles[circleIndex].classList.remove('active') ; 
+            circleIndex-- ;
+            fillLine.style.height = `${currHeight-offset}%` ;
+        }
     }
+    
 }

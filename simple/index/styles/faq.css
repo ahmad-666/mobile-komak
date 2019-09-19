@@ -1,7 +1,7 @@
 #faq {
   width: 90vw;
   height: auto;
-  margin: 4em auto;
+  margin: 1em auto 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -39,7 +39,7 @@
 #faq h4 {
   width: 100%;
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: 700;
   color: #2d2d31;
 }
@@ -163,5 +163,23 @@
   margin: 2em 0;
   visibility: visible;
   opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  #faq {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #faq {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #faq {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=faq.css.map */

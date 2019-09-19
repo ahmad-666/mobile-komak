@@ -1,106 +1,324 @@
-@import '../../colors.scss' ;
-@import '../../variables.scss' ;
-@import '../../mixins.scss' ;
-#grid{
-    width: 80% ;
+@import '../../colors.scss';
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+#grid {
+    width: 80%;
     height: auto;
-    margin: $sectionsDist auto ;
-    display: flex ;
-    @include flex(row,flex-start,flex-start,nowrap,"") ;
-    .row{
-        margin: 0 $dist1 ;
-        &:nth-child(1){
-            width: 75% ;
-            display: flex ;
-            @include flex(column,flex-start,flex-start,nowrap,"") ;
-            .article{
-                &:nth-child(1){
-                    width: 100% ;
+    margin: $sectionsDist auto;
+    display: flex;
+    @include flex(row, flex-start, flex-start, nowrap, "");
+
+    .row {
+        margin: 0 $dist1;
+
+        &:nth-child(1) {
+            width: 75%;
+            display: flex;
+            @include flex(column, flex-start, flex-start, nowrap, "");
+
+            .article {
+                &:nth-child(1) {
+                    width: 100%;
                     height: 17em;
                     background-image: url('../../assets/imgs/grid1.jpg');
-                    h4{font-size: $font-special ;}
-                    p{font-size: $font-xl ;}
+
+                    h4 {
+                        font-size: $font-special;
+                    }
+
+                    p {
+                        font-size: $font-xl;
+                    }
                 }
             }
-            .fixer_row{
-                width: 100% ;
+
+            .fixer_row {
+                width: 100%;
                 height: auto;
-                display: flex ;
-                @include flex(row,flex-start,flex-start,nowrap,"") ;
-                .article{
-                    &:nth-child(1),&:nth-child(2){
-                        width: 50% ;
+                display: flex;
+                @include flex(row, flex-start, flex-start, nowrap, "");
+
+                .article {
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        width: 50%;
                         height: 11em;
-                        margin-top: $dist2 ;
-                        h4{font-size: $font-xl ;}
-                        p{font-size: $font-l ;}
+                        margin-top: $dist2;
+
+                        h4 {
+                            font-size: $font-xl;
+                        }
+
+                        p {
+                            font-size: $font-l;
+                        }
                     }
-                    &:nth-child(1){background-image: url('../../assets/imgs/grid2.jpg');}
-                    &:nth-child(2){
+
+                    &:nth-child(1) {
+                        background-image: url('../../assets/imgs/grid2.jpg');
+                    }
+
+                    &:nth-child(2) {
                         background-image: url('../../assets/imgs/grid3.jpg');
-                        margin-right: $dist2 ;
+                        margin-right: $dist2;
                     }
                 }
 
             }
         }
-        &:nth-child(2){
-            flex-shrink: 0 ;
-            width: 25% ;
-            display: flex ;
-            @include flex(column,flex-start,flex-start,nowrap,"") ;
-            .article{
-                width: 100% ;
+
+        &:nth-child(2) {
+            flex-shrink: 0;
+            width: 25%;
+            display: flex;
+            @include flex(column, flex-start, flex-start, nowrap, "");
+
+            .article {
+                width: 100%;
                 height: 9em;
-                &:nth-child(1){background-image: url('../../assets/imgs/grid4.jpg');}
-                &:nth-child(2){background-image: url('../../assets/imgs/grid5.jpg');}
-                &:nth-child(3){background-image: url('../../assets/imgs/grid6.jpg');}
-                &:nth-child(2),&:nth-child(3){margin-top: $dist2 ;}
-                h4{font-size: $font-l ;}
-                p{font-size: $font-m ;}
+
+                &:nth-child(1) {
+                    background-image: url('../../assets/imgs/grid4.jpg');
+                }
+
+                &:nth-child(2) {
+                    background-image: url('../../assets/imgs/grid5.jpg');
+                }
+
+                &:nth-child(3) {
+                    background-image: url('../../assets/imgs/grid6.jpg');
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    margin-top: $dist2;
+                }
+
+                h4 {
+                    font-size: $font-l;
+                }
+
+                p {
+                    font-size: $font-m;
+                }
             }
         }
+
         height: auto;
-        .article{
-            position: relative ;
-            background-position: center center ;
-            background-size: 100% 100% ;
-            background-repeat: no-repeat ;
+
+        .article {
+            position: relative;
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             cursor: pointer;
-            transition: all .3s ease-in-out ;
-            &:hover{
-                background-size: 125% 125% ;
-                &::before{
-                    background-color: rgba(30,30,30,.3) ;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background-size: 125% 125%;
+
+                &::before {
+                    background-color: rgba(30, 30, 30, .3);
                 }
             }
-            &::before{
-                content: '' ;
-                @include fullSize-abs ;
-                background-color: $blackFilter2 ;
+
+            &::before {
+                content: '';
+                @include fullSize-abs;
+                background-color: $blackFilter2;
             }
-            .content{
-                width: 100% ;
+
+            .content {
+                width: 100%;
                 height: auto;
-                position: absolute ;
-                top: 45% ;
-                right: 0 ;
-                display: flex ;
-                @include flex(column,flex-start,flex-start,nowrap,"");
-                h4,p{
-                    margin-top: $dist2 ;
-                    width: 100% ;
-                    @include ellipse ;
-                    text-align: center ;
+                position: absolute;
+                top: 45%;
+                right: 0;
+                display: flex;
+                @include flex(column, flex-start, flex-start, nowrap, "");
+
+                h4,
+                p {
+                    margin-top: $dist2;
+                    width: 100%;
+                    @include ellipse;
+                    text-align: center;
                 }
-                h4{
+
+                h4 {
                     color: $whiteColor2;
-                    font-weight: 700 ;
+                    font-weight: 700;
                 }
-                p{
-                    color: $greyColor ;
+
+                p {
+                    color: $greyColor;
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #grid {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:850px) {
+    #grid {
+        width: 90%;
+        @include flex(column, flex-start, flex-start, nowrap, "");
+        .row {
+            &:nth-child(1) {
+                width: 100%;
+                margin: 0 ;
+                @include flex(column, flex-start, flex-start, nowrap, "");
+                .article {
+                    &:nth-child(1) {
+                        width: 100%;
+                        height: 17em;
+                    }
+                }
+                .fixer_row {
+                    width: 100%;
+                    @include flex(row, flex-start, flex-start, nowrap, "");
+                    .article {
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            width: 50%;
+                            height: 11em;
+                            margin-top: $dist1;
+                            h4 {
+                                font-size: $font-xl;
+                            }
+                        }
+                        &:nth-child(2) {
+                            margin-right: $dist1;
+                        }
+                    }
+    
+                }
+            }
+            &:nth-child(2) {
+                margin-right: 0 ;
+                width: 100%;
+                display: flex;
+                @include flex(row, flex-start, flex-start, wrap, flex-start);
+                .article {
+                    &:nth-child(1) {
+                        width: calc(50% - (.5em / 2));
+                        height: 9em;
+                        margin-top: $dist1 ;
+                    }
+                    &:nth-child(2) {
+                        width: calc(50% - (.5em / 2));
+                        height: 9em;
+                        margin-top: $dist1 ;
+                        margin-right: $dist1 ;
+
+                    }
+                    &:nth-child(3) {
+                        width: 100%;
+                        height: 17em;
+                        margin-top: $dist1 ;
+                        h4 {
+                            font-size: $font-special;
+                        }
+    
+                        p {
+                            font-size: $font-xl;
+                        }
+
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    #grid {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:400px) {
+    #grid {
+        .row {
+            &:nth-child(1) {
+                .article {
+                    &:nth-child(1) {
+                        height: 12em;
+                        h4 {
+                            font-size: $font-xl;
+                        }
+    
+                        p {
+                            font-size: $font-l;
+                        }
+                    }
+                }
+                .fixer_row {
+                    width: 100%;
+                    @include flex(column, flex-start, flex-start, nowrap, "");
+                    .article {
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            width: 100%;
+                            height: 12em;
+                            margin-right: 0 ;
+                        }
+                        h4 {
+                            font-size: $font-xl;
+                        }
+    
+                        p {
+                            font-size: $font-l;
+                        }
+                    }  
+                }
+            }
+            &:nth-child(2) {
+                width: 100%;
+                @include flex(column, flex-start, flex-start, nowrap,"");
+                .article {
+                    &:nth-child(1) {
+                        width: 100%;
+                        height: 11em;
+                        margin-top: $dist1 ;
+                    }
+                    &:nth-child(2) {
+                        width: 100%;
+                        height: 11em;
+                        margin-top: $dist1 ;
+                    }
+                    &:nth-child(3) {
+                        width: 100%;
+                        height: 11em;
+                        margin-top: $dist1 ;
+                        h4 {
+                            font-size: $font-xl;
+                        }
+    
+                        p {
+                            font-size: $font-l;
+                        }
+                    }
+                    h4 {
+                        font-size: $font-xl;
+                    }
+
+                    p {
+                        font-size: $font-l;
+                    }
+                }
+            } 
+        }
+    }
+}
+@media screen and (max-width:350px) {
+    #grid {
+        font-size: 10px;
     }
 }

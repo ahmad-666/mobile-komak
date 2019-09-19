@@ -1,0 +1,651 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#request{
+    width: 90vw ;
+    height: auto;
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    background-color: white ;
+    box-shadow: 0 0 .5em .1em $shadowColor ;
+    margin: ($dist4 + 2em) auto ($dist4 + 2em) auto ;
+    padding: $dist2 0 $dist3 0 ;
+    overflow: hidden;
+    #timeline{
+        width: 95% ;
+        height: 5em;
+        display: flex ;
+        @include flex(row,space-between,center,nowrap,"") ;
+        position: relative ;
+        margin: $dist2 auto 0 auto ;
+        .line,.fill_line{
+            display: inline-block ;
+            @include center-y ;
+            right: 0 ;
+            width: 100% ;
+            height: .4em;
+        }
+        .line{
+            background-color: lighten($greyColor2,30%) ;
+        }
+        .fill_line{
+            width: 0% ;
+            transition: all .8s ease-in-out ;
+            background-color: $greenColor2 ;
+        }
+        .circle{
+            width: 4em ;
+            height: 4em;
+            border-radius: 50% ;
+            position: relative ;
+            z-index: 2;
+            text-align: center ;
+            line-height: 4.5em ;
+            border: .2em solid lighten($greyColor2,30%) ; ;
+            background-color: white ;
+            transition: all .5s ease-in-out .3s ;
+            i{
+                opacity: 0 ;
+                visibility: hidden ;
+                font-size: $font-xxl ;
+                color: $whiteColor2 ;
+                transition: all .5s ease-in-out .3s ;
+            }
+            p{
+                width: 200% ;
+                height: auto;
+                font-size: $font-m ;
+                color: $greyColor2 ;
+                @include center-x ;
+                bottom: 100% ;
+                transition: all .5s ease-in-out .3s ;
+                line-height: 2em ;
+            }
+        }
+        .circle.active{
+            background-color: $greenColor2 ;
+            border: .2em solid transparent ;
+            p{
+                color: $greenColor2 ;
+                font-size: $font-l ;
+            }
+            i{
+                opacity: 1;
+                visibility: visible ;
+            }
+        }
+    }
+    form#request_info{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        margin-top: $dist2 ;
+        position: relative ;
+        right: 0 ;
+        transition: all .8s ease-in-out ;
+        .slide{
+            flex-shrink: 0 ;
+            width: 100% ;
+            height: auto;
+            display: flex ;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            h4{
+                font-size: $font-special - .2em ;
+                color: $darkColor ;
+                font-weight: 700 ;
+                margin: 0 auto ;
+            }
+            .labels{
+                width: 100% ;
+                max-height: 25em ;
+                overflow: auto ;
+                display: flex ;
+                @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                label{
+                    width: calc((90vw - (6 * 3em)) / 6) ;
+                    height: calc((90vw - (6 * 3em)) / 6) ;
+                    border-radius: $dist3 ;
+                    cursor: pointer;
+                    margin: $dist2 ;
+                    position: relative ;
+                    background-position: center center ;
+                    background-repeat: no-repeat ;
+                    background-size: 100% 100% ;
+                    transition: all .3s ease-in-out ;
+                    position: relative ;
+                    input[type="radio"],input[type="checkbox"]{
+                       width: 0 ;
+                       height: 0;
+                       display: none ;
+                    }
+                    p{
+                        width: 100% ;
+                        text-align: center ;
+                        height: auto;
+                        @include center-xy ;
+                        font-size: $font-l + .2em ;
+                        color: white ;
+                    }
+                    i{
+                        @include center-x ;
+                        bottom: 10px ;
+                        width: 1.7em ;
+                        height: 1.7em;
+                        border-radius: 50% ;
+                        background-color: $greenColor2 ;
+                        opacity: 0;
+                        visibility: hidden ;
+                        transition: all .3s ease-in-out ;
+                        text-align: center ;
+                        line-height: 1.7em ;
+                        font-size: $font-special;
+                        &::before{
+                            font-size: $font-l ;
+                            color: $whiteColor2 ;
+                        }
+                    }
+                    i.show{
+                        opacity: 1;
+                        visibility: visible ;
+                    }
+                    &::before{
+                        content: '' ;
+                        @include fullSize-abs ;
+                        background-color: $blackFilter ;
+                        border-radius: $dist3 ;
+                    }
+                    &:hover{
+                        background-size: 125% 125% ;
+                    }
+                }
+            }
+            ul.desc{
+                width: 90% ;
+                height: auto;
+                margin: $dist3 auto 0 auto ;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                li{
+                    width: 100% ;
+                    height: auto;
+                    font-size: $font-m ;
+                    color: $darkColor ;
+                    &:not(:first-child){margin-top: $dist2 ;}
+                    i{
+                        color: $primaryColor ;
+                        font-size: $font-l ;
+                        transform: translate(50%,15%) ;
+                    }
+                }
+            }
+            .btn-wrapper{
+                width: auto ;
+                height: auto;
+                margin: $dist3 auto 0 auto ;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                button{
+                    width: auto ;
+                    height: auto;
+                    padding: $dist1 + .2em $dist3 + .3em ;
+                    border-radius: $dist3 ;
+                    color: $whiteColor2 ;
+                    font-size: $font-l ;
+                    cursor: pointer;
+                    &:nth-child(1){
+                        background-color: lighten($redColor2,5%) ;
+                    }
+                    &:nth-child(2){
+                        background-color: $greenColor2 ;
+                        margin-right: $dist4 ;
+                    }
+                }
+            }
+        }
+        .slide#select_device{
+            .labels{
+                @include flex(row,space-around,center,wrap,flex-start) ;
+                label[for="mobile"]{background-image: url('../../assets/imgs/mobile.jpg');}
+                label[for="tablet"]{background-image: url('../../assets/imgs/tablet.jpg');}
+            }
+        }
+        .slide#select_brand{
+            .labels{
+                label[for="apple"]{background-image: url('../../assets/imgs/iphone.jpg') ;}
+                label[for="sony"]{background-image: url('../../assets/imgs/sony.jpg') ;}
+                label[for="samsung"]{background-image: url('../../assets/imgs/samsung.jpg') ;}
+                label[for="huawei"]{background-image: url('../../assets/imgs/huawei.jpg') ;}
+                label[for="lg"]{background-image: url('../../assets/imgs/lg.jpg') ;}
+                label[for="others"]{background-image: url('../../assets/imgs/article2.jpg') ;}
+            }
+        }
+        .slide#select_model{
+            .labels{
+                label{background-image: url('../../assets/imgs/mobile.jpg') ;}
+            }
+        }
+        .slide#select_color{
+            .labels{
+                label{background-image: url('../../assets/imgs/mobile.jpg') ;}
+            }
+        }
+        .slide#select_problem{
+            .labels{
+                label{background-image: url('../../assets/imgs/grid6.jpg') ;}
+            }
+            .error{
+                width: auto ;
+                height: auto;
+                font-size: $font-m ;
+                color: $redColor2 ;
+                margin: $dist2 auto 0 auto ;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s ease-in-out ;
+            }
+            .error.show{
+                opacity: 1;
+                visibility: visible ;
+            }
+        }
+        .slide#select_info{
+            .tabs{
+                width: 100% ;
+                height: 20em;
+                position: relative ;
+                margin-top: $dist2 ;
+                .tab{
+                    visibility: hidden ;
+                    @include fullSize-abs ;
+                    opacity: 0;
+                    transition: all .3s ease-in-out ;
+                    display: flex ;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    h4{
+                        font-size: $font-l ;
+                        color: $darkColor ;
+                        font-weight: 700 ;
+                    }
+                    .btn-wrapper{            
+                        width: auto ;
+                        height: auto;
+                        margin: $dist3 auto 0 auto ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        button{
+                            width: auto ;
+                            height: auto;
+                            padding: $dist1 + .2em $dist3 + .3em ;
+                            color: $whiteColor2 ;
+                            border-radius: $dist3 ;
+                            cursor: pointer;
+                            font-size: $font-l ;
+                            &:nth-child(1){
+                                background-color: lighten($redColor2,5%) ;
+                            }
+                            &:nth-child(2){
+                                background-color: $greenColor2 ;
+                                margin-right: $dist4 ;
+                            }
+                        }
+                    }
+                    .input_wrapper{
+                        width: auto ;
+                        height: auto;
+                        position: relative ;
+                        margin-top: $dist2 + .5em ;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        input{
+                            width: 20em ;
+                            height: 3em;
+                            color: $darkColor ;
+                            font-size: $font-m ;
+                            padding: $dist1 ;
+                            border-radius: $dist3 ;
+                            border: 1px solid $darkColor ;
+                            &::placeholder{
+                                font-size: $font-m ;
+                                color: $greyColor2 ;
+                            }
+                        }
+                        input.error{
+                            border: 2px solid $redColor2 ;
+                        }
+                        #timer_resend{
+                            width: 100% ;
+                            height: auto;
+                            margin-top: $dist1 ;
+                            display: flex ;
+                            @include flex(row,space-between,center,nowrap,"") ;
+                            #timer{
+                                width: auto ;
+                                height: auto;
+                                display: flex ;
+                                @include flex(row,flex-start,center,nowrap,"") ;
+                                font-size: $font-m - .1em ;
+                                color: $greyColor2 ;
+                            }
+                            #resend{
+                                width: auto ;
+                                height: auto;
+                                color: $greyColor2 ;
+                                font-size: $font-m - .1em ;
+                                background-color: transparent ;
+                                cursor: pointer;
+                            }
+                        }
+                        p.error{
+                            width: 100% ;
+                            text-align: center ;
+                            height: auto;
+                            visibility: hidden ;
+                            opacity: 0;
+                            transition: all .3s ease-in-out ;
+                            color: $redColor2 ;
+                            font-size: $font-m ;
+                            margin-top: $dist1 ;
+                        }
+                        p.error.show{
+                            visibility: visible ;
+                            opacity: 1;
+                        }
+                    }
+                    .input_wrapper.code_wrapper{
+                        height: auto;
+                        visibility: visible ;
+                        opacity: 1;
+                    }
+                    .input_wrapper.code_wrapper.hide{
+                        visibility: hidden ;
+                        opacity: 0;
+                        height: 0;
+                    }
+                    .input_wrapper.code_wrapper.addTransition{transition: all .3s ease-in-out;}
+                    .input_wrapper.select{
+                        width: auto ;
+                        height: auto;
+                        position: relative ;
+                        input{
+                            width: 20em ;
+                            height: 2.5em ;
+                            border-radius: 0 ;
+                            cursor: pointer;
+                        }
+                        i{
+                            font-size: $font-l ;
+                            cursor: pointer;
+                            @include center-y ;
+                            left: $dist1 ;
+                            color: $darkColor ;
+                        }
+                        ul{
+                            width: 100% ;
+                            max-height: 10em;
+                            overflow: auto;
+                            display: flex ;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            opacity: 0;
+                            visibility: hidden ;
+                            transition: all .3s ease-in-out ;
+                            box-shadow: 0 0 .5em .1em $shadowColor ;
+                            position: absolute ;
+                            right: 0;
+                            top: 100% ;
+                            z-index: 2;
+                            li{
+                                width: 100% ;
+                                height: 2.5em ;
+                                line-height: 2.5em ;
+                                padding-right: $dist1 ;
+                                color: $darkColor ;
+                                transition: all .3s ease-in-out ;
+                                cursor: pointer;
+                                font-size: $font-m ;
+                                background-color: $whiteColor2 ;
+                                &:hover{background-color: darken($whiteColor2,15%)}
+                            }
+                        }
+                        ul.show{
+                            visibility: visible ;
+                            opacity: 1;
+                        }
+                    }
+                    .discount{
+                        width: auto ;
+                        height: auto;
+                        margin-top: $dist1 ;
+                        display: flex ;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        .input_wrapper{
+                            width: auto ;
+                            height: 2em;
+                            display: flex ;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            &:nth-child(2){
+                                margin-right: $dist4 ;
+                            }
+                            input[type="checkbox"]{
+                                width: 0 ;
+                                height: 0;
+                                display: none ;
+                                &:checked{
+                                    ~label{
+                                        .rect{
+                                            border-radius: 0 ;
+                                            border-top: 1.2px solid transparent ;
+                                            border-right: 1.2px solid transparent ;
+                                            border-left: 1.2px solid $greenColor2 ;
+                                            border-bottom: 1.2px solid $greenColor2 ;
+                                            transform: translate(0,-50%) rotate(-45deg) ;
+                                            width: 1.5em ;
+                                            height: .7em;
+                                        }
+                                    }                                 
+                                }
+                            }                        
+                            label{
+                                font-size: $font-m ;
+                                color: $greyColor2 ;
+                                transform: translate(-.5em,0) ;
+                                cursor: pointer;
+                                .rect{
+                                    display: inline-block ;
+                                    width: 1.2em ;
+                                    height: 1.2em;
+                                    border-radius: .3em ;
+                                    border: 1.2px solid $darkColor ;
+                                    cursor: pointer;
+                                    transform: translate(0,.3em) rotate(0) ;
+                                    transition: all .2s ease-in-out ;
+                                }
+                            }
+                            input#discount_code{
+                                width: 15em ;
+                                height: 100%;
+                                border-radius: $dist3 ;
+                                color: $darkColor ;
+                                padding: $dist1 ;
+                                border: 1px solid $darkColor ;
+                                opacity: 0;
+                                visibility: hidden ;
+                                transition: all .3s ease-in-out ;
+                                &::placeholder{
+                                    font-size: $font-m ;
+                                    color: $greyColor2 ;
+                                }
+                            }
+                            input#discount_code.show{
+                                opacity: 1;
+                                visibility: visible ;
+                            }
+                        }
+                    }
+                }
+                .tab.show{
+                    visibility: visible ;
+                    opacity: 1;
+                }
+            }
+        }
+        .slide#confirm{
+            #summery{
+                width: 40% ;
+                height: auto;
+                margin: $dist2 auto 0 auto ;
+                display: flex ;
+                @include flex(row,space-between,flex-start,nowrap,"") ;
+                #details,#contact{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    h4{
+                        font-size: $font-l ;
+                        font-weight: 700 ;
+                        color: $greyColor2 ;
+                        margin: 0 ;
+                    }
+                    ul{
+                        margin-top: $dist1 ;
+                        width: 100% ;
+                        height: auto;
+                        display: flex ;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        li{
+                            width: 100% ;
+                            height: auto;
+                            display: flex ;
+                            @include flex(row,flex-start,flex-start,nowrap,"") ;
+                            &:not(:first-child){margin-top: $dist2 ;}
+                            i{
+                                font-size: $font-l ;
+                                color: $primaryColor ;
+                                transform: translate(50%,15%) ;
+                            }
+                            .title{
+                                font-size: $font-m ;
+                                color: $primaryColor ;
+                                font-weight:700; 
+                            }
+                            .text{
+                                color: $greyColor2 ;
+                                font-size: $font-m ;
+                                transform: translate(-.3em,0) ;
+                            }
+                        }
+                    }
+                }
+                #contact{
+                    margin-right: $dist3 ;
+                }
+                
+            }
+            textarea{
+                width: 40% ;
+                height: 10em;
+                padding: $dist1 ;
+                color: $darkColor ;
+                font-size: $font-m ;
+                line-height: $dist3 ;
+                margin: $dist2 auto 0 auto ;
+                border: 1px solid lighten($greyColor2,20%) ;
+                &:hover{
+                    border: 1px solid lighten($greyColor2,20%) ;
+                }
+                &::placeholder{
+                    font-size: $font-m ;
+                    color: $greyColor2 ;
+                }
+            }
+            button.nextSlide{
+                width: auto ;
+                height: auto;
+                padding: $dist1 + .2em $dist3 + .3em ;
+                color: $whiteColor2 ;
+                font-size: $font-l ;
+                background-color: $greenColor2 ;
+                margin: $dist2 auto 0 auto ;
+                border-radius: $dist3 ;
+                cursor: pointer;
+            }
+            p.error{
+                font-size: $font-m ;
+                color: $redColor2 ;
+                margin: $dist2 auto 0 auto;
+                opacity: 0;
+                visibility: hidden ;
+                transition: all .3s ease-in-out ;
+            }
+            p.error.show{
+                opacity: 1;
+                visibility: visible;
+            }
+            .input_wrapper.checkbox{
+                width: auto ;
+                height: auto;
+                margin: $dist2 auto 0 auto ;
+                input[type="checkbox"]{
+                    width: 0 ;
+                    height: 0;
+                    display: none ;
+                    &:checked{
+                        ~label{
+                            .rect{
+                                border-top: 1.2px solid transparent ;
+                                border-right: 1.2px solid transparent ;
+                                border-left: 1.2px solid $greenColor2 ;
+                                border-bottom: 1.2px solid $greenColor2 ;
+                                transform: translate(0,-50%) rotate(-50deg) ;
+                                border-radius: 0 ;
+                                width: 1.4em;
+                                height: .7em ;
+                            }
+                        }
+                    }
+                }
+                label{
+                    width: auto ;
+                    height: auto;
+                    display: flex ;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    cursor: pointer;
+                    .rect{
+                        width: 1.2em; 
+                        height: 1.2em;
+                        border-radius: .3em ;
+                        border: 1.2px solid $darkColor ;
+                        cursor: pointer;
+                        transition: all .3s ease-in-out ;
+                    }
+                    p{
+                       font-size: $font-m ;
+                       color: $darkColor ;
+                       transform: translate(-.5em,0) ;
+                       a{
+                           color: lighten($blueColor2,25%) ;
+                       } 
+                    }
+                }
+            }
+        }
+        .slide#track_code{
+            .tracking_code{
+                width: auto ;
+                height: auto;
+                padding: $dist2 $dist4  ;
+                color: $whiteColor2 ;
+                background-color: $greenColor2 ;
+                border-radius: $dist2 ;
+                margin: $dist2 auto 0 auto ;
+                font-size: $font-l ;
+            }
+            .note{
+                color: $greyColor2 ;
+                font-size: $font-m ;
+                margin: $dist2 auto 0 auto ;
+            }
+        }
+    }
+}

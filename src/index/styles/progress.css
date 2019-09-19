@@ -1,0 +1,287 @@
+:export {
+  primaryColor: #06ccf8;
+  blueColor1: #009CFF;
+  blueColor2: #003DBB;
+  purpleColor1: #6956D8;
+  purpleColor2: #9090C5;
+  greenColor1: #6BFBCE;
+  greenColor2: #1EC198;
+  redColor1: #FF5198;
+  redColor2: #e74a4a;
+  orangeColor1: #FF846C;
+  orangeColor2: #ff8f00;
+  paleColor: #f4f3f7;
+  whiteColor1: #f8f8f8;
+  whiteColor2: #fbfbfb;
+  greyColor: #b9b9c1;
+  greyColor2: #86878e;
+  darkColor: #2d2d31;
+  darkBlue: #5d6174;
+  shadowColor: rgba(70, 69, 85, 0.3);
+  blackFilter: rgba(30, 30, 30, 0.8);
+}
+
+:export {
+  dist1: 0.5em;
+  dist2: 1em;
+  dist3: 2em;
+  dist4: 4em;
+  mayVar: 40vw;
+  font-s: 0.6em;
+  font-m: 0.8em;
+  font-l: 1em;
+  font-xl: 1.2em;
+  font-xxl: 2em;
+  font-special: 1.6em;
+  sectionsDist: 4em;
+}
+
+#progress {
+  width: 100%;
+  height: auto;
+  margin: 2em auto;
+  background-color: #f1f0f5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#progress h4,
+#progress .stages {
+  margin: 0.5em auto;
+}
+
+#progress h4 {
+  font-size: 1.3em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+#progress .stages {
+  width: 90%;
+  height: 12em;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#progress .stages .line,
+#progress .stages .fill {
+  display: inline-block;
+  width: 100%;
+  height: .75em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#progress .stages .line {
+  background-color: #e2e2e5;
+}
+
+#progress .stages .fill {
+  width: 0%;
+  background-color: #1EC198;
+}
+
+#progress .stages .stage {
+  width: auto;
+  height: 75%;
+  z-index: 2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#progress .stages .stage:nth-child(3) {
+  -webkit-transform: translate(25%, -5%);
+     -moz-transform: translate(25%, -5%);
+      -ms-transform: translate(25%, -5%);
+          transform: translate(25%, -5%);
+}
+
+#progress .stages .stage:nth-child(4) {
+  -webkit-transform: translate(0, -5%);
+     -moz-transform: translate(0, -5%);
+      -ms-transform: translate(0, -5%);
+          transform: translate(0, -5%);
+}
+
+#progress .stages .stage:nth-child(5) {
+  -webkit-transform: translate(-25%, -5%);
+     -moz-transform: translate(-25%, -5%);
+      -ms-transform: translate(-25%, -5%);
+          transform: translate(-25%, -5%);
+}
+
+#progress .stages .stage i {
+  font-size: 3em;
+  color: #b9b9c1;
+}
+
+#progress .stages .stage .circle {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #b9b9c1;
+  position: relative;
+}
+
+#progress .stages .stage .circle .fa-check {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+     -moz-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  font-size: 2em;
+  color: #f8f8f8;
+}
+
+#progress .stages .stage h5 {
+  font-size: 1em;
+  color: #b9b9c1;
+}
+
+@media screen and (max-width: 900px) {
+  #progress {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #progress {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #progress .stages {
+    width: 80%;
+    height: 12em;
+  }
+  #progress .stages .line,
+  #progress .stages .fill {
+    height: .4em;
+  }
+  #progress .stages .stage {
+    height: 55%;
+  }
+  #progress .stages .stage:nth-child(3) {
+    -webkit-transform: translate(35%, -5%);
+       -moz-transform: translate(35%, -5%);
+        -ms-transform: translate(35%, -5%);
+            transform: translate(35%, -5%);
+  }
+  #progress .stages .stage:nth-child(4) {
+    -webkit-transform: translate(0, -5%);
+       -moz-transform: translate(0, -5%);
+        -ms-transform: translate(0, -5%);
+            transform: translate(0, -5%);
+  }
+  #progress .stages .stage:nth-child(5) {
+    -webkit-transform: translate(-35%, -5%);
+       -moz-transform: translate(-35%, -5%);
+        -ms-transform: translate(-35%, -5%);
+            transform: translate(-35%, -5%);
+  }
+  #progress .stages .stage i {
+    font-size: 2em;
+  }
+  #progress .stages .stage .circle {
+    width: 2em;
+    height: 2em;
+  }
+  #progress .stages .stage .circle .fa-check {
+    font-size: 1.2em;
+  }
+  #progress .stages .stage h5 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #progress .stages {
+    font-size: 9px;
+  }
+}
+/*# sourceMappingURL=progress.css.map */

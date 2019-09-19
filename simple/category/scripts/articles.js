@@ -1,4 +1,4 @@
 //ellipse 
-// import util from '../../utilities/utilities' ;
-// let ellipses = document.querySelectorAll('.ellipse') ;
-// util.checkEllipse(ellipses);
+//import util from '../../utilities/utilities' ;
+let ellipses1 = document.querySelectorAll('.ellipse') ;
+checkEllipse(ellipses1);

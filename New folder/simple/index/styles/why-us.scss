@@ -1,0 +1,72 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#why_us{
+    width: 100%; 
+    height: auto;
+    margin: $sectionsDist auto ;
+    display: flex ;
+    @include flex(column,flex-start,space-around,nowrap,"") ;
+    background-color: darken($paleColor,1%) ;
+    .title,.items,video{
+        margin: $dist1 0 ;
+    }
+    .title{
+        width: auto ;
+        height: auto; 
+        display: flex ;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        margin-left: auto ;
+        margin-right: auto ;
+        .line,h4{
+            margin: 0 $dist2 ;
+        }
+        .line{
+            width: 12em ;
+            height: .2em ;
+            background-color: lighten($darkColor,20%) ;
+        }
+        h4{
+            font-size: $font-special - .2em ;
+            font-weight: 700 ;
+            color: $darkColor ;
+        }
+    }
+    .items{
+        width: 100% ;
+        height: auto;
+        display: flex ;
+        @include flex(row,space-around,center,wrap,flex-start) ;
+        .item{
+            margin: $dist1 0 ;
+            width: 15em ;
+            height: 13em;
+            display: flex ;
+            @include flex(column,space-around,center,nowrap,"") ;
+            img,h6,p{
+                width: auto ;
+                margin: 0 ;
+            }
+            img{
+                width: 7em ;
+                height: 7em;
+            }
+            h6{
+                font-size: $font-l ;
+                color: $darkColor ;
+            }
+            p{
+                font-size: $font-m - .1em;
+                color: $greyColor2 ;
+            }
+        }
+    }
+    video{
+        width: 35em ;
+        height: 20em;
+        position: relative;
+        right: 50% ;
+        transform: translateX(50%) ;
+        
+    }
+}
