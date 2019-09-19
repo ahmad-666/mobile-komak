@@ -2,6 +2,7 @@
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 #why_us{
+    direction: ltr ;
     width: 100%; 
     height: auto;
     margin: $dist3 auto 0 auto ;
@@ -65,11 +66,12 @@
         }
     }
     video{
+        direction: ltr ;
         width: 35em ;
         height: 20em;
         position: relative;
-        right: 50% ;
-        transform: translateX(50%) ;
+        left: 50% ;
+        transform: translateX(-50%) ;
         margin-top: $dist2 ;
         
     }
