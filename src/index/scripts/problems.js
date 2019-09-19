@@ -9,6 +9,7 @@ function openProblemTab(e){
     let targetID = this.getAttribute('data-target') ;
     let targetTab = problemTabWrapper.querySelector(`#${targetID}`) ;
     problemTabWrapper.classList.add('show') ;
+    document.body.classList.add('hideScroll')
     if(window.innerWidth<=450){
         problemTabWrapper.addEventListener('click',closeWrapper) ;
     }
@@ -22,5 +23,6 @@ function openProblemTab(e){
     })
 }
 function closeWrapper(e){
+    document.body.classList.remove('hideScroll')
     problemTabWrapper.classList.remove('show') ;
 }

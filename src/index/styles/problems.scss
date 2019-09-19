@@ -1,6 +1,9 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 @import '../../variables.scss' ;
+body.hideScroll{
+    overflow: hidden;
+}
 #problems{
     width: 80vw ;
     height: auto;
@@ -106,7 +109,7 @@
                 visibility: hidden ;
                 transition: all .3s ease-in-out ;
                 background-color: darken($whiteColor2,12%) ;
-                padding: $dist1 ;
+                padding: $dist2 ;
                 font-size: $font-m ;
                 color: $darkColor ;
                 line-height: $dist3 ;
@@ -171,7 +174,7 @@
                 position: fixed ;
                 top: 0;
                 right: -2.5vw;
-                width: 100vw ;
+                width: 101vw ;
                 height: 100vh;
                 opacity: 0;
                 visibility: hidden ;
