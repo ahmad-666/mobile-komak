@@ -150,14 +150,15 @@ nav.fix-style{
                     visibility: hidden ;
                     transition: all .3s linear ;
                     min-width: 12em ;
-                    height: auto;
+                    max-height: 80vh;
                     position: absolute ;
                     right: 0 ;
                     top: 100% ;
                     padding: 0 ;
                     display: flex ;
                     @include flex(column,flex-start,center,nowrap,"") ;
-                    background-color: darken($whiteColor2,5%) ;
+                    background-color: darken($whiteColor2,8%) ;
+                    box-shadow: 0 0 .5em .1em $shadowColor ;
                     li{
                         display: block ;
                         width: 100% ;
@@ -175,18 +176,19 @@ nav.fix-style{
                             }
                         }               
                         a{
-                            width: auto ;
-                            height: auto;
+                            display: inline-block ;
+                            width: 100% ;
+                            height: 100%;
                             color: $darkColor ;
                             font-size: $font-l ;
                         }
                     }
                     li.logo_mobile{
+                        width: 90% ;
                         height: 4em;
                         position: relative ;
                         margin: $dist2 ;
                         a {
-                            height: 100%;
                             img {
                                 width: 10em ;
                                 height: 100%;
@@ -195,14 +197,16 @@ nav.fix-style{
                     }
                     li.special_mobile{
                         margin: $dist2 ;
-
+                        width: 90% ;
                         a{
-                            width: auto ;
-                            height: auto;
                             border-radius: $dist3 ;
                             color: $whiteColor2 ;
-                            padding: $dist1 $dist3  ;
+                            // padding: $dist1 $dist3  ;
+                            width: 100% ;
+                            height: 3em;
+                            display: inline-block ;
                             font-size: $font-l ;
+                            line-height: 3em ;
                             background: linear-gradient(to right, #ff416c, #ff4b2b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                         }
                     }
@@ -240,7 +244,7 @@ nav.fix-style{
                                 text-align: right ;
                                 padding: 0 $dist1 ;
                                 a{
-                                    width: auto ;
+                                    width: 100% ;
                                     height: 100%;
                                     font-size: $font-m ;
                                     color: $darkColor ;

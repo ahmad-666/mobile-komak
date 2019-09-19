@@ -3,7 +3,7 @@
 @import '../../variables.scss';
 
 #progress {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: $dist3 auto;
     background-color: darken($paleColor, 1%);

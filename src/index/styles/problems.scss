@@ -170,13 +170,13 @@
             .tabs_wrapper{
                 position: fixed ;
                 top: 0;
-                right: 0;
+                right: -2.5vw;
                 width: 100vw ;
                 height: 100vh;
                 opacity: 0;
                 visibility: hidden ;
                 transition: all .3s linear ;
-                z-index: 0;
+                z-index: -10;
                 .tab{
                     border-radius: 0 ;
 
@@ -200,7 +200,8 @@
                 width: 100% ;
                 @include flex(column,flex-start,center,nowrap,"") ;
                 li{
-                    width: 90% ;
+                    width: 60% ;
+                    text-align: center ;
                     @include flex(row,flex-start,center,nowrap,"") ;
                     font-size: 14px ;
                 }
