@@ -4440,6 +4440,9 @@ html, body {
   height: 100%;
   font-size: 20px !important; }
 
+body.bg {
+  background-color: #eeeeee; }
+
 a {
   border: none;
   text-decoration: none; }
@@ -5304,6 +5307,9 @@ nav.fix-style {
     width: 90%;
     height: 14em; } }
 
+body.hideScroll {
+  overflow: hidden; }
+
 #problems {
   width: 80vw;
   height: auto;
@@ -5546,7 +5552,7 @@ nav.fix-style {
         -moz-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
         background-color: gainsboro;
-        padding: 0.5em;
+        padding: 1em;
         font-size: 0.8em;
         color: #2d2d31;
         line-height: 2em;
@@ -5636,7 +5642,7 @@ nav.fix-style {
       position: fixed;
       top: 0;
       right: -2.5vw;
-      width: 100vw;
+      width: 101vw;
       height: 100vh;
       opacity: 0;
       visibility: hidden;

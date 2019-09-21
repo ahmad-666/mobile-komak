@@ -4440,6 +4440,9 @@ html, body {
   height: 100%;
   font-size: 20px !important; }
 
+body.bg {
+  background-color: #eeeeee; }
+
 a {
   border: none;
   text-decoration: none; }
