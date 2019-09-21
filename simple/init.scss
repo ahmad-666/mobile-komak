@@ -1,4 +1,6 @@
-@import 'fonts' ;
+@import './fonts.scss' ;
+@import './colors.scss' ;
+@import './variables.scss' ;
 *{
     box-sizing: border-box ;
     padding: 0;
@@ -10,6 +12,9 @@
 html,body{
     height: 100%;
     font-size: 20px !important ;
+}
+body.bg{
+    background-color: darken($whiteColor2,5%) ;
 }
 a {
     border: none ;
