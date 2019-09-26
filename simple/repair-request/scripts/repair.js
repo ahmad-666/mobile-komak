@@ -3,15 +3,20 @@
 //-------------------------------
 let requestWrapper = document.querySelector('#request') ;
 let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
+//move to next/prev slide 
+let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
 let prevSlideHandlers = requestFormWrapper.querySelectorAll('.prevSlide') ;
+nextSlideHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',moveSlider) ;
+})
 prevSlideHandlers.forEach(prevSlideHandler => {
     prevSlideHandler.addEventListener('click',moveSlider) ;
 })
-//move to next/prev slide 
 function moveSlider(e){
     if(this.classList.contains('nextSlide')){//move to next slide
-        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem
+        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem          
             if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
+                console.log('fdsf') ;
                 problemError.classList.remove('show') ;
                 nextSlide();
                 moveLine('forward') ; 
@@ -43,12 +48,14 @@ function moveSlider(e){
         }
         else {
             nextSlide();  
-            if(!this.classList.contains('static_timeline')) moveLine('forward') ;   
+            //if(!this.classList.contains('static_timeline')) 
+            moveLine('forward') ;   
         }
     }
     else if(this.classList.contains('prevSlide')) { //move to prev slide 
         prevSlide(); 
-        if(!this.classList.contains('static_timeline')) moveLine('backward') ; 
+        //if(!this.classList.contains('static_timeline')) 
+        moveLine('backward') ; 
     }
 }
 function nextSlide(){
@@ -59,44 +66,6 @@ function prevSlide(){
     let currPost = parseFloat(requestFormWrapper.style.right) ;
     requestFormWrapper.style.right = `${currPost+100}%` ;
 }
-//device next 
-let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
-nextSlideHandlers.forEach(nextSlideHandler => {
-    nextSlideHandler.addEventListener('click',moveSlider) ;
-})
-//brand next 
-let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
-nextSlideHandlers.forEach(nextSlideHandler => {
-    nextSlideHandler.addEventListener('click',moveSlider) ;
-})
-//model next 
-let modelNextHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
-nextSlideHandlers.forEach(nextSlideHandler => {
-    nextSlideHandler.addEventListener('click',moveSlider) ;
-})
-//color next 
-let colorNextHandlers = requestFormWrapper.querySelectorAll('.colorNext') ;
-colorNextHandlers.forEach(colorNextHandler => {
-    colorNextHandler.addEventListener('click',moveSlider) ;
-})
-//problem next 
-let problemNextHandlers = requestFormWrapper.querySelectorAll('.problemNext') ;
-problemNextHandlers.forEach(problemNextHandler => {
-    problemNextHandler.addEventListener('click',moveSlider) ;
-})
-//info next 
-let infoNextHandlers = requestFormWrapper.querySelectorAll('.infoNext') ;
-infoNextHandlers.forEach(infoNextHandler => {
-    infoNextHandler.addEventListener('click',moveSlider) ;
-})
-//confirm next 
-let confirmNextHandlers = requestFormWrapper.querySelectorAll('.confirmNext') ;
-confirmNextHandlers.forEach(confirmNextHandler => {
-    confirmNextHandler.addEventListener('click',moveSlider) ;
-})
-
-
-
 //.slide#select_problem checkboxes
 let problemWrapper = requestFormWrapper.querySelector('.slide#select_problem') ;
 let problemCheckboxes = problemWrapper.querySelectorAll('input[type="checkbox"]') ;
@@ -371,7 +340,7 @@ let circleIndex = 0 ;
 function moveLine(dir){
     if(window.innerWidth>350){
         let currWidth = parseFloat(fillLine.style.width) ;
-        let offset = 100/6 ;
+        let offset = Math.round(100/7) ;
         if(dir == 'forward'){
             fillLine.style.width = `${currWidth+offset}%` ;
             circleIndex++ ;
@@ -385,7 +354,7 @@ function moveLine(dir){
     }
     else if(window.innerWidth<=350){
         let currHeight = parseFloat(fillLine.style.height) ;
-        let offset = 100/6 ;
+        let offset = Math.round(100/7) ;
         if(dir == 'forward'){
             fillLine.style.height = `${currHeight+offset}%` ;
             circleIndex++ ;

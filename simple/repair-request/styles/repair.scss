@@ -707,25 +707,7 @@
         }
     }
 }
-@media screen and (max-width:400px){
-    #request{font-size: 10px ;}
-    #request{
-        form#request_info{
-            .slide{
-                .labels{
-                    label{
-                        width: calc((90vw - (2 * 1.8em)) / 2) ;
-                        height: calc((90vw - (2 * 1.8em)) / 2) ;
-                        p{
-                            font-size: $font-special ;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width:350px){
+@media screen and (max-width:450px){
     #request{
         @include flex(row,space-between,flex-start,nowrap,"") ;    
         #timeline{
@@ -854,6 +836,25 @@
         }
     }
 }
+@media screen and (max-width:400px){
+    #request{font-size: 10px ;}
+    #request{
+        form#request_info{
+            .slide{
+                .labels{
+                    label{
+                        width: calc((90vw - (2 * 1.8em)) / 2) ;
+                        height: calc((90vw - (2 * 1.8em)) / 2) ;
+                        p{
+                            font-size: $font-special ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:300px){
     #request{
         form#request_info{
