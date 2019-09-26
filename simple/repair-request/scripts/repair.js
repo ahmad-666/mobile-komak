@@ -3,15 +3,11 @@
 //-------------------------------
 let requestWrapper = document.querySelector('#request') ;
 let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
-//move to next/prev slide 
-let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
 let prevSlideHandlers = requestFormWrapper.querySelectorAll('.prevSlide') ;
-nextSlideHandlers.forEach(nextSlideHandler => {
-    nextSlideHandler.addEventListener('click',moveSlider) ;
-})
 prevSlideHandlers.forEach(prevSlideHandler => {
     prevSlideHandler.addEventListener('click',moveSlider) ;
 })
+//move to next/prev slide 
 function moveSlider(e){
     if(this.classList.contains('nextSlide')){//move to next slide
         if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem
@@ -63,6 +59,44 @@ function prevSlide(){
     let currPost = parseFloat(requestFormWrapper.style.right) ;
     requestFormWrapper.style.right = `${currPost+100}%` ;
 }
+//device next 
+let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
+nextSlideHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',moveSlider) ;
+})
+//brand next 
+let nextSlideHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
+nextSlideHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',moveSlider) ;
+})
+//model next 
+let modelNextHandlers = requestFormWrapper.querySelectorAll('.nextSlide') ;
+nextSlideHandlers.forEach(nextSlideHandler => {
+    nextSlideHandler.addEventListener('click',moveSlider) ;
+})
+//color next 
+let colorNextHandlers = requestFormWrapper.querySelectorAll('.colorNext') ;
+colorNextHandlers.forEach(colorNextHandler => {
+    colorNextHandler.addEventListener('click',moveSlider) ;
+})
+//problem next 
+let problemNextHandlers = requestFormWrapper.querySelectorAll('.problemNext') ;
+problemNextHandlers.forEach(problemNextHandler => {
+    problemNextHandler.addEventListener('click',moveSlider) ;
+})
+//info next 
+let infoNextHandlers = requestFormWrapper.querySelectorAll('.infoNext') ;
+infoNextHandlers.forEach(infoNextHandler => {
+    infoNextHandler.addEventListener('click',moveSlider) ;
+})
+//confirm next 
+let confirmNextHandlers = requestFormWrapper.querySelectorAll('.confirmNext') ;
+confirmNextHandlers.forEach(confirmNextHandler => {
+    confirmNextHandler.addEventListener('click',moveSlider) ;
+})
+
+
+
 //.slide#select_problem checkboxes
 let problemWrapper = requestFormWrapper.querySelector('.slide#select_problem') ;
 let problemCheckboxes = problemWrapper.querySelectorAll('input[type="checkbox"]') ;
