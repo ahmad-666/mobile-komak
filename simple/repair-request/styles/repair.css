@@ -1475,24 +1475,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
-  #request {
-    font-size: 10px;
-  }
-  #request form#request_info .slide .labels label {
-    width: -webkit-calc((90vw - (2 * 1.8em)) / 2);
-    width: -moz-calc((90vw - (2 * 1.8em)) / 2);
-    width: calc((90vw - (2 * 1.8em)) / 2);
-    height: -webkit-calc((90vw - (2 * 1.8em)) / 2);
-    height: -moz-calc((90vw - (2 * 1.8em)) / 2);
-    height: calc((90vw - (2 * 1.8em)) / 2);
-  }
-  #request form#request_info .slide .labels label p {
-    font-size: 1.6em;
-  }
-}
-
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   #request {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1712,6 +1695,23 @@
   }
   #request form#request_info .slide#confirm .input_wrapper.checkbox label p a {
     color: #3c7bff;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #request {
+    font-size: 10px;
+  }
+  #request form#request_info .slide .labels label {
+    width: -webkit-calc((90vw - (2 * 1.8em)) / 2);
+    width: -moz-calc((90vw - (2 * 1.8em)) / 2);
+    width: calc((90vw - (2 * 1.8em)) / 2);
+    height: -webkit-calc((90vw - (2 * 1.8em)) / 2);
+    height: -moz-calc((90vw - (2 * 1.8em)) / 2);
+    height: calc((90vw - (2 * 1.8em)) / 2);
+  }
+  #request form#request_info .slide .labels label p {
+    font-size: 1.6em;
   }
 }
 

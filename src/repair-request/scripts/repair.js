@@ -14,8 +14,9 @@ prevSlideHandlers.forEach(prevSlideHandler => {
 })
 function moveSlider(e){
     if(this.classList.contains('nextSlide')){//move to next slide
-        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem
+        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem          
             if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
+                console.log('fdsf') ;
                 problemError.classList.remove('show') ;
                 nextSlide();
                 moveLine('forward') ; 
@@ -47,12 +48,14 @@ function moveSlider(e){
         }
         else {
             nextSlide();  
-            if(!this.classList.contains('static_timeline')) moveLine('forward') ;   
+            //if(!this.classList.contains('static_timeline')) 
+            moveLine('forward') ;   
         }
     }
     else if(this.classList.contains('prevSlide')) { //move to prev slide 
         prevSlide(); 
-        if(!this.classList.contains('static_timeline')) moveLine('backward') ; 
+        //if(!this.classList.contains('static_timeline')) 
+        moveLine('backward') ; 
     }
 }
 function nextSlide(){
@@ -337,7 +340,7 @@ let circleIndex = 0 ;
 function moveLine(dir){
     if(window.innerWidth>350){
         let currWidth = parseFloat(fillLine.style.width) ;
-        let offset = 100/6 ;
+        let offset = Math.round(100/7) ;
         if(dir == 'forward'){
             fillLine.style.width = `${currWidth+offset}%` ;
             circleIndex++ ;
@@ -351,7 +354,7 @@ function moveLine(dir){
     }
     else if(window.innerWidth<=350){
         let currHeight = parseFloat(fillLine.style.height) ;
-        let offset = 100/6 ;
+        let offset = Math.round(100/7) ;
         if(dir == 'forward'){
             fillLine.style.height = `${currHeight+offset}%` ;
             circleIndex++ ;
