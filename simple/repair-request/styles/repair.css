@@ -655,12 +655,12 @@
 
 #request form#request_info .slide#select_info .tabs .tab .input_wrapper input {
   width: 20em;
-  height: 3em;
+  height: 2.5em;
   color: #2d2d31;
   font-size: 0.8em;
   padding: 0.5em;
   border-radius: 2em;
-  border: 1px solid #2d2d31;
+  border: 1px solid #aaa;
 }
 
 #request form#request_info .slide#select_info .tabs .tab .input_wrapper input::-webkit-input-placeholder {
@@ -904,6 +904,17 @@
 #request form#request_info .slide#select_info .tabs .tab .input_wrapper.select ul.show {
   visibility: visible;
   opacity: 1;
+}
+
+#request form#request_info .slide#select_info .tabs .tab .select2 {
+  width: 20em;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+#request form#request_info .slide#select_info .tabs .tab .select2 option {
+  color: #6d6e74;
+  font-size: 0.8em;
 }
 
 #request form#request_info .slide#select_info .tabs .tab .discount {
@@ -1420,6 +1431,35 @@
   color: #86878e;
   font-size: 0.8em;
   margin: 1em auto 0 auto;
+}
+
+.select2-container--default .select2-selection--single {
+  border-radius: 2em;
+  height: 2.5em;
+  outline: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 2.5em;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.select2-results__option {
+  font-size: 0.8em;
+  color: #2d2d31;
+}
+
+.select2-results__option.alert {
+  font-size: 0.8em;
+  color: #2d2d31;
 }
 
 @media screen and (max-width: 1100px) {

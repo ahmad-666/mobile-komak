@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./externals/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./externals/select2.min.css">
     <link rel="stylesheet" href="./init.css">
     <link rel="stylesheet" href="./index/styles/nav.css">
     <link rel="stylesheet" href="./repair-request/styles/repair.css">
@@ -45,7 +46,7 @@
             </li>
             <li class="logo">
                 <a href="./index.html">
-                    <img src="../assets/imgs/logo.png" alt="logo">
+                    <img src="./assets/imgs/logo.png" alt="logo">
                 </a>
             </li>
             <li class="mobile">
@@ -53,7 +54,7 @@
                 <ul class="mobile_nav">
                     <li class="logo_mobile">
                         <a href="./index.html">
-                            <img src="../assets/imgs/logo.png" alt="logo">
+                            <img src="./assets/imgs/logo.png" alt="logo">
                         </a>
                     </li>
                     <li class="special_mobile">
@@ -362,43 +363,35 @@
                             <h4>مشخصات خود را وارد کنید</h4>
                             <div class="input_wrapper">
                                 <input type="text" id="name" name="name" required placeholder="نام خود را وارد کنید">
-                            </div>
-                            <div class="input_wrapper select">
-                                <input type="text" id="state" name="state" placeholder="استان محل سکونت" readonly required>
-                                <i class="fas fa-angle-down"></i>
-                                <ul>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                </ul>
-                            </div>
-                            <div class="input_wrapper select">
-                                <input type="text" id="city" name="city" placeholder="شهر محل سکونت" readonly required>
-                                <i class="fas fa-angle-down"></i>
-                                <ul>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                    <li>تهران</li>
-                                    <li>مشهد</li>
-                                </ul>
-                            </div>
+                            </div>                 
+                            <select class="select2" id="state" name="state">
+                                <option value="tehran" selected>تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                            </select>
+                            <select class="select2" id="city" name="city">
+                                <option value="tehran" selected>تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                                <option value="tehran">تهران</option>
+                                <option value="mashhad">مشهد</option>
+                            </select>
                             <div class="discount">
                                 <div class="input_wrapper">
                                     <input type="checkbox" name="discount" id="discount" value="has_discount">
@@ -555,6 +548,8 @@
         </a>
     </div>
     <script src="./externals/anime.min.js"></script>
+    <script src="./externals/jquery.min.js"></script>
+    <script src="./externals/select2.min.js"></script>
     <script src="./externals/fontfaceobserver/fontfaceobserver.js"></script>
     <script src="./utilities/utilities.js"></script>
 	<script src="./index/scripts/landing.js"></script>

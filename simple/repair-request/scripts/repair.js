@@ -1,3 +1,21 @@
+//select2---------------------------------
+//select2---------------------------------
+//select2---------------------------------
+$('.select2').select2(); //init select2
+//change AlertMsg
+$('.select2').on('select2:open', function (e) {
+    let inputs = document.querySelectorAll('input[type="search"].select2-search__field') ;
+    inputs.forEach(input => {
+        input.addEventListener('input',changeAlertMsg) ;
+    })
+});
+function changeAlertMsg(e){
+    let alerts = document.querySelectorAll('li[role="alert"]') ;
+    alerts.forEach(alert => {
+        alert.classList.add('alert') ;
+        alert.textContent = "موردی یافت نشد" ; 
+    })
+}
 //-------------------------------
 //-------------------------------
 //-------------------------------
@@ -262,15 +280,23 @@ function changeTab(targetID){
 function Select(elm){
     this.elm = elm ;
     this.input = this.elm.querySelector('input[type="text"]') ;
+    this.hiddenInput = this.elm.querySelector('input[type="hidden"]')
+
     this.ul = this.elm.querySelector('ul') ;
     this.lis = this.ul.querySelectorAll('li') ;
+    this.initList = [...this.lis] ;
     this.arrow = this.elm.querySelector('i.fa-angle-down') ;
     this.input.addEventListener('click',this.inputHandler.bind(this));
     this.arrow.addEventListener('click',this.inputHandler.bind(this));
+    //this.otherSelects = otherSelects ;
+    this.input.addEventListener('input',this.search.bind(this)) ;
+    this.input.addEventListener('blur',this.loseFocus.bind(this)) ;
 }
 Select.prototype.inputHandler = function(e){
     e.stopPropagation();
     document.addEventListener('click',this) ;
+    let val = this.input.value;
+    if(!val.match(/\S{1,}/gi)) this.createList(this.initList) ;
     this.ul.classList.add('show') ;
     this.lis.forEach(li => {
         li.addEventListener('click',this) ;
@@ -297,6 +323,7 @@ Select.prototype.handleEvent = function(e){
         let currLi = e.currentTarget ;
         this.input.value = currLi.textContent ;
         this.input.classList.remove('error');
+        this.hiddenInput.value = currLi.getAttribute('data-value') ;
         this.ul.classList.remove('show') ;
         document.removeEventListener('click',this) ;
         this.lis.forEach(li => {
@@ -304,9 +331,43 @@ Select.prototype.handleEvent = function(e){
         })
     }
 }
+Select.prototype.search = function(e){
+    let val = this.input.value ;
+    //if we enter anything rather than white-space
+     //if we have any result we enter this block
+    if(val.match(/\S{1,}/gi)){      
+         this.lis = this.initList.filter(li => {
+             if(li.textContent.startsWith(val)) return li ;
+         })      
+     }
+     //if we don't have any result we enter this block
+     else this.lis = [...this.initList] ;  
+     this.createList(this.lis) ;
+ }
+ Select.prototype.loseFocus = function(e){
+     let val = this.input.value ;
+     let find = false ;
+     for(let i=0 ; i<this.lis.length ; i++){
+         let li = this.lis[i] ;
+         if(li.textContent == val){
+             find = true ;
+             break ;
+         }
+     }
+     if(!find) {
+         this.input.value = '' ;  
+     } 
+    
+ }
+ Select.prototype.createList = function(lis){
+     this.ul.innerHTML = '' ;
+     lis.forEach(li => {
+         this.ul.appendChild(li) ;
+     })
+ }
 let selects = [] ;
 infoWrapper.querySelectorAll('.input_wrapper.select').forEach(select => {
-    selects.push(new Select(select)) ;
+    //selects.push(new Select(select)) ;
 })
 //resend code
 let resend = infoWrapper.querySelector('#resend') ;
@@ -371,3 +432,4 @@ function moveLine(dir){
     }
     
 }
+

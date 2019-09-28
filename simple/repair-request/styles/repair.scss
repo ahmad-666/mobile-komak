@@ -273,8 +273,7 @@
                         font-size: $font-l ;
                         color: $darkColor ;
                         font-weight: 700 ;
-                    }
-                    
+                    }       
                     .input_wrapper{
                         width: auto ;
                         height: auto;
@@ -284,12 +283,12 @@
                         @include flex(column,flex-start,flex-start,nowrap,"") ;
                         input{
                             width: 20em ;
-                            height: 3em;
+                            height: 2.5em;
                             color: $darkColor ;
                             font-size: $font-m ;
                             padding: $dist1 ;
                             border-radius: $dist3 ;
-                            border: 1px solid $darkColor ;
+                            border: 1px solid #aaa ;
                             &::placeholder{
                                 font-size: $font-m ;
                                 color: $greyColor2 ;
@@ -404,6 +403,16 @@
                         ul.show{
                             visibility: visible ;
                             opacity: 1;
+                        }
+                    }
+                    .select2{
+                        width: 20em ;
+                        font-size: $font-m ;
+                        margin-top: $dist2 ;
+                        // padding-right: $dist1 ;    
+                        option{
+                            color: darken($greyColor2,10%) ;
+                            font-size: $font-m ;
                         }
                     }
                     .discount{
@@ -644,6 +653,26 @@
             }
         }
     }
+}
+.select2-container--default .select2-selection--single{
+    border-radius: $dist3 ;
+    height: 2.5em;
+    outline: none  ;
+    .select2-selection__rendered{
+        line-height: 2.5em ;
+    }
+    .select2-selection__arrow{
+        @include center-y ;
+
+    }
+}
+.select2-results__option{
+    font-size: $font-m ;
+    color: $darkColor ;
+}
+.select2-results__option.alert{
+    font-size: $font-m ;
+    color: $darkColor ;
 }
 @media screen and (max-width:1100px){
     #request{
