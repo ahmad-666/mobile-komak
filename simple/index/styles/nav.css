@@ -175,17 +175,45 @@ nav > ul li.logo {
      -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: 2em;
+  left: 0.5em;
 }
 
 nav > ul li.logo a {
   width: auto;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
 }
 
 nav > ul li.logo a img {
-  width: 8em;
-  height: 85%;
+  width: 4em;
+  height: 100%;
 }
 
 nav > ul li.mobile {
@@ -305,16 +333,54 @@ nav.fix-style {
   }
   nav > ul li.mobile .mobile_nav li.logo_mobile {
     width: 90%;
-    height: 4em;
+    height: auto;
     position: relative;
-    margin: 1em;
+    margin-top: 0;
+  }
+  nav > ul li.mobile .mobile_nav li.logo_mobile a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+    height: auto;
   }
   nav > ul li.mobile .mobile_nav li.logo_mobile a img {
-    width: 10em;
-    height: 100%;
+    width: 6em;
+    height: 6em;
+  }
+  nav > ul li.mobile .mobile_nav li.logo_mobile a p {
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 700;
+    color: #2d2d31;
   }
   nav > ul li.mobile .mobile_nav li.special_mobile {
     margin: 1em;
+    margin-top: 0.5em;
     width: 90%;
   }
   nav > ul li.mobile .mobile_nav li.special_mobile a {

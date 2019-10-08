@@ -90,13 +90,15 @@ nav{
         }
         li.logo{
             @include center-y ;
-            left: $dist3;
+            left: $dist1;
             a{
                 width: auto ;
                 height: 100%;
+                display: flex ;
+                @include flex(row,flex-start,center,nowrap,"") ;
                 img{
-                    width: 8em ;
-                    height: 85%;
+                    width: 4em ;
+                    height: 100%;
                 }
             }        
         }
@@ -185,18 +187,28 @@ nav.fix-style{
                     }
                     li.logo_mobile{
                         width: 90% ;
-                        height: 4em;
+                        height: auto;
                         position: relative ;
-                        margin: $dist2 ;
+                        margin-top: 0 ;
                         a {
+                            display: flex ;
+                            @include flex(column,flex-start,center,nowrap,"") ;
+                            height: auto;
                             img {
-                                width: 10em ;
-                                height: 100%;
+                                width: 6em ;
+                                height: 6em;
+                            }
+                            p{
+                                margin-top: 0 ;
+                                font-size: $font-l ;
+                                font-weight: 700 ;
+                                color: $darkColor ;
                             }
                         }
                     }
                     li.special_mobile{
                         margin: $dist2 ;
+                        margin-top: $dist1 ;
                         width: 90% ;
                         a{
                             border-radius: $dist3 ;
