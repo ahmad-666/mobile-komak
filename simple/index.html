@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./externals/fontawesome/all.min.css">
     <link rel="stylesheet" href="./init.css">
     <link rel="stylesheet" href="./index/styles/nav.css">
-    <link rel="stylesheet" href="./index/styles/landing.css">
+    <!-- <link rel="stylesheet" href="./index/styles/landing.css"> -->
+    <link rel="stylesheet" href="./index/styles/sliderFade.css">
     <link rel="stylesheet" href="./index/styles/why-us.css">
     <link rel="stylesheet" href="./index/styles/problems.css">
     <link rel="stylesheet" href="./index/styles/progress.css">
@@ -33,7 +34,7 @@
     <link rel="stylesheet" href="./rules/styles/rules.css">
 </head>
 <body>
-    <nav>
+    <nav class="fix-style">
         <ul>
             <li class="special">
                 <a href="./repair-request.html">درخواست تعمیر</a>
@@ -101,29 +102,56 @@
             </li>
         </ul>
     </nav>
-   <div id="landing">
-        <div class="info">
-            <h1>موبایل کمک</h1>
-            <p>
-                شرکت موبایل کمک دارای بزرگترین و معتبرترین وبسایت ارایه دهنده خدمات اینترنتی برای تعمیرات موبایل در کشور
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                همچنین فروش بیمه موبایل هم به سبد محصولات آن اضافه شد.
-            </p>
-            <a href="./repair-request.html" class="special"> درخواست تعمیر </a>
+    <div class="topSlider">
+        <div class="slide active">
+            <img src="./assets/imgs/article1.jpg" alt="slide1">
         </div>
-        <div class="bg"></div>
-    </div> 
+        <div class="slide">
+            <img src="./assets/imgs/article2.jpg" alt="slide2">
+        </div>
+        <div class="slide">
+            <img src="./assets/imgs/article3.jpg" alt="slide3">
+        </div>
+        <div class="slide">
+            <img src="./assets/imgs/article4.jpg" alt="slide4">
+        </div>
+        <i class="fas fa-angle-right arrow prev"></i>
+        <i class="fas fa-angle-left arrow next"></i>
+        <div class="dots_container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="sliderWrapperFade scrollArrows containerStyle">
+        <div class="arrows">
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-left"></i>
+        </div>
+        <h4>عنوان</h4>
+        <button class="btn prev center-y">
+            <i class="fas fa-angle-right center-xy"></i>
+        </button>
+        <button class="btn next center-y">
+            <i class="fas fa-angle-left center-xy"></i>
+        </button>
+        <a href="#!" class="show_more center-x">
+            نمایش همه
+            <i class="fas fa-angle-double-left"></i>
+        </a>
+        <div class="helper">
+            <div class="slides" style="right:0px">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+              
+            </div>
+        </div>
+    </div>
     <div id="why_us">
         <div class="title">
             <span class="line"></span>
@@ -679,7 +707,8 @@
     <script src="./externals/anime.min.js"></script>
     <script src="./externals/fontfaceobserver/fontfaceobserver.js"></script>
     <script src="./utilities/utilities.js"></script>
-    <script src="./index/scripts/landing.js"></script>
+    <!-- <script src="./index/scripts/landing.js"></script> -->
+    <script src="./index/scripts/sliderFade.js"></script>
     <script src="./index/scripts/why-us.js"></script>
     <script src="./index/scripts/problems.js"></script>
     <script src="./index/scripts/progress.js"></script>
