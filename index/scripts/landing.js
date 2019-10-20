@@ -5,9 +5,9 @@
 // })
 let navMobile = document.querySelector('nav') ;
 let mobileNav = navMobile.querySelector('li.mobile') ;
-let mobileMenu = mobileNav.querySelector('ul.mobile_nav') ;
-let mobilDropTrigger = mobileMenu.querySelector('li.dropdownTrigger') ;
-let mobilDrop = mobilDropTrigger.querySelector('.dropdownMenu') ;
+let mobileMenu = navMobile.querySelector('ul.mobile_nav') ;
+let mobilDropTrigger = navMobile.querySelector('li.dropdownTrigger') ;
+let mobilDrop = navMobile.querySelector('.dropdownMenu') ;
 mobileNav.addEventListener('click',toggleNav) ;
 function toggleNav(e){
     e.stopPropagation();

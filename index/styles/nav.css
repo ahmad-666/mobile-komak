@@ -248,7 +248,7 @@ nav.fix-style {
   }
   nav > ul li.mobile {
     display: block;
-    position: relative;
+    /* position: relative; */
     padding: 0;
     height: auto;
     line-height: 1em;
@@ -492,7 +492,12 @@ nav.fix-style {
 
 @media screen and (max-width: 450px) {
   nav {
-    font-size: 12px;
+    font-size: 14px;
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+  nav > ul li.mobile .mobile_nav {
+    top: 115%;
   }
 }
 
@@ -503,11 +508,14 @@ nav.fix-style {
   nav li.mobile {
     margin-right: 0;
   }
+  nav > ul li.mobile .mobile_nav{
+    font-size: 11px;
+  }
 }
 
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) {
   nav {
     font-size: 9px;
   }
-}
+} */
 /*# sourceMappingURL=nav.css.map */
