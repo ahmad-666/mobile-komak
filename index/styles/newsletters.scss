@@ -1,0 +1,165 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#newsletters{
+    width: 100% ;
+    height: auto;
+    margin: $dist2 auto $sectionsDist auto ;
+    background-color: darken($paleColor,1%) ;
+
+    display: flex ;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    p,.input-wrapper{margin-top: $dist2 ;}
+    h4{
+        font-size: $font-special ;
+        color: $darkColor ;
+        font-weight: 700 ;
+    }
+    p{
+        font-size: $font-m  ;
+        color: $greyColor2 ;
+    }
+    .input-wrapper{
+        width: 40% ;
+        height: 2.5em;
+        position: relative ;
+        box-shadow: 0 0 .5em .03em $shadowColor ;
+        margin-top: $dist3 ;
+        border-radius: $dist3 ;
+        input{
+            width: 100% ;
+            height: 100%;
+            @include fullSize-abs ;
+            padding: $dist2 ;
+            font-size: $font-m + .1em;
+            color: $darkColor ;
+            border-radius: $dist3 ;
+            &::placeholder{
+                font-size: $font-m ;
+                color: $greyColor2 ;
+            }
+        }
+        button{
+            width: 5em ;
+            height: 100%;
+            line-height: .5em ; 
+            border-radius: $dist3 + 1em ;
+            background-color: rgb(85, 83, 163);
+            position: absolute ;
+            left: 0em;
+            cursor: pointer;
+            i{
+                font-size: $font-special ;
+                color: white ;
+            }
+        }
+        p.error{
+            display: none ;
+            position: absolute ;
+            top: 90% ;
+            right: $dist2;
+            font-size: $font-m;
+            color: crimson ; 
+        }
+        p.error.show{display: block ;}
+    }
+    .confirmation{
+        width: auto ;
+        height: auto;
+        display: flex ;
+        margin: $dist2 auto 0 auto ;
+        @include flex(row,flex-start,center,wrap,flex-start) ;
+        a{
+            width: auto ;
+            height: auto;
+            margin: $dist2 ;
+            img{
+                width: 6em ;
+                height: 6em;
+            }
+        }
+    }
+}
+@media screen and (max-width:900px){
+    #newsletters{
+        font-size: 16px;
+        margin-bottom: $sectionsDist + 2em ;
+        .confirmation{
+            a{          
+                img{
+                    width: 5em ;
+                    height: 5em;
+                }
+            }
+        }
+       
+    }
+}
+@media screen and (max-width:600px){
+    #newsletters{
+        font-size: 13px;
+        p,.input-wrapper{}
+        h4{
+           
+        }
+        p{
+           
+        }
+        .input-wrapper{
+           
+            input{
+              
+                &::placeholder{
+                   
+                }
+            }
+            button{
+                width: 4em ;
+              
+                i{
+                   font-size: $font-xl ;
+                }
+            }
+            p.error{
+              
+            }
+            p.error.show{}
+        }
+        .confirmation{
+           
+            a{
+              
+                img{
+                  
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width:500px){
+    #newsletters{
+        margin-bottom: $sectionsDist + 4em ;
+
+    }
+}
+@media screen and (max-width:450px){
+    #newsletters{
+        .input-wrapper{
+            width: 65% ;
+        }
+    }
+}
+@media screen and (max-width:350px){
+    #newsletters{
+        font-size: 10px;
+        .input-wrapper{
+            button{
+                width: 3em ;
+                i{
+                    font-size: $font-l 
+                }
+            }
+        }
+    }
+}

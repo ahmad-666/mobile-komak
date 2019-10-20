@@ -1,0 +1,389 @@
+form#teach {
+  width: 80vw;
+  height: auto;
+  margin: 6em auto 0 auto;
+  -webkit-box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  padding: 1em;
+  overflow: hidden;
+}
+
+form#teach h4 {
+  font-size: 1.2em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+form#teach .slides {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  right: 0;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  margin: 1em auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#teach .slides .slide {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+form#teach .slides .slide h4, form#teach .slides .slide button.prev, form#teach .slides .slide .labels, form#teach .slides .slide .articles {
+  margin: 0.5em auto;
+}
+
+form#teach .slides .slide h4 {
+  font-size: 1em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+form#teach .slides .slide button.prev {
+  width: auto;
+  height: auto;
+  padding: 0.5em 2.3em;
+  border-radius: 2em;
+  color: #fbfbfb;
+  background-color: #e74a4a;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+form#teach .slides .slide .labels {
+  width: 100%;
+  max-height: 30em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  overflow: auto;
+}
+
+form#teach .slides .slide .labels label {
+  width: -webkit-calc((90vw - (6 * 4.2em) ) / 6);
+  width: -moz-calc((90vw - (6 * 4.2em) ) / 6);
+  width: calc((90vw - (6 * 4.2em) ) / 6);
+  height: -webkit-calc((90vw - (6 * 4.2em) ) / 6);
+  height: -moz-calc((90vw - (6 * 4.2em) ) / 6);
+  height: calc((90vw - (6 * 4.2em) ) / 6);
+  margin: 1em;
+  border-radius: 1em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+}
+
+form#teach .slides .slide .labels label:hover {
+  background-size: 125% 125%;
+}
+
+form#teach .slides .slide .labels label::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 1em;
+}
+
+form#teach .slides .slide .labels label input[type="radio"] {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+form#teach .slides .slide .labels label p {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+     -moz-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  width: 100%;
+  height: auto;
+  font-size: 1.2em;
+  color: #fbfbfb;
+  text-align: center;
+}
+
+form#teach .slides .slide .articles {
+  width: 100%;
+  max-height: 30em;
+  overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
+form#teach .slides .slide .articles .article {
+  width: -webkit-calc((90vw - (5 * 4.8em)) / 5);
+  width: -moz-calc((90vw - (5 * 4.8em)) / 5);
+  width: calc((90vw - (5 * 4.8em)) / 5);
+  height: auto;
+  margin: 1em;
+  border-radius: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  overflow: hidden;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+form#teach .slides .slide .articles .article:hover {
+  -webkit-transform: translateY(-5%);
+     -moz-transform: translateY(-5%);
+      -ms-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+
+form#teach .slides .slide .articles .article:hover::before {
+  opacity: 0;
+}
+
+form#teach .slides .slide .articles .article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 10em;
+  background-color: rgba(30, 30, 30, 0.6);
+  opacity: 1;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+form#teach .slides .slide .articles .article img {
+  width: 100%;
+  height: 10em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+form#teach .slides .slide .articles .article h4 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  line-height: 3em;
+  max-height: 6em;
+  text-align: justify;
+  padding-left: 1.2em;
+  padding-right: 0;
+  text-align: center;
+  font-size: 0.8em;
+  color: #fbfbfb;
+  background-color: #06ccf8;
+  margin-top: 0;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+form#teach .slides .slide .articles .article h4 .ellipse {
+  color: #2d2d31;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: none;
+}
+
+form#teach .slides .slide#brand .labels label[for="apple"] {
+  background-image: url("../../assets/imgs/iphone.jpg");
+}
+
+form#teach .slides .slide#brand .labels label[for="samsung"] {
+  background-image: url("../../assets/imgs/samsung.jpg");
+}
+
+form#teach .slides .slide#brand .labels label[for="huawei"] {
+  background-image: url("../../assets/imgs/huawei.jpg");
+}
+
+form#teach .slides .slide#brand .labels label[for="sony"] {
+  background-image: url("../../assets/imgs/sony.jpg");
+}
+
+form#teach .slides .slide#brand .labels label[for="lg"] {
+  background-image: url("../../assets/imgs/lg.jpg");
+}
+
+form#teach .slides .slide#model .labels label {
+  background-image: url("../../assets/imgs/mobile.jpg");
+}
+/*# sourceMappingURL=repair-teach.css.map */

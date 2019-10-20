@@ -1,0 +1,199 @@
+#video {
+  width: 100%;
+  height: 25em;
+  position: relative;
+  -webkit-box-shadow: 0 0 0.5em 0.3em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.5em 0.3em rgba(70, 69, 85, 0.3);
+  margin-top: 2em;
+}
+
+#video video {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+#video .filter {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#video .filter.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#video .content {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+     -moz-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#video .content p {
+  width: auto;
+  height: auto;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  font-size: 0.8em;
+  color: #fbfbfb;
+  background-color: #e85353;
+}
+
+#video .content i {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  line-height: 2.5em;
+  font-size: 1.6em;
+  color: #fbfbfb;
+  background-color: #e85353;
+}
+
+#video .content h4 {
+  font-size: 1.2em;
+  color: #fbfbfb;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#video .content.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#video ~ .desc {
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: 0 0 0.5em 0.3em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.5em 0.3em rgba(70, 69, 85, 0.3);
+  border: 3px solid #fbfbfb;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  position: relative;
+  padding: 0.5em 1em 2em 1em;
+}
+
+#video ~ .desc h4 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #2d2d31;
+  width: 100%;
+  height: auto;
+  line-height: 1.5em;
+}
+
+#video ~ .desc button.show_more {
+  width: auto;
+  height: auto;
+  font-size: 0.8em;
+  color: #2d2d31;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  bottom: 0.5em;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+#video ~ .desc button.show_more i {
+  -webkit-transform: translate(-50%, 15%);
+     -moz-transform: translate(-50%, 15%);
+      -ms-transform: translate(-50%, 15%);
+          transform: translate(-50%, 15%);
+}
+
+#video ~ .desc p {
+  width: 100%;
+  line-height: 2em;
+  height: 6em;
+  color: #2d2d31;
+  overflow: hidden;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+#video ~ .desc p.open {
+  height: auto;
+}
+/*# sourceMappingURL=player.css.map */

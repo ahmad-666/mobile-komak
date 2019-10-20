@@ -6,10 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<link href="index.css" rel="stylesheet"></head>
-
+    <link rel="stylesheet" href="./externals/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./index/styles/nav.css">
+    <!-- <link rel="stylesheet" href="./index/styles/landing.css"> -->
+    <link rel="stylesheet" href="./index/styles/sliderFade.css">
+    <link rel="stylesheet" href="./index/styles/why-us.css">
+    <link rel="stylesheet" href="./index/styles/problems.css">
+    <link rel="stylesheet" href="./index/styles/progress.css">
+    <link rel="stylesheet" href="./index/styles/sponsers.css">
+    <link rel="stylesheet" href="./index/styles/slider.css">
+    <link rel="stylesheet" href="./index/styles/faq.css">
+    <link rel="stylesheet" href="./index/styles/newsletters.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+    <link rel="stylesheet" href="./index/styles/copyright.css">
+    <link rel="stylesheet" href="./article/styles/article.css">
+    <link rel="stylesheet" href="./article/styles/comment.css">
+    <link rel="stylesheet" href="./category/styles/articles.css">
+    <link rel="stylesheet" href="./articles/styles/articles.css">
+    <link rel="stylesheet" href="./articles/styles/grid.css">
+    <link rel="stylesheet" href="./articles/styles/tabs.css">
+    <link rel="stylesheet" href="./video/styles/player.css">
+    <link rel="stylesheet" href="./repair-request/styles/repair.css">
+    <link rel="stylesheet" href="./login/styles/login.css">
+    <link rel="stylesheet" href="./track/styles/track.css">
+    <link rel="stylesheet" href="./about-us/styles/about-us.css">
+    <link rel="stylesheet" href="./rules/styles/rules.css">
+</head>
 <body>
-    <nav>
+    <nav class="fix-style">
         <ul>
             <li class="special">
                 <a href="./repair-request.html">درخواست تعمیر</a>
@@ -39,15 +64,17 @@
             </li>
             <li class="logo">
                 <a href="./index.html">
-                    <img src="assets/imgs/logo.png" alt="logo">
+                    <p>کوک فون</p>
+                    <img src="./assets/imgs/logo.png" alt="logo">
                 </a>
             </li>
-            <li class="mobile" onclick="">
+            <li class="mobile">
                 <i class="fas fa-bars"></i>
                 <ul class="mobile_nav">
                     <li class="logo_mobile">
                         <a href="./index.html">
-                            <img src="assets/imgs/logo.png" alt="logo">
+                            <img src="./assets/imgs/logo.png" alt="logo">
+                            <p>کوک فون</p>
                         </a>
                     </li>
                     <li class="special_mobile">
@@ -75,29 +102,28 @@
             </li>
         </ul>
     </nav>
-   <div id="landing">
-        <div class="info">
-            <h1>موبایل کمک</h1>
-            <p>
-                شرکت موبایل کمک دارای بزرگترین و معتبرترین وبسایت ارایه دهنده خدمات اینترنتی برای تعمیرات موبایل در کشور
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                است که فعالیت خود را در سال ۱۳۹۲ و با شعار «زندگی بهتر در عصر موبایل» آغاز نمود. مشاوره تلفنی در زمینه
-                تعمیرات نرم افزاری موبایل اولین خدمتی بود که توسط این شرکت ارایه گردید و پس از مدت کوتاهی خدمات دیگری
-                مانند تعمیرات سخت افزاری موبایل، ثبت سفارش آنلاین تعمیرات موبایل در وب‌سایت و اپلیکیشن‌های موبایل کمک،
-                فروشگاه آنلاین قطعات موبایل، تولید محتوای آموزشی کامل و رایگان تعمیرات موبایل، آموزشگاه تعمیرات موبایل و
-                همچنین فروش بیمه موبایل هم به سبد محصولات آن اضافه شد.
-            </p>
-            <a href="./repair-request.html" class="special"> درخواست تعمیر </a>
+    <div class="topSlider">
+        <div class="slide active">
+            <img src="./assets/imgs/article1.jpg" alt="slide1">
         </div>
-        <div class="bg"></div>
-    </div> 
+        <div class="slide">
+            <img src="./assets/imgs/article2.jpg" alt="slide2">
+        </div>
+        <div class="slide">
+            <img src="./assets/imgs/article3.jpg" alt="slide3">
+        </div>
+        <div class="slide">
+            <img src="./assets/imgs/article4.jpg" alt="slide4">
+        </div>
+        <i class="fas fa-angle-right arrow prev"></i>
+        <i class="fas fa-angle-left arrow next"></i>
+        <div class="dots_container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
     <div id="why_us">
         <div class="title">
             <span class="line"></span>
@@ -106,22 +132,22 @@
         </div>
         <div class="items">
             <div class="item">
-                <img src="assets/imgs/money.png" alt="money.png">
+                <img src="./assets/icons/money.png" alt="money.png">
                 <h6>اول کار بعد پول</h6>
                 <p>ابتدا تعمیر دستگاه سپس پرداخت هزینه</p>
             </div>
             <div class="item">
-                <img src="assets/imgs/experience.png" alt="experience.png">
+                <img src="./assets/icons/experience.png" alt="experience.png">
                 <h6>سابقه ی کار</h6>
                 <p>بیش از ۱۰سال سابقه کار موفق</p>
             </div>
             <div class="item">
-                <img src="assets/imgs/warranty.png" alt="warranty.png">
+                <img src="./assets/icons/warranty.png" alt="warranty.png">
                 <h6>گارانتی</h6>
                 <p>در صورت خرابی مجدد گوشی را رایگان تعمیر می‌کنیم</p>
             </div>
             <div class="item">
-                <img src="assets/imgs/repairment.png" alt="repairment.png">
+                <img src="./assets/icons/repairment.png" alt="repairment.png">
                 <h6>تعمیرات</h6>
                 <p>قادر به حل هر مشکل سخت افزاری و نرم افزاری</p>
             </div>
@@ -284,61 +310,61 @@
         <div id="sponsers">
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
             <div class="sponser">
                 <a href="#!">
-                    <img src="assets/imgs/logo-zoomit.png" alt="sponser">
+                    <img src="./assets/imgs/logo-zoomit.png" alt="sponser">
                     <h5>دیجیاتو</h5>
                 </a>
             </div>
@@ -354,7 +380,7 @@
         </a>
         <div class="slider">
             <div class="slide">
-                <img src="assets/imgs/article1.jpg" alt="article-img">
+                <img src="./assets/imgs/article1.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -362,7 +388,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article2.jpg" alt="article-img">
+                <img src="./assets/imgs/article2.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -370,7 +396,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article3.jpg" alt="article-img">
+                <img src="./assets/imgs/article3.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -378,7 +404,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article4.jpg" alt="article-img">
+                <img src="./assets/imgs/article4.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -386,7 +412,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article5.jpg" alt="article-img">
+                <img src="./assets/imgs/article5.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -394,7 +420,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article1.jpg" alt="article-img">
+                <img src="./assets/imgs/article1.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -402,7 +428,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article2.jpg" alt="article-img">
+                <img src="./assets/imgs/article2.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -410,7 +436,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article3.jpg" alt="article-img">
+                <img src="./assets/imgs/article3.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -418,7 +444,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article4.jpg" alt="article-img">
+                <img src="./assets/imgs/article4.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -426,7 +452,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="assets/imgs/article5.jpg" alt="article-img">
+                <img src="./assets/imgs/article5.jpg" alt="article-img">
                 <div class="content">
                     <p> نام نویسنده</p>
                     <h5>عنوان مقاله</h5>
@@ -590,13 +616,13 @@
         </div>
         <div class="confirmation">
             <a href="#!">
-                <img src="assets/imgs/confirm.png" alt="confirmation">
+                <img src="./assets/icons/confirm.png" alt="confirmation">
             </a>
             <a href="#!">
-                <img src="assets/imgs/confirm.png" alt="confirmation">
+                <img src="./assets/icons/confirm.png" alt="confirmation">
             </a>
             <a href="#!">
-                <img src="assets/imgs/confirm.png" alt="confirmation">
+                <img src="./assets/icons/confirm.png" alt="confirmation">
             </a>
         </div>
     </form>
@@ -650,6 +676,18 @@
             طراحی سایت توسط ittoos
         </a>
     </div>
-<script type="text/javascript" src="index.js"></script></body>
+    <script src="./externals/anime.min.js"></script>
+    <script src="./externals/fontfaceobserver/fontfaceobserver.js"></script>
+    <script src="./utilities/utilities.js"></script>
+    <!-- <script src="./index/scripts/landing.js"></script> -->
+    <script src="./index/scripts/sliderFade.js"></script>
+    <script src="./index/scripts/why-us.js"></script>
+    <script src="./index/scripts/problems.js"></script>
+    <script src="./index/scripts/progress.js"></script>
+    <script src="./index/scripts/sponsers.js"></script>
+    <script src="./index/scripts/slider.js"></script>
+    <script src="./index/scripts/faq.js"></script>
+    <script src="./index/scripts/newsletters.js"></script>
+</body>
 
 </html>

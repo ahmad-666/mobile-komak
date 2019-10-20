@@ -1,0 +1,38 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#rules{
+    width: 80vw ;
+    height: auto;
+    margin: $sectionsDist auto ;
+    padding: $dist2 ;
+    display: flex ;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    box-shadow: 0 0 .5em .1em $shadowColor ;
+    border: 2px solid lighten($greyColor2,20%) ;
+    background-color: white ;
+    h4{
+        font-size: $font-special ;
+        color: $darkColor ;
+        font-weight: 700 ;
+    }
+    p{
+        width: 100% ;
+        height: auto;
+        font-size: $font-m ;
+        color: $greyColor2 ;
+        line-height: $dist3 ;
+    }
+}
+@media screen and (max-width:900px){
+    #rules{font-size: 16px;}
+}
+@media screen and (max-width:600px){
+    #rules{font-size: 13px;}
+}
+@media screen and (max-width:500px){
+    #rules{width: 90vw ;}
+}
+@media screen and (max-width:350px){
+    #rules{font-size: 10px;}
+}

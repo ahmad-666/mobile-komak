@@ -1,0 +1,166 @@
+#landing {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#landing .bg {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/svgs/landing.svg") -6vw -12vh no-repeat;
+  background-size: 107% 116%;
+}
+
+#landing .info {
+  width: 40vw;
+  height: auto;
+  position: absolute;
+  top: 22%;
+  left: 4em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#landing .info h1, #landing .info p, #landing .info a {
+  width: 100%;
+  height: auto;
+  margin: 0 0;
+}
+
+#landing .info h1 {
+  font-size: 1.5em;
+  color: #2d2d31;
+  font-weight: 700;
+}
+
+#landing .info p {
+  font-size: .7em;
+  color: #838391;
+  line-height: 2.5em;
+  max-height: 20em;
+  overflow: auto;
+}
+
+#landing .info a.special {
+  margin-top: 1em;
+  width: auto;
+  height: auto;
+  padding: 0.6em 1.5em;
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#ff416c), to(#ff4b2b));
+  background: -webkit-linear-gradient(left, #ff416c, #ff4b2b);
+  background: -moz-linear-gradient(left, #ff416c, #ff4b2b);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 2em;
+  font-size: .9em;
+}
+
+@media screen and (max-width: 900px) {
+  #landing {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #landing {
+    height: 150vh;
+    margin-top: 3em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+  }
+  #landing .info {
+    position: static;
+    width: 95%;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: "";
+  }
+  #landing .info p {
+    max-height: 40vh;
+  }
+  #landing .info h1 {
+    text-align: center;
+  }
+  #landing .bg {
+    width: 100%;
+    height: 75%;
+    margin-top: 0.5em;
+    background: url("../../assets/svgs/landing.svg") -6vw -6vh no-repeat;
+    background-size: 107% 100%;
+  }
+}
+/*# sourceMappingURL=landing.css.map */
