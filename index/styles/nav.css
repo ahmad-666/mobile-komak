@@ -257,6 +257,14 @@ nav.fix-style {
     visibility: visible;
     opacity: 1;
   }
+  nav > ul li.mobile:active .mobile_nav {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* nav > ul li.mobile:not(:active) .mobile_nav {
+    visibility: hidden;
+    opacity: 0;
+  } */
   nav > ul li.mobile .fa-bars {
     font-size: 1.6em;
     cursor: pointer;
@@ -502,22 +510,3 @@ nav.fix-style {
   }
 }
 /*# sourceMappingURL=nav.css.map */
-
-@media screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0)
-{ 
-    @media {
-      nav > ul li.mobile:hover .mobile_nav {
-        /* visibility: visible;
-        opacity: 1; */
-        display: flex;
-      }
-      nav > ul li.mobile .mobile_nav {
-        opacity: 1;
-        visibility: visible;
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none;
-		display: none ;
-      }
-    }
-}
