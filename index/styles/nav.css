@@ -253,23 +253,20 @@ nav.fix-style {
     height: auto;
     line-height: 1em;
   }
-  nav > ul li.mobile:hover .mobile_nav {
+  /* nav > ul li.mobile:hover .mobile_nav {
     visibility: visible;
     opacity: 1;
   }
-  nav > ul li.mobile:active .mobile_nav {
-    visibility: visible;
-    opacity: 1;
-  }
-  /* nav > ul li.mobile:not(:active) .mobile_nav {
-    visibility: hidden;
-    opacity: 0;
-  } */
+  */
   nav > ul li.mobile .fa-bars {
     font-size: 1.6em;
     cursor: pointer;
     color: #2d2d31;
     padding: 0;
+  }
+  nav > ul li.mobile .mobile_nav.show{
+    visibility: visible;
+    opacity: 1;
   }
   nav > ul li.mobile .mobile_nav {
     opacity: 0;
@@ -408,10 +405,10 @@ nav.fix-style {
   nav > ul li.mobile .mobile_nav li.dropdownTrigger {
     position: relative;
   }
-  nav > ul li.mobile .mobile_nav li.dropdownTrigger:hover .dropdownMenu {
+  /* nav > ul li.mobile .mobile_nav li.dropdownTrigger:hover .dropdownMenu {
     opacity: 1;
     visibility: visible;
-  }
+  } */
   nav > ul li.mobile .mobile_nav li.dropdownTrigger i {
     font-size: 1em;
     color: #2d2d31;
@@ -419,6 +416,10 @@ nav.fix-style {
        -moz-transform: translate(-0.5em, 15%);
         -ms-transform: translate(-0.5em, 15%);
             transform: translate(-0.5em, 15%);
+  }
+  nav > ul li.mobile .mobile_nav li.dropdownTrigger .dropdownMenu.show {
+    opacity: 1;
+    visibility: visible;
   }
   nav > ul li.mobile .mobile_nav li.dropdownTrigger .dropdownMenu {
     opacity: 0;
