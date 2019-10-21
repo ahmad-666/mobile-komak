@@ -294,3 +294,27 @@ nav.fix-style{
         font-size: 9px ;
     }
 }
+@media screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0)
+{ 
+    @media {
+        nav{
+            > ul{                
+                li.mobile{
+                    &:hover{
+                        .mobile_nav{
+                            // visibility: visible ;
+                            // opacity: 1;
+                            display: flex;
+                        }
+                    }
+                    .mobile_nav{
+                        opacity: 1;
+                        visibility: visible ;
+                        display: none;
+                        transition: none ;
+                    }
+                }
+            }
+        }
+    }
+}
