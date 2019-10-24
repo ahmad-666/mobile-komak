@@ -1,7 +1,3 @@
-body {
-  background-color: #f1f0f5;
-}
-
 #login_wrapper {
   width: 100%;
   min-height: 50vh;
@@ -196,7 +192,7 @@ body {
 }
 
 #login_wrapper form#login .checkbox_wrapper label input[type="checkbox"]:checked ~ .rect {
-  background-color: #4a4982;
+  background-color: #06ccf8;
   border: 1px solid transparent;
 }
 
@@ -246,7 +242,7 @@ body {
   border-radius: 2em;
   font-size: 1em;
   color: #fbfbfb;
-  background-color: #4a4982;
+  background-color: #06ccf8;
 }
 
 #login_wrapper form#login p.error {
@@ -258,5 +254,30 @@ body {
 
 #login_wrapper form#login p.error.show {
   display: block;
+}
+
+@media screen and (max-width: 900px) {
+  #login_wrapper {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #login_wrapper {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #login_wrapper {
+    font-size: 10px;
+    min-height: 50vh;
+  }
+  #login_wrapper form#login {
+    width: 90%;
+  }
+  #login_wrapper form#login .input_wrapper {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=login.css.map */

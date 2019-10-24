@@ -4,14 +4,14 @@
 #faq{
     width: 90vw ;
     height: auto;
-    margin: $sectionsDist auto ;
+    margin: $dist2 auto 0 auto ;
     display: flex ;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
     h4,.questions{margin: $dist1 0 ;}
     h4{
         width: 100% ;
         text-align: center ;
-        font-size: $font-special ;
+        font-size: $font-xl + .2em ;
         font-weight: 700 ;
         color: $darkColor ;
     }
@@ -70,5 +70,20 @@
                 opacity: 1;          
             }
         }
+    }
+}
+@media screen and (max-width:900px){
+    #faq{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:600px){
+    #faq{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:350px){
+    #faq{
+        font-size: 10px;
     }
 }

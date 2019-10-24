@@ -248,20 +248,25 @@ nav.fix-style {
   }
   nav > ul li.mobile {
     display: block;
-    position: relative;
+    /* position: relative; */
     padding: 0;
     height: auto;
     line-height: 1em;
   }
-  nav > ul li.mobile:hover .mobile_nav {
+  /* nav > ul li.mobile:hover .mobile_nav {
     visibility: visible;
     opacity: 1;
   }
+  */
   nav > ul li.mobile .fa-bars {
     font-size: 1.6em;
     cursor: pointer;
     color: #2d2d31;
     padding: 0;
+  }
+  nav > ul li.mobile .mobile_nav.show{
+    visibility: visible;
+    opacity: 1;
   }
   nav > ul li.mobile .mobile_nav {
     opacity: 0;
@@ -400,10 +405,10 @@ nav.fix-style {
   nav > ul li.mobile .mobile_nav li.dropdownTrigger {
     position: relative;
   }
-  nav > ul li.mobile .mobile_nav li.dropdownTrigger:hover .dropdownMenu {
+  /* nav > ul li.mobile .mobile_nav li.dropdownTrigger:hover .dropdownMenu {
     opacity: 1;
     visibility: visible;
-  }
+  } */
   nav > ul li.mobile .mobile_nav li.dropdownTrigger i {
     font-size: 1em;
     color: #2d2d31;
@@ -411,6 +416,10 @@ nav.fix-style {
        -moz-transform: translate(-0.5em, 15%);
         -ms-transform: translate(-0.5em, 15%);
             transform: translate(-0.5em, 15%);
+  }
+  nav > ul li.mobile .mobile_nav li.dropdownTrigger .dropdownMenu.show {
+    opacity: 1;
+    visibility: visible;
   }
   nav > ul li.mobile .mobile_nav li.dropdownTrigger .dropdownMenu {
     opacity: 0;
@@ -483,7 +492,12 @@ nav.fix-style {
 
 @media screen and (max-width: 450px) {
   nav {
-    font-size: 12px;
+    font-size: 14px;
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+  nav > ul li.mobile .mobile_nav {
+    top: 115%;
   }
 }
 
@@ -494,30 +508,14 @@ nav.fix-style {
   nav li.mobile {
     margin-right: 0;
   }
+  nav > ul li.mobile .mobile_nav{
+    font-size: 11px;
+  }
 }
 
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) {
   nav {
     font-size: 9px;
   }
-}
+} */
 /*# sourceMappingURL=nav.css.map */
-
-@media screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0)
-{ 
-    @media {
-      nav > ul li.mobile:hover .mobile_nav {
-        /* visibility: visible;
-        opacity: 1; */
-        display: flex;
-      }
-      nav > ul li.mobile .mobile_nav {
-        opacity: 1;
-        visibility: visible;
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none;
-		display: none ;
-      }
-    }
-}

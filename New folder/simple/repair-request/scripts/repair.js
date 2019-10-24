@@ -1,3 +1,24 @@
+//select2---------------------------------
+//select2---------------------------------
+//select2---------------------------------
+$('.select2').select2(); //init select2
+//change AlertMsg
+$('.select2').on('select2:open', function (e) {
+    let inputs = document.querySelectorAll('input[type="search"].select2-search__field') ;
+    inputs.forEach(input => {
+        input.addEventListener('input',changeAlertMsg) ;
+    })
+});
+function changeAlertMsg(e){
+    let alerts = document.querySelectorAll('li[role="alert"]') ;
+    alerts.forEach(alert => {
+        alert.classList.add('alert') ;
+        alert.textContent = "موردی یافت نشد" ; 
+    })
+}
+//-------------------------------
+//-------------------------------
+//-------------------------------
 let requestWrapper = document.querySelector('#request') ;
 let requestFormWrapper = requestWrapper.querySelector('form#request_info') ;
 //move to next/prev slide 
@@ -11,8 +32,9 @@ prevSlideHandlers.forEach(prevSlideHandler => {
 })
 function moveSlider(e){
     if(this.classList.contains('nextSlide')){//move to next slide
-        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem
+        if(this == problemNextSlideBtn) { //if we hit nextSlide button inside .slide#select_problem          
             if(problemWrapper.querySelectorAll('i.fa-check.show').length>0){
+                console.log('fdsf') ;
                 problemError.classList.remove('show') ;
                 nextSlide();
                 moveLine('forward') ; 
@@ -44,12 +66,14 @@ function moveSlider(e){
         }
         else {
             nextSlide();  
-            if(!this.classList.contains('static_timeline')) moveLine('forward') ;   
+            //if(!this.classList.contains('static_timeline')) 
+            moveLine('forward') ;   
         }
     }
     else if(this.classList.contains('prevSlide')) { //move to prev slide 
         prevSlide(); 
-        if(!this.classList.contains('static_timeline')) moveLine('backward') ; 
+        //if(!this.classList.contains('static_timeline')) 
+        moveLine('backward') ; 
     }
 }
 function nextSlide(){
@@ -110,6 +134,9 @@ function initTimer(){
 //user input validation 
 let mobileInput = infoWrapper.querySelector('#mobile_num') ;
 let code = 123 ;
+function get_code($code){
+     code = $code ;
+}
 let codeInput = infoWrapper.querySelector('#code') ;
 let codeWrapper = codeInput.parentElement ;
 let codeWrapperHeight = codeWrapper.offsetHeight ;
@@ -158,7 +185,7 @@ function tabHandler(e){
     }
 }
 function mobileValidate(){
-    if(mobileInput.value.length >= 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
+    if(mobileInput.value.length == 11 && mobileInput.value[0]=='0' && mobileInput.value[1]=='9') {
         mobileInput.classList.remove('error') ;
         mobileInput.removeEventListener('input',monitorMobile) ;
         return true ;
@@ -169,7 +196,7 @@ function mobileValidate(){
     }
 }
 function monitorMobile(e){
-    if(mobileInput.value.length < 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
+    if(mobileInput.value.length != 11 || mobileInput.value[0]!='0' || mobileInput.value[1]!='9') mobileInput.classList.add('error') ;
     else mobileInput.classList.remove('error') ;
 }
 function codeValidate(){
@@ -253,15 +280,23 @@ function changeTab(targetID){
 function Select(elm){
     this.elm = elm ;
     this.input = this.elm.querySelector('input[type="text"]') ;
+    this.hiddenInput = this.elm.querySelector('input[type="hidden"]')
+
     this.ul = this.elm.querySelector('ul') ;
     this.lis = this.ul.querySelectorAll('li') ;
+    this.initList = [...this.lis] ;
     this.arrow = this.elm.querySelector('i.fa-angle-down') ;
     this.input.addEventListener('click',this.inputHandler.bind(this));
     this.arrow.addEventListener('click',this.inputHandler.bind(this));
+    //this.otherSelects = otherSelects ;
+    this.input.addEventListener('input',this.search.bind(this)) ;
+    this.input.addEventListener('blur',this.loseFocus.bind(this)) ;
 }
 Select.prototype.inputHandler = function(e){
     e.stopPropagation();
     document.addEventListener('click',this) ;
+    let val = this.input.value;
+    if(!val.match(/\S{1,}/gi)) this.createList(this.initList) ;
     this.ul.classList.add('show') ;
     this.lis.forEach(li => {
         li.addEventListener('click',this) ;
@@ -288,6 +323,7 @@ Select.prototype.handleEvent = function(e){
         let currLi = e.currentTarget ;
         this.input.value = currLi.textContent ;
         this.input.classList.remove('error');
+        this.hiddenInput.value = currLi.getAttribute('data-value') ;
         this.ul.classList.remove('show') ;
         document.removeEventListener('click',this) ;
         this.lis.forEach(li => {
@@ -295,9 +331,43 @@ Select.prototype.handleEvent = function(e){
         })
     }
 }
+Select.prototype.search = function(e){
+    let val = this.input.value ;
+    //if we enter anything rather than white-space
+     //if we have any result we enter this block
+    if(val.match(/\S{1,}/gi)){      
+         this.lis = this.initList.filter(li => {
+             if(li.textContent.startsWith(val)) return li ;
+         })      
+     }
+     //if we don't have any result we enter this block
+     else this.lis = [...this.initList] ;  
+     this.createList(this.lis) ;
+ }
+ Select.prototype.loseFocus = function(e){
+     let val = this.input.value ;
+     let find = false ;
+     for(let i=0 ; i<this.lis.length ; i++){
+         let li = this.lis[i] ;
+         if(li.textContent == val){
+             find = true ;
+             break ;
+         }
+     }
+     if(!find) {
+         this.input.value = '' ;  
+     } 
+    
+ }
+ Select.prototype.createList = function(lis){
+     this.ul.innerHTML = '' ;
+     lis.forEach(li => {
+         this.ul.appendChild(li) ;
+     })
+ }
 let selects = [] ;
 infoWrapper.querySelectorAll('.input_wrapper.select').forEach(select => {
-    selects.push(new Select(select)) ;
+    //selects.push(new Select(select)) ;
 })
 //resend code
 let resend = infoWrapper.querySelector('#resend') ;
@@ -321,19 +391,45 @@ let confirmError = confirmWrapper.querySelector('p.error') ;
 let timeline = requestWrapper.querySelector('#timeline') ;
 let line = timeline.querySelector('.line') ;
 let fillLine = timeline.querySelector('.fill_line') ;
+if(window.innerWidth>350){
+    fillLine.style.width = '0%' ;
+    fillLine.style.height = '' ;
+}
+else if(window.innerWidth<=350){
+    fillLine.style.width = '' ;
+    fillLine.style.height = '0%' ;
+}
 let circles = timeline.querySelectorAll('.circle') ;
 let circleIndex = 0 ;
 function moveLine(dir){
-    let currWidth = parseFloat(fillLine.style.width) ;
-    let offset = 100/6 ;
-    if(dir == 'forward'){
-        fillLine.style.width = `${currWidth+offset}%` ;
-        circleIndex++ ;
-        circles[circleIndex].classList.add('active') ; 
+    if(window.innerWidth>350){
+        let currWidth = parseFloat(fillLine.style.width) ;
+        let offset = Math.round(100/7) ;
+        if(dir == 'forward'){
+            fillLine.style.width = `${currWidth+offset}%` ;
+            circleIndex++ ;
+            circles[circleIndex].classList.add('active') ; 
+        }
+        else if(dir = 'backward'){
+            circles[circleIndex].classList.remove('active') ; 
+            circleIndex-- ;
+            fillLine.style.width = `${currWidth-offset}%` ;
+        }
     }
-    else if(dir = 'backward'){
-        circles[circleIndex].classList.remove('active') ; 
-        circleIndex-- ;
-        fillLine.style.width = `${currWidth-offset}%` ;
+    else if(window.innerWidth<=350){
+        let currHeight = parseFloat(fillLine.style.height) ;
+        let offset = Math.round(100/7) ;
+        if(dir == 'forward'){
+            fillLine.style.height = `${currHeight+offset}%` ;
+            circleIndex++ ;
+            circles[circleIndex].classList.add('active') ; 
+        }
+        else if(dir = 'backward'){
+            circles[circleIndex].classList.remove('active') ; 
+            circleIndex-- ;
+            fillLine.style.height = `${currHeight-offset}%` ;
+        }
     }
+    
 }
+

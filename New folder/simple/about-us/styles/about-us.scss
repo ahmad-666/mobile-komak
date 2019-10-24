@@ -24,3 +24,15 @@
         line-height: $dist3 ;
     }
 }
+@media screen and (max-width:900px){
+    #about_us{font-size: 16px;}
+}
+@media screen and (max-width:600px){
+    #about_us{font-size: 13px;}
+}
+@media screen and (max-width:500px){
+    #about_us{width: 90vw ;}
+}
+@media screen and (max-width:350px){
+    #about_us{font-size: 10px;}
+}

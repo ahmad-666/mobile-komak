@@ -32,7 +32,6 @@ main .articles {
   background-color: #fbfbfb;
   -webkit-box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
           box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
-  padding-bottom: 5em;
 }
 
 main .articles h4 {
@@ -43,11 +42,11 @@ main .articles h4 {
 }
 
 main .articles .article {
-  width: -webkit-calc((63vw - (3 * 2.7em)) / 3);
-  width: -moz-calc((63vw - (3 * 2.7em)) / 3);
-  width: calc((63vw - (3 * 2.7em)) / 3);
+  width: -webkit-calc((100% - (3 * 1.1em)) / 3);
+  width: -moz-calc((100% - (3 * 1.1em)) / 3);
+  width: calc((100% - (3 * 1.1em)) / 3);
   height: auto;
-  margin: 1em;
+  margin: 1em 0.5em;
   border-radius: 1em;
   display: -webkit-box;
   display: -webkit-flex;
@@ -276,9 +275,7 @@ main .articles .article:nth-child(10) .img {
 main .articles .pagination {
   width: 100%;
   height: auto;
-  position: absolute;
-  right: 0;
-  bottom: 0.5em;
+  margin: 1em auto;
   text-align: center;
 }
 
@@ -319,11 +316,11 @@ main .articles .pagination a, main .articles .pagination .dots {
   position: relative;
   width: auto;
   height: 2.5em;
-  padding: 0 1em;
-  font-size: 1em;
+  padding: 0 0.7em;
+  font-size: 0.8em;
   border-radius: 0.5em;
   color: #004eee;
-  background-color: #f4f3f7;
+  background-color: #eceaf1;
   margin: 0.5em;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -349,5 +346,69 @@ main .articles .pagination a:hover, main .articles .pagination .dots:hover {
 
 main .articles .pagination .dots {
   line-height: 2.2em !important;
+}
+
+@media screen and (max-width: 1100px) {
+  main .articles .article {
+    width: -webkit-calc((100% - (2 * 1.1em)) / 2);
+    width: -moz-calc((100% - (2 * 1.1em)) / 2);
+    width: calc((100% - (2 * 1.1em)) / 2);
+  }
+  main .articles .article .img {
+    height: 10em;
+  }
+  main .articles .article h4 {
+    position: relative;
+    overflow: hidden;
+    line-height: 1.5em;
+    max-height: 4.5em;
+    text-align: justify;
+    padding-left: 1.2em;
+    padding-right: 0;
+  }
+  main .articles .article h4 .ellipse {
+    color: #2d2d31;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main .articles .article {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main .articles .article .img {
+    height: 14em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main {
+    font-size: 10px;
+  }
+  main .articles .article {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main .articles .article .img {
+    height: 14em;
+  }
 }
 /*# sourceMappingURL=articles.css.map */

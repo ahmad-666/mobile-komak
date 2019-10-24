@@ -6,15 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./external/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./externals/fontawesome/all.min.css">
     <link rel="stylesheet" href="./init.css">
-    <link rel="stylesheet" href='./index/styles/nav.css'></link>
-    <link rel="stylesheet" href='./about-us/styles/about-us.css'></link>
-    <link rel="stylesheet" href='./index/styles/footer.css'></link>
-    <link rel="stylesheet" href='./index/styles/copyright.css'></link>
+    <link rel="stylesheet" href="./index/styles/nav.css">
+    <link rel="stylesheet" href="./index/styles/landing.css">
+    <link rel="stylesheet" href="./index/styles/why-us.css">
+    <link rel="stylesheet" href="./index/styles/problems.css">
+    <link rel="stylesheet" href="./index/styles/progress.css">
+    <link rel="stylesheet" href="./index/styles/sponsers.css">
+    <link rel="stylesheet" href="./index/styles/slider.css">
+    <link rel="stylesheet" href="./index/styles/faq.css">
+    <link rel="stylesheet" href="./index/styles/newsletters.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+    <link rel="stylesheet" href="./index/styles/copyright.css">
+    <link rel="stylesheet" href="./article/styles/article.css">
+    <link rel="stylesheet" href="./article/styles/comment.css">
+    <link rel="stylesheet" href="./category/styles/articles.css">
+    <link rel="stylesheet" href="./articles/styles/articles.css">
+    <link rel="stylesheet" href="./articles/styles/grid.css">
+    <link rel="stylesheet" href="./articles/styles/tabs.css">
+    <link rel="stylesheet" href="./video/styles/player.css">
+    <link rel="stylesheet" href="./repair-request/styles/repair.css">
+    <link rel="stylesheet" href="./login/styles/login.css">
+    <link rel="stylesheet" href="./track/styles/track.css">
+    <link rel="stylesheet" href="./about-us/styles/about-us.css">
+    <link rel="stylesheet" href="./rules/styles/rules.css">
 </head>
 
-<body>
+<body class="bg">
     <nav>
         <ul>
             <li class="special">
@@ -30,7 +49,7 @@
                         <a href="./articles.html">مقالات و آموزش نرم افزاری</a>
                     </li>
                     <li>
-                        <a href="./repair-teach.html">آموزش تعمیر موبایل</a>
+                        <a href="./articles.html">آموزش تعمیر موبایل</a>
                     </li>
                 </ul>
             </li>
@@ -38,15 +57,50 @@
                                 <a href="https://mobilekomak.com/store/">فروشگاه</a>
                             </li> -->
             <li>
-                <a href="./representation.html">اخذ نمایندگی</a>
+                <a href="./login.html">ورود</a>
+            </li>
+            <li>
+                <a href="./track.html">پیگیری سفارش</a>
             </li>
             <li class="logo">
                 <a href="./index.html">
                     <img src="./assets/imgs/logo.png" alt="logo">
                 </a>
             </li>
+            <li class="mobile">
+                <i class="fas fa-bars"></i>
+                <ul class="mobile_nav">
+                    <li class="logo_mobile">
+                        <a href="./index.html">
+                            <img src="./assets/imgs/logo.png" alt="logo">
+                        </a>
+                    </li>
+                    <li class="special_mobile">
+                        <a href="./repair-request.html">درخواست تعمیر</a>
+                    </li>
+                    <li class="dropdownTrigger">
+                        آموزش ها
+                        <i class="fas fa-angle-left"></i>
+                        <ul class="dropdownMenu">
+                            <li>
+                                <a href="./articles.html">مقالات و آموزش نرم افزاری</a>
+                            </li>
+                            <li>
+                                <a href="./articles.html">آموزش تعمیر موبایل</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./login.html">ورود</a>
+                    </li>
+                    <li>
+                        <a href="./track.html">پیگیری سفارش</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
+
     <div id="about_us">
         <h4>درباره ما</h4>
         <p>
@@ -140,7 +194,8 @@
                     ۰۲۱-۷۵۱۴۷
                 </p>
                 <div id="socials">
-                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=contact@mobilekomak.com&tf=1"> <i class="fab fa-google-plus-g"></i> </a>
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=contact@mobilekomak.com&tf=1"> <i
+                            class="fab fa-google-plus-g"></i> </a>
                     <a href="#!"> <i class="fab fa-telegram"></i> </a>
                     <a href="https://www.youtube.com/user/MobileKomak"> <i class="fab fa-youtube"></i> </a>
                     <a href="https://twitter.com/mobilekomak"> <i class="fab fa-twitter"></i> </a>
@@ -148,16 +203,16 @@
                     <a href="https://www.facebook.com/mobilekomak"> <i class="fab fa-facebook-f"></i> </a>
                 </div>
             </div>
-        </div>     
+        </div>
     </div>
     <div id="copyright">
         <a href="http://www.ittoos.com">
             <i class="far fa-copyright"></i>
             طراحی سایت توسط ittoos
         </a>
-    </div>	
-	<script src="./index/scripts/landing.js"></script>
-	<script src='./about-us/scripts/about-us.js'></scripts>
+    </div>
+    <script src="./index/scripts/landing.js"></script>
+    <script src="./about-us/scripts/about-us.js"></script>
     <script src="./index/scripts/footer.js"></script>
 </body>
 

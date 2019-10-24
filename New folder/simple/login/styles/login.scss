@@ -1,9 +1,9 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-body{
-    background-color: #f1f0f5 ;
-}
+// body{
+//     background-color: #f1f0f5 ;
+// }
 #login_wrapper{
     width: 100% ;
     min-height: 50vh;
@@ -124,4 +124,24 @@ body{
             display: block
         }
     } 
+}
+@media screen and (max-width:900px){
+    #login_wrapper{font-size: 16px;}
+}
+@media screen and (max-width:600px){
+    #login_wrapper{font-size: 13px;}
+
+}
+@media screen and (max-width:350px){
+    #login_wrapper{
+        font-size: 10px;
+        min-height: 50vh ;
+        form#login{
+            width: 90% ;
+            .input_wrapper{
+                width: 90% ;
+            }
+        }
+    }
+
 }

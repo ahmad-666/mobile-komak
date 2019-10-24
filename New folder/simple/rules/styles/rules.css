@@ -50,4 +50,28 @@
   color: #86878e;
   line-height: 2em;
 }
+
+@media screen and (max-width: 900px) {
+  #rules {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #rules {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #rules {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #rules {
+    font-size: 10px;
+  }
+}
 /*# sourceMappingURL=rules.css.map */
