@@ -127,7 +127,9 @@ nav.fix-style{
         font-size: 16px ;
         > ul{    
             li{
-                display: none ;
+                &:not(.special){
+                    // display: none ;
+                }
             }    
             li.mobile{
                 display: block ;
